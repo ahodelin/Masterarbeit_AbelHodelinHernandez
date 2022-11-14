@@ -1,9 +1,8 @@
 git add *.tex *.sh *.sty *.pdf
 git add data/db/*.sql
-git add bibliography/biblio.bib
+#git add bibliography/biblio.bib
 git add data/csv/*.csv
-# git add data/fhir/*
-git add python_scripts/*
+#git add python_scripts/*
 
 d=`date`
 git commit -m "Last update $d"
