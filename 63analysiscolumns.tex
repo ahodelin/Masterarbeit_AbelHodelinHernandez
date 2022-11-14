@@ -38,45 +38,45 @@ Nach der Datendefinition wird die Zuordnung der Konfigurationsvariablen mit den 
 	\hline			
 		\rowcolor{lightgray} Spalte & Datentyp & Information \\ \hline		
 		profile\_id & int & Generierter numerischer Identifikator des zugeordneten \ac{fhir}-Profils \\ \hline
-		profile\_name & varchar & Name des \ac{fhir}-Profils, z.B. Atemzugvolumen-Waehrend-Beatmung \\ \hline
+		profile\_name & varchar & Name des \ac{fhir}-Profils, z. B. Atemzugvolumen-Waehrend-Beatmung \\ \hline
 		category\_coding \_system & text & \acsu{url} der Kategorie. Dies kann ein \ac{snomedct}-\ac{url} bei einigen \glqq Observations\grqq{} sein. \\ \hline
 		category\_coding \_code & varchar & \glqq vital-signs\grqq{} oder \ac{snomedct}-ID \\ \hline
 		code\_coding \_system\_snomed & text & http://snomed.info/sct \\ \hline 
-		code\_coding \_code\_snomed & varchar & \ac{snomedct} des \ac{fhir}-Profils, z.B. 250874002 \\ \hline
+		code\_coding \_code\_snomed & varchar & \ac{snomedct} des \ac{fhir}-Profils, z. B. 250874002 \\ \hline
 		code\_coding \_system\_loinc & text & http://loinc.org \\ \hline
-		code\_coding \_code\_loinc & varchar & \ac{loinc}-Code des \ac{fhir}-Profils, z.B. 76222-9 \\ \hline
+		code\_coding \_code\_loinc & varchar & \ac{loinc}-Code des \ac{fhir}-Profils, z. B. 76222-9 \\ \hline
 		code\_coding \_system\_ieee & text & urn:iso:std:iso:11073:10101 \\ \hline
-		code\_coding \_code\_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel des \ac{fhir}-Profils, z.B. 151980 \\ \hline
+		code\_coding \_code\_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel des \ac{fhir}-Profils, z. B. 151980 \\ \hline
 		valuequantity \_system & text & http://unitsofmeasure.org \\ \hline
-		valuequantity\_code & varchar & Maßeinheiten im \ac{fhir}-Profil, z.B. mL \\ \hline
-		conf\_var\_unit & varchar & Maßeinheiten der Konfigurationsvariable in \ac{copra}, z.B. ml \\ \hline
+		valuequantity\_code & varchar & Maßeinheiten im \ac{fhir}-Profil, z. B. mL \\ \hline
+		conf\_var\_unit & varchar & Maßeinheiten der Konfigurationsvariable in \ac{copra}, z. B. ml \\ \hline
 		device\_reference & text & Zuweisung zur Art der Prozedur (gemessen, eingestellt oder erhoben). Diese Prozedur befindet sich in den Profilen des Typs \glqq DeviceMetric\grqq{} \\ \hline
 		meta\_profile & text &  \ac{url} um das Profil zu identifizieren \\ \hline
-		conf\_var\_id & bigint & Primärer Schlüssel der Tabelle \texttt{co6\_config\_variables}, z.B. 104726 \\ \hline
-		conf\_var\_parent\_id & bigint & Schlüssel des Bezuges der Variable, z.B. 1 für Patientenbezug \\ \hline
-		conf\_var\_parent \_name & varchar & Name des Bezuges, z.B. Patient \\ \hline
-		conf\_var\_name & varchar & Name der Konfigurationsvariable, z.B. Beatmung\_MS\_Pallas\_Vt \\ \hline
-		conf\_var\_description & varchar & Beschreibung der Konfiguratiovsvariable, z.B. Gemessenes Tidalvolumen \\ \hline
-		conf\_var\_types\_id & int & Schlüssel des Datentyps in der Tabelle \texttt{co6\_config\_variable\_types}, z.B. 6 für nummerische Werte \\ \hline
-		conf\_var\_types\_name & varchar & Name des Datentyps in der Tabelle \texttt{co6\_config\_variable\_types}, z.B. Decimal\_6\_3 \\ \hline
+		conf\_var\_id & bigint & Primärer Schlüssel der Tabelle \texttt{co6\_config\_variables}, z. B. 104726 \\ \hline
+		conf\_var\_parent\_id & bigint & Schlüssel des Bezuges der Variable, z. B. 1 für Patientenbezug \\ \hline
+		conf\_var\_parent \_name & varchar & Name des Bezuges, z. B. Patient \\ \hline
+		conf\_var\_name & varchar & Name der Konfigurationsvariable, z. B. Beatmung\_MS\_Pallas\_Vt \\ \hline
+		conf\_var\_description & varchar & Beschreibung der Konfiguratiovsvariable, z. B. Gemessenes Tidalvolumen \\ \hline
+		conf\_var\_types\_id & int & Schlüssel des Datentyps in der Tabelle \texttt{co6\_config\_variable\_types}, z. B. 6 für nummerische Werte \\ \hline
+		conf\_var\_types\_name & varchar & Name des Datentyps in der Tabelle \texttt{co6\_config\_variable\_types}, z. B. Decimal\_6\_3 \\ \hline
 		code\_systolic \_coding\_system \_snomed & text & http://snomed.info/sct \\ \hline
-		code\_systolic \_coding\_code \_snomed & varchar & \ac{snomedct}-ID der systolischen Blutdruckmessung, z.B. 271649006 \\ \hline
+		code\_systolic \_coding\_code \_snomed & varchar & \ac{snomedct}-ID der systolischen Blutdruckmessung, z. B. 271649006 \\ \hline
 		code\_systolic \_coding\_system \_loinc & text & http://loinc.org \\ \hline
-		code\_systolic \_coding\_code \_loinc & varchar & \ac{loinc}-Code der systolischen Blutdruckmessung, z.B. 8406-1 \\ \hline
+		code\_systolic \_coding\_code \_loinc & varchar & \ac{loinc}-Code der systolischen Blutdruckmessung, z. B. 8406-1 \\ \hline
 		code\_systolic \_coding\_system \_ieee & text & urn:iso:std:iso:11073:10101 \\ \hline
-		code\_systolic \_coding\_code \_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel der systolischen Blutdruckmessung, z.B. 150107 \\ \hline
+		code\_systolic \_coding\_code \_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel der systolischen Blutdruckmessung, z. B. 150107 \\ \hline
 		code\_mean \_coding\_system \_snomed & text & http://snomed.info/sct \\ \hline
-		code\_mean \_coding\_code \_snomed & varchar & \ac{snomedct}-ID der mittleren Blutdruckmessung, z.B. 6797001 \\ \hline
+		code\_mean \_coding\_code \_snomed & varchar & \ac{snomedct}-ID der mittleren Blutdruckmessung, z. B. 6797001 \\ \hline
 		code\_mean \_coding\_system \_loinc & text & http://loinc.org \\ \hline
-		code\_mean \_coding\_code \_loinc & varchar & \ac{loinc}-Code der mittleren Blutdruckmessung, z.B. 8478-0 \\ \hline
+		code\_mean \_coding\_code \_loinc & varchar & \ac{loinc}-Code der mittleren Blutdruckmessung, z. B. 8478-0 \\ \hline
 		code\_mean \_coding\_system \_ieee & text & urn:iso:std:iso:11073:10101 \\ \hline
-		code\_mean \_coding\_code \_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel der mittleren Blutdruckmessung, z.B. 150019 \\ \hline
+		code\_mean \_coding\_code \_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel der mittleren Blutdruckmessung, z. B. 150019 \\ \hline
 		code\_diastolic \_coding\_system \_snomed & text & http://snomed.info/sct \\ \hline
-		code\_diastolic \_coding\_code \_snomed & varchar & \ac{snomedct}-ID der diastolischen Blutdruckmessung, z.B. 271650006 \\ \hline
+		code\_diastolic \_coding\_code \_snomed & varchar & \ac{snomedct}-ID der diastolischen Blutdruckmessung, z. B. 271650006 \\ \hline
 		code\_diastolic \_coding\_system \_loinc & text & http://loinc.org \\ \hline
-		code\_diastolic \_coding\_code \_loinc & varchar & \ac{loinc}-Code der diastolischen Blutdruckmessung, z.B. 8462-4 \\ \hline
+		code\_diastolic \_coding\_code \_loinc & varchar & \ac{loinc}-Code der diastolischen Blutdruckmessung, z. B. 8462-4 \\ \hline
 		code\_diastolic \_coding\_system \_ieee & text & urn:iso:std:iso:11073:10101 \\ \hline
-		code\_diastolic \_coding\_code \_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel der diastolischen Blutdruckmessung, z.B. 150018 \\ \hline
+		code\_diastolic \_coding\_code \_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel der diastolischen Blutdruckmessung, z. B. 150018 \\ \hline
 		matching\_valide & bool & Ergebnis der Validierung der Zuordnung, \texttt{true} oder \texttt{false} \\ \hline
 \end{longtable}
 

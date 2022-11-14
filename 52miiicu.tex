@@ -4,7 +4,7 @@ Die Information der \ac{fhir}-Profile des Moduls \glqq\ac{icu}\grqq{} des Kernda
 
 Die Parameter je Profil an der Webseite, nämlich Name, Typ, Attribute der Maßeinheit, Daten der Codesysteme und vorhandene Metrik des Geräts wurden in die Tabelle \texttt{mii\_icu} der \ac{db} \texttt{mii\_copra} eingefügt.
 
-Die meisten \ac{fhir}-Profile unter der Kategorie \glqq Observation\grqq{} besitzen eine ähnliche Struktur, sodass der Import in die Tabelle \texttt{mii\_icu} erleichtert wird. Die Ausnahmen bilden die Profile der Gruppe \glqq Blutdruck Generisch\grqq{} für die Speicherung der Blutdruckmessungen, z.B. \glqq Linksatrialer Druck\grqq{}. Diese Profile sind eine Zusammensetzung von drei separat kodierten \glqq Observations\grqq{}, die dieselben Attribute teilen, nämlich die Spezifikationen für den systolischen, mittleren und diastolischen Blutdruck. In solchen Fällen wurden auch die semantischen Annotationen der systolischen, mittleren und diastolischen Attribute in der Tabelle \texttt{mii\_icu} registriert.
+Die meisten \ac{fhir}-Profile unter der Kategorie \glqq Observation\grqq{} besitzen eine ähnliche Struktur, sodass der Import in die Tabelle \texttt{mii\_icu} erleichtert wird. Die Ausnahmen bilden die Profile der Gruppe \glqq Blutdruck Generisch\grqq{} für die Speicherung der Blutdruckmessungen, z. B. \glqq Linksatrialer Druck\grqq{}. Diese Profile sind eine Zusammensetzung von drei separat kodierten \glqq Observations\grqq{}, die dieselben Attribute teilen, nämlich die Spezifikationen für den systolischen, mittleren und diastolischen Blutdruck. In solchen Fällen wurden auch die semantischen Annotationen der systolischen, mittleren und diastolischen Attribute in der Tabelle \texttt{mii\_icu} registriert.
 
 Die Struktur der Tabelle \texttt{mii\_icu} zur Speicherung der Elemente der \ac{fhir}-Profile ist in der \ref{tab:miiicu} dargestellt.
 
@@ -14,35 +14,35 @@ Die Struktur der Tabelle \texttt{mii\_icu} zur Speicherung der Elemente der \ac{
 		\hline
 		\rowcolor{lightgray} Spalte & Datentyp & Information \\ \hline
 		profile\_id & int & Generierter nummerischer Identifikator des zugeordneten \ac{fhir}-Profils \\ \hline
-		profile\_name & varchar & Name des \ac{fhir}-Profils, z.B. Atemzugvolumen-Waehrend-Beatmung \\ \hline
+		profile\_name & varchar & Name des \ac{fhir}-Profils, z. B. Atemzugvolumen-Waehrend-Beatmung \\ \hline
 		category\_coding \_system & text & \acsu{url} der Kategorie \glqq Observation\grqq{}. Dies kann ein \ac{snomedct}-\ac{url} sein. \\ \hline
 		category\_coding \_code & varchar & \glqq vital-signs\grqq{} oder \ac{snomedct}-ID \\ \hline
 		code\_coding \_system\_snomed & text & http://snomed.info/sct \\ \hline 
-		code\_coding \_code\_snomed & varchar & \ac{snomedct} des \ac{fhir}-Profils, z.B. 250874002 \\ \hline
+		code\_coding \_code\_snomed & varchar & \ac{snomedct} des \ac{fhir}-Profils, z. B. 250874002 \\ \hline
 		code\_coding \_system\_loinc & text & http://loinc.org \\ \hline
-		code\_coding \_code\_loinc & varchar & \ac{loinc}-Code des \ac{fhir}-Profils, z.B. 76222-9 \\ \hline
+		code\_coding \_code\_loinc & varchar & \ac{loinc}-Code des \ac{fhir}-Profils, z. B. 76222-9 \\ \hline
 		code\_coding \_system\_ieee & text & urn:iso:std:iso:11073:10101 \\ \hline
-		code\_coding \_code\_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel des \ac{fhir}-Profils, z.B. 151980 \\ \hline
+		code\_coding \_code\_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel des \ac{fhir}-Profils, z. B. 151980 \\ \hline
 		valuequantity \_system & text & http://unitsofmeasure.org \\ \hline
-		valuequantity\_code & varchar & Maßeinheiten im \ac{fhir}-Profil, z.B. mL \\ \hline
+		valuequantity\_code & varchar & Maßeinheiten im \ac{fhir}-Profil, z. B. mL \\ \hline
 		device\_reference & text & Zuweisung zur Art der Prozedur (gemessen, eingestellt oder erhoben). Diese Prozedur befindet sich in den Profilen der Typ \glqq DeviceMetric\grqq{} \\ \hline
 		code\_systolic \_coding\_system \_snomed & text & http://snomed.info/sct \\ \hline
-		code\_systolic \_coding\_code \_snomed & varchar & \ac{snomedct}-ID der systolischen Blutdruckmessung, z.B. 271649006 \\ \hline
+		code\_systolic \_coding\_code \_snomed & varchar & \ac{snomedct}-ID der systolischen Blutdruckmessung, z. B. 271649006 \\ \hline
 		code\_systolic \_coding\_system \_loinc & text & http://loinc.org \\ \hline
-		code\_systolic \_coding\_code \_loinc & varchar & \ac{loinc}-Code der systolischen Blutdruckmessung, z.B. 8406-1 \\ \hline
+		code\_systolic \_coding\_code \_loinc & varchar & \ac{loinc}-Code der systolischen Blutdruckmessung, z. B. 8406-1 \\ \hline
 		code\_systolic \_coding\_system \_ieee & text & urn:iso:std:iso:11073:10101 \\ \hline
 		code\_systolic \_coding\_code \_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel der systolischen Blutdruckmessung \\ \hline
 		code\_mean \_coding\_system \_snomed & text & http://snomed.info/sct \\ \hline
-		code\_mean \_coding\_code \_snomed & varchar & \ac{snomedct}-ID der mittleren Blutdruckmessung, z.B. 6797001 \\ \hline
+		code\_mean \_coding\_code \_snomed & varchar & \ac{snomedct}-ID der mittleren Blutdruckmessung, z. B. 6797001 \\ \hline
 		code\_mean \_coding\_system \_loinc & text & http://loinc.org \\ \hline
-		code\_mean \_coding\_code \_loinc & varchar & \ac{loinc}-Code der mittleren Blutdruckmessung, z.B. 8478-0 \\ \hline
+		code\_mean \_coding\_code \_loinc & varchar & \ac{loinc}-Code der mittleren Blutdruckmessung, z. B. 8478-0 \\ \hline
 		code\_mean \_coding\_system \_ieee & text & urn:iso:std:iso:11073:10101 \\ \hline
-		code\_mean \_coding\_code \_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel der mittleren Blutdruckmessung, z.B. 150019 \\ \hline
+		code\_mean \_coding\_code \_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel der mittleren Blutdruckmessung, z. B. 150019 \\ \hline
 		code\_diastolic \_coding\_system \_snomed & text & http://snomed.info/sct \\ \hline
-		code\_diastolic \_coding\_code \_snomed & varchar & \ac{snomedct}-ID der diastolischen Blutdruckmessung, z.B. 271650006 \\ \hline
+		code\_diastolic \_coding\_code \_snomed & varchar & \ac{snomedct}-ID der diastolischen Blutdruckmessung, z. B. 271650006 \\ \hline
 		code\_diastolic \_coding\_system \_loinc & text & http://loinc.org \\ \hline
-		code\_diastolic \_coding\_code \_loinc & varchar & \ac{loinc}-Code der diastolischen Blutdruckmessung, z.B. 8462-4 \\ \hline
+		code\_diastolic \_coding\_code \_loinc & varchar & \ac{loinc}-Code der diastolischen Blutdruckmessung, z. B. 8462-4 \\ \hline
 		code\_diastolic \_coding\_system \_ieee & text & urn:iso:std:iso:11073:10101 \\ \hline
-		code\_diastolic \_coding\_code \_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel der diastolischen Blutdruckmessung, z.B. 150018 \\ \hline
+		code\_diastolic \_coding\_code \_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel der diastolischen Blutdruckmessung, z. B. 150018 \\ \hline
 		meta\_profile & text &  \ac{url} um das Profil zu identifizieren \\ \hline
 \end{longtable}

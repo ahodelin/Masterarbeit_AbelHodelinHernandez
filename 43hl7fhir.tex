@@ -18,7 +18,7 @@ In \ac{fhir} werden Konzepte aus der realen Welt als Ressourcen mit entsprechend
 
 Die Referenzen ermöglichen es, dass mehrere Ressourcen und deren Informationseinheiten aufeinander verweisen können, um Beziehungen aufzubauen \cite{fhir}. Ein Beispiel davon sind die \glqq Observation\grqq{}-Ressourcen mit den Werten der Messungen im Erweiterungsmodul \glqq Intensivmedizin\grqq{} verweisen auf die \glqq Patient\grqq{}-Ressourcen mit der Information der behandelnden Personen in dem Basismodul \glqq Person\grqq{} des Kerndatensatzes der \ac{mii} (\ref{fig:mii}).
 
-Viele Werte in den \ac{fhir}-Ressourcen sind optional, sodass eine Umsetzung kompatibel ist, wenn sie nur die minimal obligatorischen Daten liefert. Diese Werte können von außen über die Profile modifiziert werden, und können wiederum sich aufeinander verweisen \cite{ehealtOk}. Das bedeutet die \ac{fhir}-Profile sind die Spezifikationen, die die \ac{fhir}-Ressourcen beschreiben und definieren, z.B. die Festlegung von konkreten Codesystemen \cite{fhir, fhircompact}.
+Viele Werte in den \ac{fhir}-Ressourcen sind optional, sodass eine Umsetzung kompatibel ist, wenn sie nur die minimal obligatorischen Daten liefert. Diese Werte können von außen über die Profile modifiziert werden, und können wiederum sich aufeinander verweisen \cite{ehealtOk}. Das bedeutet die \ac{fhir}-Profile sind die Spezifikationen, die die \ac{fhir}-Ressourcen beschreiben und definieren, z. B. die Festlegung von konkreten Codesystemen \cite{fhir, fhircompact}.
 
 \begin{comment}
 Der \ac{fhir}-Standard besitzt fünf Begriffe für die Beschreibung der Stabilität-Ebene \cite{fhircompact}:
@@ -32,7 +32,7 @@ Der \ac{fhir}-Standard besitzt fünf Begriffe für die Beschreibung der Stabilit
 \end{enumerate}
 \end{comment}
 
-Ein zuvor genannter Aspekt von \ac{fhir} ist seine Fokussierung auf moderne Webprotokolle. Somit können die \ac{fhir}-Ressourcen, die auf einem Server liegen, über eine Schnittstelle via \ac{http} abgefragt werden \cite{telemedizin, ehealtOk}. Außerdem ist das Datenformat für diese Übertragung auch von \ac{fhir} festgelegt, diese kann entweder \ac{xml} oder \ac{json} sein \cite{ehealtOk}. Diese zwei Formaten sind weitverbreitet und besitzen eine hohe Akzeptanz durch ihre Versatilität \cite{fhirformat}.
+Ein zuvor genannter Aspekt von \ac{fhir} ist seine Fokussierung auf moderne Webprotokolle. Somit können die \ac{fhir}-Ressourcen, die auf einem Server liegen, über eine Schnittstelle via \ac{http} abgefragt werden \cite{telemedizin, ehealtOk}. Außerdem ist das Datenformat für diese Übertragung auch von \ac{fhir} festgelegt, diese kann entweder \ac{xml} oder \ac{json} sein \cite{ehealtOk}. Diese zwei Formate sind weitverbreitet und besitzen eine hohe Akzeptanz durch ihre Versatilität \cite{fhirformat}.
 
 Die \ac{fhir}-Profile können auf verschiedene Art und Weise dargestellt werden. Die am häufigsten benutzten Arten der Darstellung sind logische Tabellen, \ac{xml}- und \ac{json}-Schemata \cite{fhirformat}.
 
@@ -52,9 +52,9 @@ Eine logische Tabelle eines \ac{fhir}-Profils beinhaltet die Spalten: Name, Flag
 	\item Flags: Entscheidende Informationen darüber, wie das Element implementiert werden sollte.
 	\begin{itemize}
 		\item S: Dieses Element muss unterstützt werden.
-		\item I: Elemente mit diesem Symbol definieren Randbedingungen oder sind Teile davon, z.B. das Element \texttt{code} definiert die benutzten Codesysteme bei der \glqq Procedure\grqq{}-Profile (\ref{fig:logic-table})
+		\item I: Elemente mit diesem Symbol definieren Randbedingungen oder sind Teile davon, z. B. das Element \texttt{code} definiert die benutzten Codesysteme bei der \glqq Procedure\grqq{}-Profile (\ref{fig:logic-table})
 		\item $\sum$: Diese Elemente sind Teile einer Ressource.
-		\item ?!: Das sind modifizierende Elemente, z.B. das Element \texttt{status} beschreibt den Zustand einer \glqq Procedure\grqq{}-Ressource, nämlich \texttt{final}, wenn die Ressource ein eine Endversion sich befindet (\ref{fig:logic-table}).
+		\item ?!: Das sind modifizierende Elemente, z. B. das Element \texttt{status} beschreibt den Zustand einer \glqq Procedure\grqq{}-Ressource, nämlich \texttt{final}, wenn die Ressource in einer Endversion sich befindet (\ref{fig:logic-table}).
 	\end{itemize}
 	\item Card.: Cardinality - untere und obere Grenze, wie häufig dieses Element in der Ressource erscheinen darf.
 	\item Type: Typ des Elements. Hier erscheint auch der Link zur Definition des Typs.
@@ -112,7 +112,7 @@ Die grundlegende analytische und Design-Aufgabe der Nutzung von \ac{xml} ist die
 
 \acf{json} ist ein, auf Features der Skriptsprache JavaScript basiertes, menschlesbares Datenaustauschformat für die Übertra- gung der Information zwischen Anwendungen \cite{jsondef}. Aus diesem Grund kann die Sprache selbst die Daten in \ac{json}-Format decodieren, und die Daten können als native JavaScript-Objekte direkt angewendet werden \cite{interop}. 
 
-Dadurch dass \ac{json} einfacher als \ac{xml} ist und viele Programmiersprachen schon \ac{json}-Bibliotheken implementiert haben, ist \ac{json} das bevorzugte Datenaustauschformat zwischen Anwendungen im unterschiedlichen Kontext, z.B. \ac{fhir}-Server und Webanwendungen, und damit eine geeignete Option, um Interoperabilität in Gesundheitswesen zu gewährleisten \cite{interop, jsondef}. Der Code \ref{list:jsonpatient} zeigt das \ac{fhir}-\ac{json}-Datei für die Definition einer Person.
+Dadurch dass \ac{json} einfacher als \ac{xml} ist und viele Programmiersprachen schon \ac{json}-Bibliotheken implementiert haben, ist \ac{json} das bevorzugte Datenaustauschformat zwischen Anwendungen im unterschiedlichen Kontext, z. B. \ac{fhir}-Server und Webanwendungen, und damit eine geeignete Option, um Interoperabilität in Gesundheitswesen zu gewährleisten \cite{interop, jsondef}. Der Code \ref{list:jsonpatient} zeigt die \ac{fhir}-\ac{json}-Datei für die Definition einer Person.
 
 \begin{lstlisting}[caption={[Beispiel einer \acs{fhir}-Ressource in JSON] Beispiel einer \acs{fhir}-Ressource für eine Person in JSON.},language=JavaScript, label=list:jsonpatient, captionpos=b]
 {
