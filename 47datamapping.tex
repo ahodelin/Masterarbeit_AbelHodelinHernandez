@@ -6,13 +6,13 @@ In der Gesundheitsbranche hilft die Datenzuordnung durch die Abgleichung von Dat
 
 Dadurch dass der Staging Bereich eines \ac{dw} der Zwischenspeicher ist, in dem die Daten aus den Quellsystemen für die spätere Transformationen gelagert werden, benötigt das Mapping die inhaltliche Information und Datenstruktur verschiedener Tabellen aus dem Quellsystem \cite{datamappingqs, datawarehouse}.
 
-Für die Durchführung eines Data Mappings sind drei Elementen entscheidend: das \ac{ldm}, das \ac{pdm} und die fachlichen Spezialisten \cite{datamappingqs}. Einerseits liefert das \ac{ldm} die Details der Strukturdefinition der Datenquelle \cite{datamappingqs, datamodel}. Andererseits beschreibt das \ac{pdm} die Spezifikationen der Implementierung des \ac{ldm} \cite{datamodel}. Die fachlichen Spezialisten besitzen das Fachwissen über eine bestimmte Thematik und stehen somit bei Fragen und Problemen zur Verfügung \cite{smeitlexicon}.
+Für die Durchführung eines Data Mappings sind drei Elemente entscheidend: das \ac{ldm}, das \ac{pdm} und die fachlichen Spezialisten \cite{datamappingqs}. Einerseits liefert das \ac{ldm} die Details der Strukturdefinition der Datenquelle \cite{datamappingqs, datamodel}. Andererseits beschreibt das \ac{pdm} die Spezifikationen der Implementierung des \ac{ldm} \cite{datamodel}. Die fachlichen Spezialisten besitzen das Fachwissen über eine bestimmte Thematik und stehen somit bei Fragen und Problemen zur Verfügung \cite{smeitlexicon}.
 
 Es gibt drei Data Mapping-Haupttechniken \cite{datamappingastera}:
 \begin{enumerate}
   \item Manuelle Datenzuordnung: Manuelle Kodierung der Datenquellen oder manuelle Zuordnung des Zielschemas.
   \item Schemazuordnung: Halbautomatischer Prozess bei dem eine Beziehung zwischen Quell- und Zielschema hergestellt wird und die Verbindungen geprüft und gegebenenfalls angepasst werden.
-  \item Vollautomatische Datenzuordnung: Diese Technik bietet eine bequeme, einfache und effiziente meist codefreie Benutzeroberfläche.
+  \item Vollautomatische Datenzuordnung: Diese Technik bietet eine bequeme, einfache und effiziente, meist codefreie, Benutzeroberfläche.
 \end{enumerate}
 
 Das Data Mapping wird in verschiedenen Szenarien angewendet. Eines davon ist, wie bei diesem Projekt, der elektronische Datenaustausch von Gesundheitsdaten, bei dem die Quelldaten in verschiedene Formate konvertiert werden sollen \cite{datamappingastera}.
@@ -29,6 +29,6 @@ Das Data Mapping besteht aus sechs Schritten \cite{datamappingtalend}.
 
 In dieser Masterarbeit werden zum Teil einige Transformationsregeln definiert, und programmiert.
 
-Dadurch dass Data Mapping eine dynamische Schnittstelle ist, sollte es regelmäßig gewartet und aktualisiert werden \cite{datamappingtalend}.
+Dadurch, dass Data Mapping eine dynamische Schnittstelle ist, sollte es regelmäßig gewartet und aktualisiert werden \cite{datamappingtalend}.
 
-Dieses Projekt befasst sich mit dem manuellen Data Mapping für den Datenaustausch von Biosignaldaten aus der \ac{copra}-Instanz des Staging Bereichs eines \ac{dw}, als Quellsystem, zu einem Zielsystem in \ac{fhir}. Das manuelle Data Mapping wurde ausgewählt, denn bis jetzt existieren noch keine vorherigen Projekte weder an der Universitätsmedizin Mainz noch an anderen \ac{mii} Standorte, welche sich mit dem Data Mapping von Biosignaldaten aus \ac{copra} mit \ac{fhir}-Profilen befassen. Dieses Projekt könnte auch der Grundstein für den Ideenaustausch und die Kooperation mit anderen \ac{mii}-Standorten werden.
+Dieses Projekt befasst sich mit dem manuellen Data Mapping für den Datenaustausch von Biosignaldaten aus der \ac{copra}-Instanz des Staging Bereichs eines \ac{dw}, als Quellsystem, zu einem Zielsystem in \ac{fhir}. Das manuelle Data Mapping wurde ausgewählt, denn bis jetzt existieren noch keine vorherigen Projekte - weder an der Universitätsmedizin Mainz noch an anderen \ac{mii} Standorte, welche sich mit dem Data Mapping von Biosignaldaten aus \ac{copra} mit \ac{fhir}-Profilen befassen. Dieses Projekt könnte auch der Grundstein für den Ideenaustausch und die Kooperation mit anderen \ac{mii}-Standorten werden.

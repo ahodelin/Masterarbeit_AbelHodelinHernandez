@@ -2,5 +2,5 @@
 
 Der erzeugte Datensatz nach der Analyse der Maßeinheiten wurde in die \ac{copra}-Instanz des Staging Bereichs des \ac{dw} importiert, denn der Rest der benötigten Daten für die Erzeugung der \ac{fhir}-Ressourcen des Erweiterungsmoduls \glqq Intensivmedizin\grqq{} befinden sich in verschiedenen Tabellen dieser Instanz. 
 
-Dadurch dass die notwendigen Daten in \ac{copra} in mehreren Tabellen liegen (\ref{fig:copraschema}), sollten sie hierzu zusammengeführt werden. Die genauen Daten von \ac{copra} und den \ac{fhir}-Profilen des Datensatzes der Zuordnung für die Zusammenführung wurden dann spezifiziert.
+Dadurch, dass die notwendigen Daten in \ac{copra} in mehreren Tabellen liegen (\ref{fig:copraschema}), sollten sie hierzu zusammengeführt werden. Die genauen Daten von \ac{copra} und den \ac{fhir}-Profilen des Datensatzes der Zuordnung für die Zusammenführung wurden dann spezifiziert.
 Am Ende der Spezifikation wurden \ac{sql}-Views mit den zusammengeführten Parametern und den Transformationsregeln in der \ac{copra}-Instanz programmiert. Diese Views können in weiteren Prozessen bei der Überführung der Biosignaldaten aus \ac{copra} in \ac{fhir} benutzt werden.

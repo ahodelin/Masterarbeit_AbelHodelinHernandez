@@ -2,7 +2,7 @@
 
 Das \acf{pdms} unterstützt die klinische Dokumentation auf Intensivstationen \glqq\acf{icu}\grqq{} und hat damit nachweisbare Auswirkungen auf die Vollständigkeit der Patientenakten, den Zeitaufwand für die Dokumentation und die Erhöhung der Patientenqualitätssicherung \cite{pdmsfinanc, pdmsimplem, pdmsicu}. Dieses System umfasst auch Komponenten der computergestützten Auftragserfassung für Ärzte \glqq\ac{cpoe}\grqq{}, denn die Daten aus diesem System sind entscheidend für verschiedene automatisierte Workflows \cite{pdmsfinanc, pdmsicu}. Das \ac{pdms} bietet auch eine spezifische Funktionalität für die Dokumentation der \ac{drg}, welche alle relevanten Daten für die Codierung erfasst \cite{pdmsfinanc, pdmsimplem}.
 
-In Deutschland waren im Jahr 2021 ca. 15 \ac{pdms}-Anbieter bekannt \cite{pdmsgermany}. Unter diesen Anbietern befindet sich \acf{copra}, was an der Universitätsmedizin Mainz und Standort der Realisierung dieses Projekts benutzte \ac{pdms} ist.
+In Deutschland waren im Jahr 2021 ca. 15 \ac{pdms}-Anbieter bekannt \cite{pdmsgermany}. Unter diesen Anbietern befindet sich der \acf{copra}, welcher an der Universitätsmedizin Mainz und Standort der Realisierung dieses Projekts benutzte \ac{pdms} ist.
 
 \subsection{\acsu{copra}}
 
@@ -18,14 +18,14 @@ Die Dokumentation der gesammelten Aktivitäten in \ac{copra} werden exportiert, 
 
 Durch die Freiheiten bei der Gestaltung der Infrastruktur von \ac{copra} ist ein multidimensionales Datenmodell wie in der \ref{fig:copraschema} möglich. 
 
-Das Schema der \ref{fig:copraschema} ist die Darstellung des Datenmodells des Bereichs für die Biosignaldaten an der Universitätsmedizin Mainz, denn das \ac{copra}-System beinhaltet ein Schema mit mehr als 260 Tabellen insgesamt in dem Release 44.0 der Version 1 von 20.10.2015 \cite{copradoc}. Dieses Modell sollte aber nicht mit einem Sternschema in einem \ac{dw} (\ref{subsec:datamodel}) verwechselt werden, denn bei \ac{copra} stellt die Tabelle \texttt{co6\_medic\_data\_patient} mit der Basisinformation der behandelnden Personen, in der \ac{dw}-Theorie, eine Dimension dar, und die weiteren Tabellen sammeln Metadaten und die Ergebnisse der Messungen der medizinischen Geräten (Werttabellen), also die Fakten, und beinhalten auch die Hauptschlüssel von \texttt{co6\_medic\_data\_patient} als Fremdschlüssel.
+Das Schema der \ref{fig:copraschema} ist die Darstellung des Datenmodells des Bereichs für die Biosignaldaten an der Universitätsmedizin Mainz, denn das \ac{copra}-System beinhaltet ein Schema mit mehr als 260 Tabellen insgesamt in dem Release 44.0 der Version 1 von 20.10.2015 \cite{copradoc}. Dieses Modell sollte aber nicht mit einem Sternschema in einem \ac{dw} (\ref{subsec:datamodel}) verwechselt werden, denn bei \ac{copra} stellt die Tabelle \texttt{co6\_medic\_data\_patient} mit der Basisinformation der behandelnden Personen, in der \ac{dw}-Theorie, eine Dimension dar, und die weiteren Tabellen sammeln Metadaten und die Ergebnisse der Messungen der medizinischen Geräte (Werttabellen), also die Fakten, und beinhalten auch die Hauptschlüssel von \texttt{co6\_medic\_data\_patient} als Fremdschlüssel.
 
 \clearpage
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[height=8.5cm]{figures/copra_data_model_data}
-	\caption[Datenmodell von \acs{copra}]{Datenmodell des für diese Arbeit benutzten Teils vom \ac{copra}-System an der Universitätsmedizin Mainz. Die Tabelle \texttt{co6\_medic\_data\_patient} beinhaltet die Information der behandelnden Personen. Die Tabellen \texttt{co6\_data\_decimal\_6\_3}, \texttt{co6\_medic\_data\_pressure} und \texttt{co6\_data\_string} speichern die Ergebnisse der Messungen oder Techniken. Die Tabelle \texttt{co6\_data\_object} beinhaltet die Schlüssel aller Objekte, z. B. Patienten und abstrakte Elementen, wie die Arztbriefe oder Scores.
+	\caption[Datenmodell von \acs{copra}]{Datenmodell des für diese Arbeit benutzten Teils vom \ac{copra}-System an der Universitätsmedizin Mainz. Die Tabelle \texttt{co6\_medic\_data\_patient} beinhaltet die Information der behandelnden Personen. Die Tabellen \texttt{co6\_data\_decimal\_6\_3}, \texttt{co6\_medic\_data\_pressure} und \texttt{co6\_data\_string} speichern die Ergebnisse der Messungen oder Techniken. Die Tabelle \texttt{co6\_data\_object} beinhaltet die Schlüssel aller Objekte, z. B. Patienten und abstrakte Elemente, wie die Arztbriefe oder Scores.
 	Die Tabellen \texttt{co6\_config\_variables} und \texttt{co6\_config\_variable\_types} beinhalten die Metadaten der gespeicherten Information in \ac{copra}.}
 	\label{fig:copraschema}
 \end{figure}

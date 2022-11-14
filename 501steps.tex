@@ -6,13 +6,13 @@ Die \ac{fhir}-Profile des Erweiterungsmoduls \glqq\ac{icu}\grqq{} werden analysi
 
 Nach der Speicherung der Profile wird die Struktur der Tabellen von \ac{copra} in dem Staging Bereich des \ac{dw} analysiert. Diese beinhalten die Konfigurationsvariablen und die Werte der Biosignaldaten mit den Attributen für das Data Mapping mit den \ac{fhir}-Profilen. 
 
-Die Voraussetzungen für die Auswahl der Konfigurationsvariablen für die weitere Durchführung des Projekts werden definiert, nämlich patienten- oder fallbezogene Variablen, mit mindesten 1000 validierten, aktuellen und nicht gelöschten Datensätzen im den Werttabellen (\ref{subsec:datadef}).
+Die Voraussetzungen für die Auswahl der Konfigurationsvariablen für die weitere Durchführung des Projekts werden definiert, nämlich patienten- oder fallbezogene Variablen, mit mindestens 1000 validierten, aktuellen und nicht gelöschten Datensätzen in den Werttabellen (\ref{subsec:datadef}).
 
 Nach der Auswahl werden die entscheidenden Attribute der Konfigurationsvariablen in die vorher entwickelten PostgreSQL \ac{db} importiert. Diese Konfigurationsvariablen beinhalten die Namen von Beobachtungen und Messungen, also die \glqq Procedure\grqq{}- und \glqq Observations\grqq{}-Profile.
 
 Mit den gespeicherten Informationen der \ac{fhir}-Profile und den Konfigurationsvariablen in der \ac{db} und der analysierten Datenstruktur von \ac{copra} wird das manuelle Data Mapping durchgeführt. Von diesem Prozess werden in diesem Projekt drei Schritte umgesetzt, nämlich die Datendefinition, Zuweisung der Quell- und Zielfelder, und die Programmierung der Transformationsregeln.
 
-Der Prozess für die Verlinkung der Konfigurationsvariablen mit den \ac{fhir}-Profilen generiert einen Datensatz mit den notwendigen Attributen der Konfigurationsvariablen und der \ac{fhir}-Profile. Dieser Datensatz wird validiert, und die Maßeinheiten beider Systeme werden verglichen, um Fehler und andere Irregularitäten zu detektieren, und wenn möglich, mit der Kooperation der fachlichen Spezialisten der \ac{pdms}-Abteilung und Transformationsregeln solche Probleme zu lösen. Diese Regeln werden in dem Datensatz der zugeordneten Konfigurationsvariablen mit den \ac{fhir}-Profile eingefügt.
+Der Prozess für die Verlinkung der Konfigurationsvariablen mit den \ac{fhir}-Profilen generiert einen Datensatz mit den notwendigen Attributen der Konfigurationsvariablen und der \ac{fhir}-Profile. Dieser Datensatz wird validiert, und die Maßeinheiten beider Systeme werden verglichen, um Fehler und andere Irregularitäten zu detektieren, und wenn möglich, mit der Kooperation der fachlichen Spezialisten der \ac{pdms}-Abteilung und Transformationsregeln solche Probleme zu lösen. Diese Regeln werden in dem Datensatz der zugeordneten Konfigurationsvariablen mit den \ac{fhir}-Profilen eingefügt.
 
 Der Datensatz der zugeordneten Konfigurationsvariablen mit den \ac{fhir}-Profilen wird danach in die \ac{copra}-Instanz des Staging Bereichs des \ac{dw} angelegt, um 
 %die Überführung der Biosignaldaten aus \acs{copra} in den \ac{fhir}-Profile einzuplanen, und
