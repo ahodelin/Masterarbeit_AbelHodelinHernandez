@@ -1,0 +1,80 @@
+Extrakorporale Verfahren;Procedure
+Eingestellte und gemessene Parameter (Extrakorporale Verfahren);DeviceMetric
+Parameter von extrakorporalen Verfahren;Observation
+Blutfluss durch cardiovasculaeres Geraet;Observation
+Ionisiertes Kalzium aus Nierenersatzverfahren;Observation
+Sauerstoffgasfluss;Observation
+Dauer Haemodialysesitzung;Observation
+Haemodialyse Blutfluss;Observation
+Substituatfluss;Observation
+Substituatvolumen;Observation
+Dauer extrakoporaler Gasaustausch;Observation
+Blutfluss extrakoporaler Gasaustausch;Observation
+Blutflussindex extrakoporaler Gasaustausch;Observation
+Venoeser Druck;Observation
+Arterieller Druck;Observation
+Beatmung;Procedure
+Eingestellte und gemessene Parameter (Beatmung);DeviceMetric
+Parameter von Beatmung;Observation
+Unterstuetzungsdruck Beatmung;Observation
+Endexpiratorischer Kohlendioxidpartialdruck;Observation
+Atemwegsdruck bei null expiratorischem Gasfluss;Observation
+Atemwegsdruck bei mittlerem expiratorischem Gasfluss;Observation
+Druckdifferenz Beatmung;Observation
+Positiv-endexpiratorischer Druck;Observation
+Dynamische Kompliance;Observation
+Maximaler Beatmungsdruck;Observation
+Mittlerer Beatmungsdruck;Observation
+Exspiratorischer Sauerstoffpartialdruck;Observation
+Sauerstofffraktion;Observation
+Sauerstofffraktion eingestellt;Observation
+Exspiratorischer Gasfluss;Observation
+Inspiratorischer Gasfluss;Observation
+Eingestellter inspiratorischer Gasfluss;Observation
+Beatmungszeit auf niedriegem Druck;Observation
+Beatmungszeit auf hohem Druck;Observation
+Spontanes-Mechanisches-Atemzugvolumen-Waehrend-Beatmung;Observation
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;Observation
+Spontanes-Atemzugvolumen;Observation
+Atemzugvolumen-Waehrend-Beatmung;Observation
+Atemzugvolumen-Einstellung;Observation
+Zeitverhaeltnis-Ein-Ausatmung;Observation
+Einstellung-Ausatmungszeit-Beatmung;Observation
+Einstellung-Einatmungszeit-Beatmung;Observation
+Spontane-Mechanische-Atemfrequenz-Beatmet;Observation
+Spontane-Atemfrequenz-Beatmet;Observation
+Mechanische-Atemfrequenz-Beatmet;Observation
+Horowitz-In-Arteriellem-Blut;Observation
+Monitoring und Vitaldaten;Observation
+Pulmonalarterieller wedge Blutdruck;Observation
+Intrakranieller Druck (ICP);Observation
+Atemfrequenz;Observation
+Kopfumfang;Observation
+Koerpergroesse;Observation
+Koerpergewicht;Observation
+Koerpergewicht Percentil altersabhaengig;Observation
+Koerpergroesse (Percentile);Observation
+Ideales Koerpergewicht;Observation
+Koerpertemperatur Kern;Observation
+Sauerstoffsaettigung im Blut preductal durch Pulsoxymetrie;Observation
+Sauerstoffsaettigung im Blut postduktal durch Pulsoxymetrie;Observation
+Sauerstoffsaettigung im art. Blut durch Pulsoxymetrie;Observation
+Linksventrikulaerer Schlagvolumen;Observation
+Linksventrikulaerer Schlagvolumenindex;Observation
+Linksv. Schlagvolumenindex durch Indikatorverd.;Observation
+Linksv. Schlagvolumen durch Indikatorverduennung;Observation
+Pulmonalvaskulaerer Widerstandsindex;Observation
+Systemischer vaskulaerer Widerstandsindex;Observation
+Linksventrikulaerer Herzindex;Observation
+Herzzeitvolumen;Observation
+Linksv. Herzindex durch Indikatorverduennung;Observation
+Linksv. Herzzeitvolumen durch Indikatorverduennung;Observation
+Herzfrequenz;Observation
+Zentralvenoeser Druck (ZVD);Observation
+Blutdruck Generisch;Observation
+Linksatrialer Druck;Observation
+Rechtsatrialer Druck;Observation
+Rechtsventrikulaerer Druck;Observation
+Linksventrikulaerer Druck;Observation
+Pulmonalarterieller Blutdruck;Observation
+Blutdruck;Observation
