@@ -1,0 +1,1397 @@
+\subsection{Arterieller Druck} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/ArteriellerDruckObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Arterieller-Druck} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 182744004 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code &
+mm[Hg]
+\\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Atemfrequenz} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/AtemfrequenzObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Atemfrequenz} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://terminology.hl7.org/CodeSystem/observation-category} \\
+\cline{3-3}
+	& & code: vital-signs\\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & /min
+\\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{
+Atemzugvolumen-Waehrend-Beatmung} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/Atemzugvolumen-Waehrend-BeatmungObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Atemzugvolumen-Waehrend-Beatmung} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 40617009 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & mL
+\\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Beatmungsvolumen-Pro-Minute-Machineller-Beatmung} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/Beatmungsvolumen-Pro-Minute-Machineller-BeatmungObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 40617009 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code &
+L/min
+\\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Blutfluss durch cardiovasculäres Gerät} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/BlutflussdurchcardiovasculresGertObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Blutfluss-durch-cardiovasculaeres-Geraet} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 182744004 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & L/min
+\\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Druckdifferenz Beatmung} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/DruckdifferenzBeatmungObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Druckdifferenz-Beatmung} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 40617009 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code &
+cm[H2O]
+\\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Einstellung-Einatmungszeit-Beatmung} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/Einstellung-Einatmungszeit-BeatmungObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Einstellung-Einatmungszeit-Beatmung} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 40617009\\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code &
+s
+\\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+\subsection{
+Exspiratorischer Gasfluss} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/ExspiratorischerGasflussObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Exspiratorischer-Gasfluss} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 40617009 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & L/min \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Herzfrequenz} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/HerzfrequenzObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{Herzfrequenz} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://terminology.hl7.org/CodeSystem/observation-category} \\
+\cline{3-3}
+	& & code: vital-signs\\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & /min \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Herzzeitvolumen} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/HerzzeitvolumenObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Herzzeitvolumen} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://terminology.hl7.org/CodeSystem/observation-category} \\
+\cline{3-3}
+	& & code: vital-signs \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code &
+L/min
+\\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Inspiratorischer Gasfluss} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/InspiratorischerGasflussObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Inspiratorischer-Gasfluss} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 40617009 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & L/min
+\\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Intrakranieller Druck (ICP)} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IntrakraniellerDruckICPObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Intrakranieller-Druck-(ICP)} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://terminology.hl7.org/CodeSystem/observation-category} \\
+\cline{3-3}
+	& & code: vital-signs \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & mm[Hg] \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Ionisiertes Kalzium aus Nierenersatzverfahren} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IonisiertesKalziumausNierenersatzverfahrenObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Ionisiertes-Kalzium-aus-Nierenersatzverfahren} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 182744004 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & mmol/L \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{
+Koerpergewicht} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/KoerpergewichtObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Koerpergewicht} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://terminology.hl7.org/CodeSystem/observation-category} \\
+\cline{3-3}
+	& & code: vital-signs \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & kg \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{
+Koerpergroesse} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/KoerpergroesseObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Koerpergroesse} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://terminology.hl7.org/CodeSystem/observation-category} \\
+\cline{3-3}
+	& & code: vital-signs \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & cm \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Koerpertemperatur Kern} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/KoerpertemperaturKernObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Koerpertemperatur-Kern} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://terminology.hl7.org/CodeSystem/observation-category} \\
+\cline{3-3}
+	& & code: vital-signs \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & Cel \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Kopfumfang} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/KopfumfangObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Kopfumfang} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://terminology.hl7.org/CodeSystem/observation-category} \\
+\cline{3-3}
+	& & code: vital-signs \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & cm \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{
+Linksatrialer Druck} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/LinksatrialerDruckObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Linksatrialer-Druck} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://terminology.hl7.org/CodeSystem/observation-category} \\
+\cline{3-3}
+	& & code: vital-signs \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & mm[Hg] \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Linksventrikulärer Schlagvolumenindex} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/LinksventrikulrerSchlagvolumenindexObservation2.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Linksventrikulaerer-Schlagvolumenindex} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://terminology.hl7.org/CodeSystem/observation-category} \\
+\cline{3-3}
+	& & code: vital-signs \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & mL/m2 \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Mechanische Atemfrequenz Beatmet} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/Mechanische-Atemfrequenz-BeatmetObservation.html}
+
+\noindent Input:
+
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Mechanische-Atemfrequenz-Beatmet} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 40617009 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & {Breaths}/min \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Mittlerer Beatmungsdruck} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/MittlererBeatmungsdruckObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Mittlerer-Beatmungsdruck} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 40617009 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & cm[H2O] \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Positiv-endexpiratorischer Druck} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/Positiv-endexpiratorischerDruckObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Positiv-endexpiratorischer-Druck} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 40617009 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & cm[H2O] \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{
+Pulmonalarterieller wedge Blutdruck} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/PulmonalarteriellerwedgeBlutdruckObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Pulmonalarterieller-wedge-Blutdruck} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://terminology.hl7.org/CodeSystem/observation-category} \\
+\cline{3-3}
+	& & code: vital-signs\\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & mm[Hg] \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Sauerstofffraktion} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/SauerstofffraktionObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Sauerstofffraktion} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 40617009 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Sauerstofffraktion eingestellt} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/SauerstofffraktioneingestelltObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Sauerstofffraktion-eingestellt} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 40617009 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Sauerstoffgasfluss} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/SauerstoffgasflussObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Sauerstoffgasfluss} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 182744004 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & L/min \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Sauerstoffsättigung im art. Blut durch Pulsoxymetrie} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/Sauerstoffsttigungimart.BlutdurchPulsoxymetrieObs.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Sauerstoffsaettigung-im-art.-Blut-durch-Pulsoxymetrie} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://terminology.hl7.org/CodeSystem/observation-category} \\
+\cline{3-3}
+	& & code: vital-signs \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & \% \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Spontane Atemfrequenz Beatmet} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/Spontane-Atemfrequenz-BeatmetObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Spontane-Atemfrequenz-Beatmet} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 40617009 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & /min \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Spontane Mechanische Atemfrequenz Beatmet} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/Spontane-Mechanische-Atemfrequenz-BeatmetObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Spontane-Mechanische-Atemfrequenz-Beatmet} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 40617009 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & /min \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Substituatfluss} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/SubstituatflussObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Substituatfluss} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 182744004 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & mL/h \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Venöser Druck} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/VenserDruckObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Venoeser-Druck} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 182744004 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & mm[Hg] \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}
+
+
+\subsection{Zeitverhältnis Ein-Ausatmung} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/Zeitverhltnis-Ein-AusatmungObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_string}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_string.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Zeitverhaeltnis-Ein-Ausatmung} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://snomed.info/sct} \\
+\cline{3-3}
+	& & code: 40617009 \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{
+co6\_data\_string.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & {ratio} \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_string.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_string.datetimeto} \\ \hline
+\end{longtable}
+\clearpage
+
+\subsection{Zentralvenöser Druck (ZVD)} 
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/ZentralvenserDruckZVDObservation.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{
+co6\_data\_decimal\_6\_3}
+\end{itemize}
+Output:
+\begin{itemize}
+        \item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{}
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|}
+        \hline
+        \rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich)} \\ \hline
+        id &  & \texttt{co6\_data\_decimal\_6\_3.id} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{
+Zentralvenoeser-Druck-(ZVD)} \\ \hline 
+	status &  & in Abstimmung  \\ \hline 
+	category & coding & system: \url{http://terminology.hl7.org/CodeSystem/observation-category} \\
+\cline{3-3}
+	& & code: vital-signs \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{co6\_data\_decimal\_6\_3.val} \\
+        \cline{2-3}
+         & system & http://unitsofmeasure.org \\
+         \cline{2-3}
+         & code & mm[Hg] \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{
+co6\_data\_decimal\_6\_3.datetimeto} \\ \hline
+\end{longtable}

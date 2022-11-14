@@ -1,0 +1,1 @@
+select count(*) quantity, profile_type from mii_icu mi group by profile_type order by quantity desc; 

@@ -1,0 +1,702 @@
+quantity;id;name;description
+16410672;100093;ABP_1;arterieller Blutdruck 1
+4799052;100094;NBP_1;nichtinvasiver Blutdruck 1
+4408700;110935;ART;2. artereille Messung, ab 201712 im Rahmen Umstellung Philips Monitoring
+206155;103817;PtiO2Druck;Gemessener Sauerstoffpartialdruck im Parenchym
+171411;102050;PAP;Pulmunalarterieller Druck
+156731;100089;ABP_2;zweiter arterieller Blutdruck
+9561;104356;IABP_DatascopeCS300_MS_Systole_Mittel_Diastole;Dokumentation des gemessenen Blutdruckes unter IABP.
+9026;106468;IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole;Dokumentation des gemessenen Blutdruckes unter IABP
+5552;108727;P_Impella_Impella_MS_LVDruck;
+1774;103724;IABP_DatascopeCS100_MS_SystoleMittelDiastole;
+24578727;1266;HF;Herzfrequenz
+11370555;102010;SpO2;Sauerstoffsättigung Pulsoxymetrie
+6890007;1267;AF;Atemfrequenz
+6857880;102011;PLS;Pulsrate errechnet aus der SpO2 Messung
+5204618;102004;Temp1a;Temperatur 1a
+3264032;102902;Beatmung_MS_G5_VTE;"Messwert; exspiratorisches Tidalvolumen Einheit: ml"
+3259020;103034;Beatmung_MS_G5_ExpMinVol;Exspiratorisches Minutenvolumen, Monitoring-Parameter 
+3245683;102900;Beatmung_MS_G5_Pmittel;Messwert: Beatmungsmitteldruck
+3197094;102901;Beatmung_MS_G5_PeepCPAP;Messwert: Beatmungsdruck Peep / CPAP
+3186625;103037;Beatmung_MS_G5_O2VolProzent;Sauerstoffkonzentration des abgegebenen Gasgemisches
+3035078;102907;Beatmung_MS_G5_Cstat;Statische Compliance, ein Monitoringwert
+3004562;103036;Beatmung_MS_G5_fspontan;Spontane Atemfrequenz
+3003172;102905;Beatmung_MS_G5_Rinsp;Inspiratorische Flow-Resistance, ein Monitoring-Parameter
+2934534;103035;Beatmung_MS_G5_ftotal;Gesamtatemfrequenz, ein Monitoring Parameter
+2755955;102899;Beatmung_MS_G5_Ppeak;Messwert: Beatmungsspitzendruck
+1902747;102057;ARR;Arrhythmie Drägermonitoring, VES/min
+1867954;110934;P_Temperatur_generic;Anlage für Philips Monitoring
+1395054;102942;Beatmung_ES_G5_Sauerstoff;Sauerstoffeinstellung
+1279446;1269;ZVD;Zentralvenöser Druck
+1159163;102935;Beatmung_ES_G5_Druckrampe;Eine Parametereinstellung. Anstiegszeit des Drucks bei druckkontrollierten und druckunterstützten Atemzyklus.
+1138574;102892;Beatmung_ES_G5_Psupport;Einstellwert: Druckunterstützung beim G 5  bei Spontanatemzügen
+1106362;105085;Beatmung_ES_G5_PEEP_CPAP_Ptief;Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.
+948526;102012;etCO2;End-tidales CO2
+928729;102931;Beatmung_ES_G5_ETS;Exspiratorische Triggersensitivität, eine Parametereinstellung
+857825;104009;Beatmung_Messung_Horrowitz;
+827665;103040;Beatmung_MS_G5_Pinsp;"Inspiratorischer Druck; mit Pinsp wird der Zieldruck (zusätzlich zu PEEP/CPAP) bezeichnet, der im Modus ASV während der Inspirationsphase abgegeben wird"
+827463;104040;Beatmung_MS_G5_VTi;
+773877;100088;ICP;Intrakranialer Druck
+753893;103032;Beatmung_MS_G5_Pplateau;Plateau-Atemwegsdruck, ein Monitoring-Parameter
+742578;110933;P_Temperatur_Kern;Anlage für Philips Monitoring
+741598;100086;CPP;Zerebraler Perfusionsdruck
+740392;102906;Beatmung_MS_G5_Rexsp;Exspiratorische Flow-Resistance, ein Monitoring-Parameter
+675846;102903;Beatmung_MS_G5_InspFlow;Inspiratorischer Peakflow, ein Monitoring-Parameter
+563157;102916;Beatmung_MS_G5_TE;Exspirationzeit, ein Monitoring-Parameter
+507846;104971;NEV_CRRT_MS_Multi_venDruck;
+507648;104972;NEV_CRRT_MS_Multi_artDruck;
+480872;104970;NEV_CRRT_MS_Multi_TMP;
+441662;102912;Beatmung_MS_G5_AutoPeep;Unerwarteter positiver endexspiratorischer Druck, ein Monitoring-Parameter
+438173;103715;TempPBT;Temperatur bei der PICCO Messung
+416868;103404;Beatmung_ES_G5_Flowtrigger;Die inspiratorische Bemühung des Patienten ( Flow),  die das Beatmungsgerät veranlässt, einen Atemhub abzugeben
+384116;103334;Beatmung_ES_G5_Pmax;Hochdruckalarmgrenze im 'ASV Modus
+351586;102039;dPmax;Index der linken Ventrikelkontraktilität  
+350114;106402;NEV_CRRT_MS_Multi_Bilanz_ml;neue Variable für automatische Datenübernahme IBUS
+342306;102904;Beatmung_MS_G5_TI;Inspirationszeit in Sekunden, Monitoring-Parameter
+332747;102034;PCCO;Pulskontur-Herzzeitvolumen 
+332155;102035;PCCI;Herzindex (kontinuirlich) 
+331370;102532;PPV;Pulsdruckabweichung
+324633;102036;p-SVI;Schlagvolumenindex  (PICCO Modul Dräger Monitoring)
+313183;102408;p-SV;Schlagvolumen
+296427;102037;p-SVR;Systemischer Gefäßwiderstand (PICCO Modul Dräger Monitoring) 
+295716;100070;SVV;Schlagvolumenabweichung 
+294129;105086;Beatmung_ES_G5_Pkontrol_Phoch;Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi.
+293188;102038;p-SVRI;Index des systemischen Gefäßwiderstandes (PICCO Modul Dräger Monitoring)  
+289539;106412;Beatmung_MS_G5_petCO2;
+273885;104037;Beatmung_MS_G5_Mvspont;
+262289;104753;Beatmung_ES_G5_Frequenz_Backup;Frequenzeinstellung inder Backupeinstellung.
+262224;104754;Beatmung_ES_G5_Apnoezeit_Backup;Apnoezeiteinstellung in der Backupeinstellung.
+240537;102914;Beatmung_MS_G5_VLeckage;Leckagevolumen, ein Monitoring-Parameter
+230624;103033;Beatmung_MS_G5_Pmin;Minimaler Atemwegsdruck, ein Monitoring Parameter
+229381;104756;Beatmung_ES_G5_Pkontrol_Backup;
+217541;102533;CFI;Herzfunktionsindex
+203830;104963;NEV_CRRT_MS_Multi_CitratvolKum;
+203454;104962;NEV_CRRT_MS_Multi_CalciumVolKum;
+194583;110930;P_Temperatur_Rektal;Anlage im Rahmen Philips Monitoring
+190026;104979;NEV_CRRT_ES_Multi_Ultrafiltration;
+188552;102491;Oxidationswasser;Oxidationswasser in ml (einfuhrrelevant)
+187816;102493;PerspiratioInsensibilis;Perspiratio Insensibilis in ml (Ausfuhrrelevant in der Bilanz)
+177501;102915;Beatmung_MS_G5_ExspFlow;Exspiratorischer Peakflow, ein Monitoring-Parameter
+6998;102006;Temp2a;Temperatur 2a
+177417;102893;Beatmung_ES_G5_PeepCPAP;Einstellwert: Peep bzw. CPAP Niveau in verschiedenen Modi beim G 5
+171496;106396;NEV_CRRT_MS_Multi_DialysatvolKum_ml;Anpassung für automatische Datenübernahme IBUS
+163205;104980;NEV_CRRT_ES_Multi_Blutfluss;
+158382;102938;Beatmung_ES_G5_Frequenz;Anzahl der Atemzyklen pro Minute, Parametereinstellung
+155427;104978;NEV_CRRT_ES_Multi_Dialysat;
+154165;104974;NEV_CRRT_ES_Multi_CalciumFiltrat;
+142391;104967;NEV_CRRT_MS_Multi_Bilanz;
+136296;104975;NEV_CRRT_ES_Multi_CitratBlut;
+131661;102944;Beatmung_ES_G5_ProzentMinVol;Przentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus
+130983;102888;Beatmung_ES_G5_Thoch;Einstellwert: Zeiteinstellung des oberes Druckniveau beim G 5 im Modus DuoPAP
+111518;100096;Beatmung_Messung_VTeMl;VTe / ex. Atemzugvolumen (Tidal Volumen expir.)
+111043;100300;Beatmung_Messung_Pmax;Peak Airway Pressure
+110131;104968;NEV_CRRT_MS_Multi_Calciumfluss;
+108942;100275;Beatmung_Messung_PEEP;
+108930;101442;Beatmung_Messung_AF;Breathing Frequency
+108818;101441;Beatmung_Messung_Pmean;Mean Airway Pressure
+108636;100098;Beatmung_Messung_MV;Mindest Volumen tot.
+107611;104969;NEV_CRRT_MS_Multi_Citratfluss;
+102782;101433;Beatmung_Messung_Compliance;Compliance
+102667;101435;Beatmung_Messung_Resistance;Resistance
+102346;102909;Beatmung_MS_G5_RCexsp;Exspiratorische Zeitkonstante, ein Monitoring-Parameter
+97971;102071;Beatmung_Messung_O2KonzentrationG5;
+97841;103011;Nierenverfahren_MS_Multi_venDruck;venöser Druck
+97677;103010;Nierenverfahren_MS_Multi_artDruck;arterieller Druck
+97578;103012;Nierenverfahren_MS_Multi_TMPDruck;Transmembrandruck
+96925;103116;Nierenverfahren_MS_Bilanz;Variable wird verwendet für Multifiltrate und ADM 08
+95179;6;Patient_Gewicht;Gewicht des Patienten
+87138;104758;Schlagvolumen;gemessenes Schlagvolumen
+86700;100072;CI;Herzindex
+83156;104760;Schlagvolumenindex;Wert des gemessenen Schlagvolumenindex.
+79120;7;Patient_Groesse;Größe des Patienten
+76517;104966;NEV_CRRT_MS_Multi_DialysatvolKum;
+74252;106393;NEV_CRRT_MS_Multi_Behandlungszeit_Aktuell__min;Anpassung für die automatische Datenübermnahme IBUS
+73292;110758;P_Beatmung_ES_Anfeuchtung_Temperatur;
+60553;103049;Nierenverfahren_MS_Multi_DialysatvolumenKumulativ;kumulatives Dialysatvol
+60046;102890;Beatmung_ES_G5_Phoch;Einstellwert oberes Druckniveau im beim G 5 im Modus DuoPAP
+59723;100270;Beatmung_Messung_AFSpontan;Respiratory Rate (spontan)
+59320;101414;Lungenersatzverfahren_Doku_ECMOBlutfluss;
+59195;110929;P_Temperatur_Tympanal;Anlage im Rahmen PhilipsMonitoring
+58936;101415;Lungenersatzverfahren_Doku_ECMOPumpendrehzahl;
+53657;101413;Lungenersatzverfahren_Doku_ECMOAirFlow;
+52807;101412;Lungenersatzverfahren_Doku_ECMOInspiratorischSaO2;
+52545;103403;Beatmung_ES_G5_Drucktrigger;Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben
+50953;102887;Beatmung_ES_G5_Ti;Einstelungswert für die Inspirationszeit
+43338;108525;Beatmung_ES_G5_Flow;Parameter im Modus Highflow - ab 08.06.2017
+39233;103059;Nierenverfahren_MS_Multi_CitratvolumenKumulativ;kumulativ Citrat
+39078;103060;Nierenverfahren_MS_Multi_CalciumvolumenKumulativ;kumulativ
+37979;102946;Beatmung_ES_G5_Groeße;Eine Parametereinstellung im ASV Modus. Sie wird zur Berechnnug des idealen Körpergewichts (IBW) des Patienten verwendet
+34114;100074;SVR;Systemischer Gefäßwiderstand
+33068;102185;VigilanceC_CI;Herzindex
+33020;103296;Beatmung_ES_Evita4_O2Konzentration;eingestellte O2 Konzentration des Frischgases
+29967;100105;Beatmung_Einstellung_FiO2;O²- Konzentration im Inspirationsgemisch (FiO2)
+29275;100073;SVRI;Index des systemischen Gefäßwiderstandes 
+29081;103338;Nierenverfahren_MS_BM25_AbnahmeKumulativ;
+28887;100102;Beatmung_Einstellung_PEEP;Positiver endexspiratorischer Druck (PEEP)
+28732;103716;TempBT;Bluttemperatur bei der HZV Messung
+28190;103019;Nierenverfahren_MS_BM25_artDruck;
+28112;103020;Nierenverfahren_MS_BM25_venDruck;
+27734;102977;Nierenverfahren_ES_Multi_Ultrafiltration;Ultrafiltrationsrate ml/h
+27055;102025;PVR;Pulmunaler Gefäßwiderstand 
+27019;114052;NEV_CRRT_MS_Multi_praeF;
+26821;103022;Nierenverfahren_MS_BM25_DruckvorFilter;
+25803;103021;Nierenverfahren_MS_BM25_TMPDruck;
+25700;103809;tcpCO2;transcutan gemessener pCO2 Wert.
+25493;103301;Beatmung_ES_Evita4_PEEP;eingestelltes PEEP Niveau
+24916;102184;VigilanceC_HZV;Herzzeitvolumen
+24004;104036;Beatmung_ES_G5_Pasvlimit;
+23560;102040;p-CO;Herzzeitvolumen (PICCO Modul Dräger Monitoring) 
+23211;102045;GEF;Globale Auswurffraktion 
+23023;102041;GEDV;Globales enddiastolisches Volumen 
+22205;102976;Nierenverfahren_ES_Multi_Blutfluss;Blutpumpengeschwindigkeit ml/min
+21963;104039;Beatmung_ES_G5_Pinsp;
+21891;102042;GEDVI;Index des enddiastolisches Volumen 
+21305;103013;Nierenverfahren_MS_Multi_DruckvorFilterDruck;
+21083;103302;Beatmung_ES_Evita4_ASB;eingestellte Druckunterstützung
+21002;100106;Beatmung_Einstellung_ASB;Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB)
+20646;106395;NEV_CRRT_MS_Multi_SubVolKum_ml;Änderung für die automatische Datenübernahme IBUS
+19523;103123;Nierenverfahren_ES_Multi_Dialysat;
+19345;104977;NEV_CRRT_ES_Multi_Substituat;
+19289;101401;Nierenersatzverfahren_Mess_ArteriellDruck;
+19281;103058;Nierenverfahren_ES_Multi_CalciumFiltrat;Calciumrate
+19206;102980;Nierenverfahren_ES_Multi_Temperatur;Tempertatu Celsius
+19113;102891;Beatmung_ES_G5_Pkontrol;Einstellwert oberes Druckniveau beim G 5 im Modus P SIMV
+19057;104965;NEV_CRRT_MS_Multi_SubVolKum;
+18937;101422;Patient_KO;Körperoberfläche des Patienten ohne Fallbezug
+17911;110926;P_Temperatur_Haut;Anlage im Rahmen PhilipsMonitoring
+17611;101447;Beatmung_Messung_Pplateau;Plateau Druck
+17553;103299;Beatmung_ES_Evita4_Rampe;eingestellte Anstiegszeit vom unteren zum oberen Druckniveau
+17225;104876;NEV_HD_MS_4008HS_venDruck;
+17186;104877;NEV_HD_MS_4008HS_artDruck;
+16976;104875;NEV_HD_MS_4008HS_TMP;
+16681;108630;P_Therapiebetten_Doku_Lifetherm_ES_Temperatur;
+16602;108623;P_Therapiebetten_Doku_Lifetherm_ES_Strahler;
+16525;104961;NEV_CRRT_MS_Multi_UFR_BFRVerhaeltnis;
+16439;103300;Beatmung_ES_Evita4_Pinsp;eingestelltes oberes Druckniveau
+15958;102886;Beatmung_ES_G5_Timax;eingestellte maximale Inspirationszeit beim G5 im Modus NIV
+15837;103050;Nierenverfahren_MS_BM25_DialysatvolumenKumulativ;
+15728;103057;Nierenverfahren_ES_Multi_CitratBlut;Citratrate
+15526;102073;Beatmung_Einstellung_O2Konzentration;
+15079;102535;p-CI;Herzindex
+14312;102043;EVLW;Extravaskuläres Lungenwasser 
+14075;108509;SpO2_2;
+13606;102494;PerspiratioSensibilis;Perspiratio Sensibilis in ml (ausfuhrrelevant in der Bilanz)
+13579;102044;EVLWI;Extravaskuläres Lungenwasserindex 
+13516;100069;ITBV;Intrathorakales Blutvolumen
+13382;103298;Beatmung_ES_Evita4_frequenz;eingestellte Atemfrequenz
+13373;103297;Beatmung_ES_Evita4_Tinsp;eingestellte absolute Inspirationszeit
+13367;103303;Beatmung_ES_Evita4_Flowtrigger;Einstellgröße des Flowtriggers
+12800;102536;ITBVI;Index des intrathorakalen Blutvolumens
+12621;102047;PVPI;Pulmonalvaskuläer Permeabilitätsindex 
+12533;104872;NEV_HD_MS_4008HS_effBlutfluss;
+12427;104873;NEV_HD_MS_4008HS_Leitfähigkeit;
+12372;101397;Nierenersatzverfahren_Mess_AbnahmeKumulat;
+12360;100100;Beatmung_Messung_FiO2;FiO2
+11960;102756;Nierenersatzverfahren_Mess_VenoeserDruck;
+11682;102490;Vigileo_CI;
+11632;103306;Beatmung_ES_Evita4_fApnoe;eingestellte Atemfrequenz in der Apnoeventilation
+11553;101395;Nierenersatzverfahren_Mess_UmsatzKumulati;
+11454;103015;Nierenverfahren_MS_Multi_SubvolumenKumulativ;
+11344;103305;Beatmung_ES_Evita4_VtApnoe;Einstellgröße für das Tidalvolumen in der Apnoeeinstellung
+11300;101399;Nierenersatzverfahren_Mess_DruckVorFilter;
+11062;103062;Nierenverfahren_MS_Multi_Calciumfluss;Calciumrate
+10962;101400;Nierenersatzverfahren_Dokumentation_Filtratdruck;
+10853;100097;Beatmung_Messung_MVSpontan;Mindest Volumen sp
+10704;101443;Beatmung_Messung_Pmin;Minimum Airway Pressure
+10303;103061;Nierenverfahren_MS_Multi_Citratfluss;Citratrate
+9989;101444;Beatmung_Messung_IntrinsicPEEP;Intrinsic PEEP
+9873;103088;Beatmung_ES_F120_O2Konzentration;Einstellparameter: Sauerstoffgehalt des Gasgemisches
+9674;101398;Nierenersatzverfahren_Dokumentation_Blutfluss;
+9626;103018;Nierenverfahren_MS_Multi_Behandlungszeit;
+9614;103087;Beatmung_ES_F120_Flow;Einstellwert: Größe des Gasflusses beim F 120
+9453;112007;P_INVOS_Doku_rSO2_rechts;cerbebrale Sauerstoffsättigung rechts
+9167;112006;P_INVOS_Doku_rSO2_links;cerebrale Sauerstoffsättigung links
+8912;105014;Schrittmacher_Osypka101H_ES_Rate;Grundfrequenz
+8725;104878;NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum;
+8702;103086;Beatmung_ES_F120_CPAP;Eingestelltes CPAP Niveau
+8509;102176;Vigileo_SV;ml/b
+8502;106332;CardioHelpMaquet_MS_Blutfluss;
+8292;103333;Beatmung_ES_G5_Vt;Einstellwert: Tidalvolumen
+8096;102119;Nierenersatzverfahren_Mess_TMP;TransmembranDruck
+7997;104888;NEV_HD_ES_4008HS_Blutfluss;
+7992;102991;Nierenverfahren_ES_BM25_Abnahme;Ultrafiltrationsrate
+7791;105043;Hypothermie_ArticSun_MS_Wassertemperatur;kontrollierte Wassertemperatur, gemessener Wert
+7645;106331;CardioHelpMaquet_MS_DruckArteriell;
+7640;106330;CardioHelpMaquet_MS_DruckVenoes;
+7638;103206;Nierenverfahren_MS_UltrafiltratmengeKum;Kumulativer Entzug, bilanzrelevant
+7634;106329;CardioHelpMaquet_MS_DeltaP;
+7616;104893;NEV_HD_ES_4008HS_UFZiel;
+7591;103702;Hypothermie_ArticSun_Doku_Patiententemperatur;
+7401;103164;Nierenverfahren_MS_4008HS_venDruck;
+7341;102489;Vigileo_CO;
+7327;103163;Nierenverfahren_MS_4008HS_artDruck;
+7263;101402;Nierenersatzverfahren_Mess_VenDruck;
+7251;104880;NEV_HD_ES_4008HS_Temperatur;
+7195;104151;Beatmung_ES_Airvo_O2Konzentration;Dokumentation der O2 Konzentration in Abhängigkeit der Einstellgrößen FlowSetting und O2 Flow.
+7188;106328;CardioHelpMaquet_MS_SvO2;
+7188;104944;NEV_HD_VO_4008HS_UF_Ziel;
+7185;103165;Nierenverfahren_MS_4008HS_TMP;
+7161;104808;Beatmung_ES_C2_Sauerstoff;
+7146;110937;P_Beatmung_MS_AnaConDa_MAC;Umstellung PhilipsMonitoring
+7100;105045;BIS;Der Bispectral Index (BIS) ist ein verarbeiteter EEG Parameter und zeigt die Auswirkungen der Sedierung auf das Gehirn an.
+7091;105019;Schrittmacher_Osypka203H_ES_Rate;Grundfrequenz
+7084;105015;Schrittmacher_Osypka101H_ES_Sense;Empfindlichkeit
+7072;105016;Schrittmacher_Osypka101H_ES_STIM;Stimulation
+7061;106352;CardioHelpMaquet_DOKU_HB;
+7055;106351;CardioHelpMaquet_DOKU_HCT;
+7040;103078;Beatmung_MS_VisionA_Amplitude;gemessene Druckdifferenz im HFOV Modus
+6945;102878;Beatmung_MS_VisionA_MAP;gemessener Mittlerer Atemwegsdruck unter HFO bei Alpha Vision
+6853;104943;NEV_HD_VO_4008HS_Blutfluss_Max;
+6803;104892;NEV_HD_ES_4008HS_UFRate;
+6787;104936;NEV_HD_VO_4008HS_Temperatur;
+6772;102990;Nierenverfahren_ES_BM25_Blutfluss;Blutpumpengeschwindigkeit
+6632;104935;NEV_HD_VO_4008HS_Fluss;
+6475;104879;NEV_HD_ES_4008HS_Fluss;
+6446;104881;NEV_HD_ES_4008HS_Bicarbonat;
+6443;102628;Nierenersatzverfahren_Mess_Bilanz;
+6326;104938;NEV_HD_VO_4008HS_Soll_Na;
+6271;110782;P_NEV_HD_MS_5008onl_artDruck;
+6254;110781;P_NEV_HD_MS_5008onl_venDruck;
+6205;104871;NEV_HD_MS_4008HS_BlutvolKum;
+6184;102881;Beatmung_MS_VisionA_HFOBaseFlow;gemessener Basis Continousflow
+6142;104149;Beatmung_ES_Airvo_FlowSetting;Einstellunggröße  des Flows am Gerät
+6106;110928;P_Temperatur_Oesophagial;Anlage im Rahmen PhilipsMonitoring
+6105;104937;NEV_HD_VO_4008HS_Bicarbonat;
+5952;102088;Lungenersatzverfahren_Doku_ECMOATZ;
+5819;103943;Beatmung_ES_Heimbeatmung_Peep;
+5765;104882;NEV_HD_ES_4008HS_SollNa;
+5573;102074;Beatmung_Einstellung_SauerstoffFlow;
+5543;105078;Beatmung_ES_C2_PEEP_CPAP_Ptief;Eingestellter PEEP, CPAP oder Ptief am C2.
+5523;103169;Nierenverfahren_MS_4008HS_effBlutfluss;
+5443;107907;Beatmung_ES_Heimbeatmung_Frequenz;
+5419;110780;P_NEV_HD_MS_5008onl_TMP;
+5417;101393;Nierenersatzverfahren_Einstell_Umsatz;
+5376;104810;Beatmung_ES_C2_Druckrampe;
+5305;102503;Nierenersatzverfahren_Dokumentation_BlutflussEinst;
+5270;104809;Beatmung_ES_C2_ETS;
+5250;100108;Beatmung_Einstellung_AF;Beatmungsfrequenz (f/AF)
+5206;103168;Nierenverfahren_MS_4008HS_Leitfähigkeit;
+5191;102062;Beatmung_Einstellung_PAW/Pinspiration;
+5184;106401;NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum_ml;Anpassung im Zuge der automatischen Datenübernahme IBUS
+5150;103340;IABP_Doku_Ballonvolumen;
+5086;102880;Beatmung_MS_VisionA_SISetting;Dauer des manuell durchgeführten Atemhubs
+5075;105023;Schrittmacher_Osypka203H_ES_V_STIM;Stimulation Ventrikel
+5039;106334;CardioHelpMaquet_ES_Pumpendrehzahl;
+4966;110783;P_NEV_HD_MS_5008_onl_Ultrafiltratmengekum_ml;
+4952;107909;Beatmung_MS_Heimbeatmung_Ppeak;
+4934;107908;Beatmung_MS_Heimbeatmung_MV;
+4839;102631;Nierenersatzverfahren_Mess_Dialysatvolumen;
+4802;103041;Beatmung_MS_G5_P01;Atemweg-Okklusionsdruck, ein Monitoring-Parameter
+4773;106335;CardioHelpMaquet_ES_Gasfluss;
+4724;106668;HeartWare_RPM_Doku;
+4718;110866;Beatmung_ES_Heimbeatmung_Sauerstoff;
+4705;102026;PVRI;Pulmunaler Gefäßwiderstandsindex 
+4686;106667;HeartWare_Watt_Doku;
+4675;106336;CardioHelpMaquet_ES_FiO2;
+4618;103170;Nierenverfahren_MS_4008HS_BlutvolumenKum;
+4596;103079;Beatmung_MS_VisionA_O2Konzentration;gemessene Sauerstoffgehalt des Gasgemisches
+4587;104349;IABP_DatascopeCS300_ES_Unterstützungsdruck;Dokumentation des Unterstützungsdruckes.
+4573;104874;NEV_HD_MS_4008HS_SollNa;
+4554;104973;NEV_CRRT_ES_Multi_Temperatur;
+4451;103166;Nierenverfahren_MS_4008HS_Restzeit;
+4421;108722;P_Beatmung_MS_AnaConDa_etGaskonz;
+4388;104819;Beatmung_ES_C2_Psupport;
+4375;103124;Nierenverfahren_ES_BM25_Dialysat;
+4361;102978;Nierenverfahren_ES_Multi_Substituat;Umsatz, Austausch Substituat ml/h
+4305;103017;Nierenverfahren_MS_Multi_UFRBFRVerhaeltnis;
+4282;110867;Beatmung_ES_Heimbeatmung_Psupport;
+4278;103381;Schrittmacher_Eins_ES_Frequenz;Medtronic 5348
+4251;108721;P_Beatmung_MS_AnaConDa_inspGaskonz;
+4235;103563;PCWP;
+4169;110778;P_NEV_HD_MS_5008onl_Leitfaehigkeit;
+4161;102179;Vigileo_SVI;SchlagvolumenindexSchlagvolumenindex
+4120;104805;Beatmung_ES_C2_Flowtrigger;
+4107;103215;Beatmung_MS_3100B_Amplitude;Messwert: gemessene Druckamplitude
+4022;106471;IABP_CARDIOSAVE_ES_Unterstuetzungsdruck;Dokumentation des Unterstützungdruckes
+3985;103077;Beatmung_ES_VisionA_O2Konzentration;Eingestellte Sauerstoffzufuhr
+3942;108742;P_Temperatur_DeltaT;Delta Temperatur zentral/Temperatur peripher
+3922;106669;HeartWare_Blutfluss_Doku;
+3908;108729;P_Impella_Impella_MS_Flow;
+3884;108730;P_Impella_Impella_MS_PurgeFlow;
+3863;102873;Beatmung_ES_VisionA_MAP;Mittlerer Atemwegsdruck (MAP)
+3794;103152;Nierenverfahren_ES_4008HS_Blutfluss;
+3772;102072;Beatmung_Einstellung_DruckFlow;
+3733;103254;Nierenverfahren_VO_4008HS_Dialysezeit;
+3733;103237;Nierenverfahren_VO_4008HS_UFZiel;
+3721;103024;Nierenverfahren_MS_BM25_UmsatzvolumenKumulativ;
+3718;103216;Beatmung_MS_3100B_O2Konzentration;Messwert: gemessene O2 Konzentration des Gasgemisches
+3707;104752;Beatmung_ES_G5_Vt_Backup;Vt in der Backupeinstellung
+3686;102894;Beatmung_ES_G5_Ttief;Einstellwert: Zeiteinstellung für das untere Druckniveau beim G5 im Modus APRV
+3678;103698;Hypothermie_ArticSun_Doku_Zieltemperatur;
+3659;103382;Schrittmacher_Eins_ES_Ausgang;Medtronic 5348
+3590;103147;Nierenverfahren_ES_4008HS_UFZiel;Ultrafiltrationsziel
+3562;106327;CardioHelpMaquet_MS_TemperaturIst;
+3542;103213;Beatmung_ES_3100B_Mitteldruck;Einstellwert: eingestellter mittlerer Atemwegsdruck
+3499;102102;Nierenersatzverfahren_Einstell_Blutfluss;
+3464;106392;NEV_HD_MS_4008HS_BlutvolKum_ml;Anpassung aufgrund IBUS Anbindung
+1302358;106480;EinweisenderArzt_PLZ;
+3441;103383;Schrittmacher_Eins_ES_Empfindlichkeit;Medtronic 5348
+3395;103146;Nierenverfahren_ES_4008HS_DialyseZeit;
+3395;102874;Beatmung_ES_VisionA_Schlagvolumen;Schlagvolumen (SV) in engl. (cycle volume)
+3352;110796;P_NEV_HD_ES_5008onl_Blutfluss;
+3338;108508;tcpO2;transcutan gemessener pO2 Wert.
+3329;102872;Beatmung_ES_VisionA_Oszillationsfrequenz;Oszillationsfrequenz Gerät: Alpha Vision Modus: HFO
+3303;103242;Nierenverfahren_VO_4008HS_SollNatrium;
+3284;107912;Beatmung_MS_Heimbeatmung_VTi;
+3283;104352;IABP_DatascopeCS300_ES_Doku_Ballonvolumen;Dokumentation des Ballonvolumens.
+3277;103148;Nierenverfahren_ES_4008HS_UFRate;Ultrafiltrationsrate
+3244;102051;HZV;Herzzeitvolumen
+3213;103161;Nierenverfahren_ES_4008HS_Temperatur;
+3211;100254;Beatmung_Einstellung_Inspirationszeit;Inspirationszeit in %
+3148;105000;NEV_CRRT_VO_Multi_Ultrafiltration;
+3145;105022;Schrittmacher_Osypka203H_ES_A_STIM;Stimulation Vorhof
+3086;107980;P_Beatmung_ES_C3_Sauerstoff;
+3080;105001;NEV_CRRT_VO_Multi_BlutflussMax;
+3076;106390;NEV_HD_MS_4008HS_Rest_Zeit_min;Anpassung für IBUS Anbindung
+2969;103307;Beatmung_ES_Evita4_Tubuskompensation;Einstellgröße für die Tubuskompensation
+2955;102198;VigilanceC_O2;
+2935;102587;Nierenersatzverfahren_Einstell_UFR;
+2899;110801;P_NEV_HD_ES_5008onl_UFZiel;
+2884;106469;IABP_CARDIOSAVE_ES_IABPAufblasen;Dokumentation des prozentualen Anteils des Aufblasens des Ballons
+2863;106474;IABP_CARDIOSAVE_ES_IABPLeersaugen;Dokumentation des prozentualen Anteils des Leersaugens des Ballons
+2849;103244;Nierenverfahren_VO_4008HS_Temperatur;
+2801;103565;Schrittmacher_Doku_Wahrnehmung;
+2795;104261;Beatmung_ES_Servoi_O2;Sauerstoffkonzentration 
+2764;103160;Nierenverfahren_ES_4008HS_Bicarbonat;
+2761;102876;Beatmung_ES_VisionA_HFOBaseFlow;Basis Continousflow
+2758;110785;P_NEV_HD_ES_5008onl_Temperatur;
+2737;103162;Nierenverfahren_ES_4008HS_Fluss;
+2728;103243;Nierenverfahren_VO_4008HS_Bicarbonat;
+2728;103564;Schrittmacher_Doku_Reizschwelle;
+2690;107911;Beatmung_MS_Heimbeatmung_VTe;
+2640;110817;P_NEV_HD_VO_5008onl_UFZiel;
+2640;103818;NIRSlinks_MS;Über eine Messsonde transcutan gemessener Prozentwert
+2620;107910;Beatmung_MS_Heimbeatmung_Pmittel;
+2590;110868;Beatmung_ES_Heimbeatmung_Pcontrol;
+2584;100272;Beatmung_Messung_ASB;
+2583;110814;P_NEV_HD_VO_5008onl_BlutflussMax;
+2578;104999;NEV_CRRT_VO_Multi_Dialysat;
+2576;103819;NIRSrechts_MS;
+2563;110777;P_NEV_HD_MS_5008onl_effBlutfluss;
+2562;106394;NEV_CRRT_MS_Multi_SubBolusVolKum_ml;Anpassung für die automatische Datenübernahme IBUS
+2515;104264;Beatmung_ES_Servoi_PEEP;PEEP 
+2500;102877;Beatmung_ES_VisionA_SISetting;Druckeinstellung für manuell ausgelösten Atemhub
+2499;103832;Lungenersatzverfahren_Doku_ILA_Blutfluss;
+2488;103158;Nierenverfahren_ES_4008HS_SollNa;
+2459;102610;Nierenersatzverfahren_Einstell_Temperatur;
+2456;110786;P_NEV_HD_ES_5008onl_Bicarbonat;
+2451;106333;CardioHelpMaquet_ES_TemperaturSoll;
+2448;110820;P_Beatmung_ES_C3_PEEP_CPAP;
+2406;103210;Beatmung_ES_3100B_Frequenz;Einstellwert: eingestellte Oszillationsfrequenz 
+2402;110804;P_NEV_HD_VO_5008onl_Fluss;
+2391;110784;P_NEV_HD_ES_5008onl_Fluss;
+2337;110800;P_NEV_HD_ES_5008onl_UFRate;
+2332;106407;Hypothermie_ArticSun_MS_Zieltemperatur;Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur
+2324;110805;P_NEV_HD_VO_5008onl_Temperatur;
+2271;104883;NEV_HD_ES_4008HS_BasisNa;
+2249;102106;Nierenersatzverfahren_Einstell_Dialysatfluß;
+2237;102889;Beatmung_ES_G5_Plateau;prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird
+2225;103214;Beatmung_ES_3100B_O2Konzentration;Einstellwert: O2 Konzentration des Gasgemisches
+2211;110787;P_NEV_HD_ES_5008onl_SollNa;
+2188;102993;Nierenverfahren_ES_BM25_Temperatur;Temperatur Celcius
+2174;110806;P_NEV_HD_VO_5008onl_Bicarbonat;
+2145;103386;Schrittmacher_zwei_ES_Frequenz;Medtronic 5375
+2132;103211;Beatmung_ES_3100B_Inspirationszeit;Einstellwert: prozentualer Anteil der Inspirationszeit bezogen auf den gesamtem Atemzyklus
+2105;110807;P_NEV_HD_VO_5008onl_SollNa;
+2104;103209;Beatmung_ES_3100B_BiasFlow;Einstellwert: eingestellter Basisfluss im Beatmungssystem
+2096;110904;P_Patient_Gewicht_Differenz;Differenz zwischen dem aktuellen Gewicht und dem Gewicht des letzten Eintrags
+2028;103831;Lungenersatzverfahren_Doku_ILA_Gasfluss;
+2017;102183;Vigileo_ScvO2;
+2009;103167;Nierenverfahren_MS_4008HS_SollNatrium;
+2008;102068;Beatmung_Einstellung_DruckTrigger;
+1906;110939;P_Beatmung_ES_NO;
+1902;104803;Beatmung_MS_C2_Ppeak;
+1881;110938;P_Beatmung_MS_NO2;
+1875;104798;Beatmung_MS_C2_VTE;
+1866;103387;Schrittmacher_zwei_ES_Ausgang;Medtronic 5375
+1860;104797;Beatmung_MS_C2_ExpMinVol;
+1808;110779;P_NEV_HD_MS_5008onl_SollNa;
+1745;103238;Nierenverfahren_VO_4008HS_BlutflussMax;
+1745;103388;Schrittmacher_zwei_ES_Empfindlichkeit;Medtronic 5375
+1724;110881;Beatmung_ES_Heimbeatmung_Ti;
+1720;104790;Beatmung_MS_C2_fSpontan;
+1713;103720;IABP_DatascopeCS100_ES_Unterstützungsdruck;
+1657;104791;Beatmung_MS_C2_fTotal;
+1653;105024;Schrittmacher_Osypka203H_ES_AV_DLY;AV Überleitungszeit
+1234971;102926;Beatmung_MS_G5_IEVerhaeltnis;gemessenes I:E Verhältnis
+1645;103212;Beatmung_ES_3100B_Leistung;Einstellwert: prozentuale Kolbenauslenkung
+1642;104251;Beatmung_MS_Servoi_Ppeak;Atemdruck Spitze 
+1592;110772;P_NEV_HD_MS_5008onl_Rest_Zeit_min;
+1542;104800;Beatmung_MS_C2_PeepCPAP;
+1512;110754;P_Therapiebetten_Doku_DraegerBabytherm_ES_Temp;
+1501;104801;Beatmung_MS_C2_Pmittel;
+1498;102059;Beatmung_Einstellung_ASBAnstieg;
+1494;110755;P_Therapiebetten_Doku_DraegerBabytherm_ES_Strahler;
+1485;106783;Beatmung_ES_Optiflow_O2Konzentration;
+1484;104239;Beatmung_MS_Servoi_Vte;Exsp. Tidalvolumen 
+1484;104804;Beatmung_MS_C2_Sauerstoff;
+1483;104345;IABP_DatascopeCS300_ES_IABPAufblasen;Dokumentation des prozentualen Anteil des Aufblasens des Ballons.
+1465;102753;Nierenersatzverfahren_Mess_CalciumFluss;
+1452;102721;Nierenersatzverfahren_Einstell_Calcium;
+1448;105077;Beatmung_ES_C2_Pmax;Eingestellte Alarmhochdruckgrenze. Einstellung erfolgtdirekt über die Alarmeinstellung aber auch indirekt über die Einstellung Pasvlimit. Die Alarmhochdruckgrenze liegt automatisch 10 mbar über der Pasvlimit Einstellung.
+1448;102752;Nierenersatzverfahren_Mess_CitratFluss;
+1437;106784;Beatmung_ES_Optiflow_O2Flow;
+1432;107996;P_Beatmung_ES_C3_Flowtrigger;
+1432;100091;LAP;Linksatrial  Mitteldruck
+1412;103092;Beatmung_ES_CF800_DruckluftFlow;Einstellgröße: Gasfluss Druckluft
+1409;106281;Beatmung_ES_C2_Apnoezeit_Backup;
+1399;104884;NEV_HD_ES_4008HS_StartNa;
+1398;104347;IABP_DatascopeCS300_ES_IABPLeersaugen;Dokumentation des prozentualen Anteils des Leersaugens des Ballons.
+1396;103091;Beatmung_ES_CF800_SauerstoffFlow;Einstellgröße Gasfluss Sauerstoff
+1392;108665;P_Waermesysteme_FisherPaykel_Doku_Prozent;
+1389;103093;Beatmung_ES_CF800_O2Konzentration;Sauerstoffgehalt des eingestellten Gasgemisches CF 800
+1366;104793;Beatmung_MS_C2_InsFlow;
+1362;104788;Beatmung_MS_C2_TE;
+1357;102627;Nierenersatzverfahren_Mess_SubstituatVolumen;
+1356;102992;Nierenverfahren_ES_BM25_Umsatz;Austausch, Substituat, ml/h
+1340;103195;Nierenverfahren_MS_4008onl_venDruck;
+1321;103194;Nierenverfahren_MS_4008onl_artDruck;
+1315;103196;Nierenverfahren_MS_4008onl_TMP;
+1306;102007;Temp2b;Temperatur 2b
+1297;104833;NEV_Apherese_ES_Multi_Plasma;
+1275;103157;Nierenverfahren_ES_4008HS_BasisNa;
+1268;110776;P_NEV_HD_MS_5008onl_BlutvolKum;
+1267;103245;Nierenverfahren_VO_4008HS_Fluss;
+1265;104784;Beatmung_MS_C2_Cstat;
+1254;104786;Beatmung_MS_C2_Rinsp;
+1251;104807;Beatmung_ES_C2_ProzentVol;
+1241;103269;Beatmung_ES_Evita2_Frequenz;eingestellt mandatorische Atemfrquenz
+1203;102729;Nierenersatzverfahren_Einstell_Citrat;
+1194;108639;P_Temperaturregulation_Blankettrol_Doku_Temp;
+1191;11;COPRA_Patient_Kopfumfang;Kopfumfang des Patienten in Zentimetern
+1189;104117;Lungenersatzverfahren_MS_ILA_SpO2;
+1187;102097;Lungenersatzverfahren_Doku_ILAQ1Flow;
+1183;103320;Beatmung_MS_Evita4_MV;gemessenes Atemminutenvolumen
+1182;102578;Beatmung_Einstellung_ProzentMinVol;
+1169;107991;P_Beatmung_ES_C3_Ti;
+1161;104820;Beatmung_ES_C2_Pinsp;
+1151;107986;P_Beatmung_ES_C3_Pinsp;Inspiratorischer Druck
+1148;103200;Nierenverfahren_MS_4008onl_effBlutfluss;
+1145;107977;P_Beatmung_ES_C3_Druckrampe;
+1142;103315;Beatmung_MS_Evita4_Ppeak;gemessener Atemwegsspitzendruck
+1128;104282;Beatmung_ES_Servoi_SIMV_Frequenz;SIMV Frequenz 
+1115;107997;P_Beatmung_ES_C3_ETS;
+1110;104782;Beatmung_ES_C2_Ti;
+1109;103314;Beatmung_MS_Evita4_FiO2;gemessene O2 Konzentration des inspiratorischen Atemgasgemisches
+1108;100249;Beatmung_Einstellung_FlowTrigger;
+1099;107998;P_Beatmung_ES_C3_Flow;
+1097;104268;Beatmung_ES_Servoi_DU_ueber_PEEP;DU über PEEP 
+1064;103323;Beatmung_MS_Evita4_frequenz;gemessene Gesamtatemfrequenz
+1059;103094;Beatmung_ES_CF800_CPAP;eingestelltes CPAP Niveau
+1055;103199;Nierenverfahren_MS_4008onl_Leitfähigkeit;
+1052;110882;Beatmung_ES_Heimbeatmung_Timax;eingestellte maximale Inspirationszeit 
+1052;104939;NEV_HD_VO_4008HS_Start_Na;
+1051;103201;Nierenverfahren_MS_4008onl_BlutvolumenKumulativ;
+1044;103318;Beatmung_MS_Evita4_PEEP;gemessener positiver endexspiratorischer Druck
+1043;104244;Beatmung_MS_Servoi_Mve_spont;Spontanes exsp. Minutenvolumen 
+1043;103317;Beatmung_MS_Evita4_Pmean;gemessener Atemwegsmitteldruck
+1029;107993;P_Beatmung_ES_C3_Timax;Inspirationszeit max
+1025;108634;P_Waermesysteme_BarkeyWaermepaddels_Doku_Temp;
+1022;104830;NEV_Apherese_MS_Multi_artDruck;
+1021;104829;NEV_Apherese_MS_Multil_venDruck;
+1020;104249;Beatmung_MS_Servoi_Pmean;Mittlerer Atemwegsdruck 
+1019;101322;Patient_AufnGewicht;Aufnahmegewicht (fallbezogen)
+1016;103197;Nierenverfahren_MS_4008onl_Restzeit;
+1006;104828;NEV_Apherese_MS_Multi_TMP;
+4962086;100095;Herzrhythmus;Herzrhythmus
+2506099;23;Fall_Nummer;Identifikationsnummer des Falles
+2499758;101329;Fall_Art;
+2225895;102013;PACED;
+1536842;2;Patient_Name;Name des Patiente
+1536836;3;Patient_Vorname;Vorname des Patiente
+1536775;8;Patient_ID;Identifikation des Patiente
+1536761;5;Patient_Geschlecht;Geschlecht des Patienten
+1302682;106483;EinweisenderArzt_Name;
+1302682;106478;EinweisenderArzt_Land;
+1302459;106479;EinweisenderArzt_Ort;
+1197501;106481;EinweisenderArzt_Strasse;
+1107460;106477;EinweisenderArzt_Telefon;
+1018430;105082;Beatmung_ES_G5_Body_Wt;Eingestelltes Körpergewicht.
+1009318;106484;EinweisenderArzt_Titel;
+1000261;100092;Ereignisse Vitlaparameter Graphisch;Ereignisse Vitlaparameter Graphisch als Listenauswahl
+723927;106482;EinweisenderArzt_Vorname;
+714951;100024;Patient_Nationalitaet;Nationalität des Patienten
+713394;101327;Patient_Land;Patientenadresse: Land
+712917;101325;Patient_PLZ;Patientenadresse: PLZ
+712910;101326;Patient_Ort;Patientenadresse: Ort
+700705;100023;Patient_Strasse;Adresse des Patienten: Strasse + Hausnummer
+669378;105083;Beatmung_ES_G5_F_CMV;Eingestellte CMV Frequenz bei dem Respirator G5 in den Beatmungsmodi DUOPAP, APVcmv, Pcmv, 
+584232;100036;Patient_Telefon;Telefonnummer des Patienten
+419297;100035;Angehoerige1_Name;Nachname des Angehörigen
+406430;101781;Angehoerige1_Land;
+395020;101780;Angehoerige1_Ort;
+394750;101779;Angehoerige1_PLZ;
+394503;100034;Angehoerige1_Telefon;Angehoerigen-Telefon
+392403;101778;Angehoerige1_Strasse;
+355988;101777;Angehoerige1_Vorname;
+295760;105049;NEV_CRRT_ES_Multi_Temp;neu angelegt am 18.05.2012
+288555;101786;Hausarzt_Name;
+288118;101789;Hausarzt_Ort;
+288051;101788;Hausarzt_PLZ;
+287855;101787;Hausarzt_Strasse;
+287777;101790;Hausarzt_Land;
+279682;101793;Hausarzt_Telefon;
+268387;103752;Diagnostik;Dokumentation durchgeführter diagnostischer Maßnahmen.
+261023;106486;Hausarzt_Titel;
+242836;104757;Beatmung_ES_G5_IEVerhältnis_Backup;
+174104;103748;Beatmung_ES_G5_Tubuskompensation;Dokumentation der eingestellten Tubuskompensation
+153881;106485;Hausarzt_Vorname;
+56283;102135;Untersuchung_Thorax_Pulmo;
+55075;102138;Untersuchung_Abdomen_Bauchwand;
+52278;102129;Untersuchung_Kopf_Augen;
+51962;102144;Untersuchung_ExtremitaetenLeiste_UntereExtremitaet;
+51546;102136;Untersuchung_Thorax_Cor;
+50692;102145;Untersuchung_ZNS_Bewusstsein;
+47541;102143;Untersuchung_ExtremitaetenLeiste_ObereExtremitaet;
+46805;105084;Beatmung_ES_G5_F_SIMV;Eingestellt SIMV Frequenz bei dem Respirator G5 in den Beatmungsmodi APVsimv, Psimv.
+26045;103734;Lungenersatzverfahren_Doku_ECMOTemperatur;Eingestellter Temperaturwert an der ECMO (Gerät)
+24182;102151;Untersuchung_Status_Reizbildung;
+22354;102152;Untersuchung_Status_Makrozirkulation;
+20365;103376;Schrittmacher_Doku_Drähte;
+20260;103374;Schrittmacher_Doku_Modus;
+20086;102131;Untersuchung_Kopf_Nas_Mund;
+19715;104959;NEV_CRRT_MS_Multi_BehandlungszeitAktuell;
+18675;102156;Untersuchung_Status_Atemform;
+17997;102154;Untersuchung_Status_Oxygenierung;
+17229;102153;Untersuchung_Status_Mikrozirkulation;
+16649;103805;Hypothermie_ArticSun_Doku_Behandlungsmodi;Liste
+16193;102132;Untersuchung_Kopf_Hals;
+15662;102139;Untersuchung_Abdomen_Nieren;
+15069;102155;Untersuchung_Status_Ventilation;
+14300;102128;Untersuchung_Kopf_Haut;
+13774;102148;Untersuchung_ZNS_Motorik;
+13270;104751;Untersuchung_Kontrolle_Laufraten;Arztdoku S. 10
+12167;102142;Untersuchung_ExtremitaetenLeiste_Haut;
+11862;102134;Untersuchung_Thorax_Wand;
+11438;102158;Untersuchung_Status_Koerpertemperatur;
+11191;105090;Fall_Wertsachen_Wertgegenstaende;
+11088;103735;Lungenersatzverfahren_Doku_ECMOFlushen;"Dokumentation der Tätigkeit ""Flushen"" bei Einsatz eines ECMO Verfahrens"
+10716;102137;Untersuchung_Abdomen_Haut;
+10669;102133;Untersuchung_Thorax_Haut;
+10573;102159;Untersuchung_Status_Urin;
+10497;108501;Fontanelle_Beurteilung;
+10340;104952;NEV_HD_VO_Konzentrat;
+10261;101792;Angehoerige1_Verwandschaftsgrad;
+10205;104954;NEV_HD_VO_Filter;
+10187;104949;NEV_HD_VO_SpüllösungAntikoag;
+10163;104955;NEV_HD_VO_Zugang;
+10120;104948;NEV_HD_VO_FuellenMit;
+10084;101462;Angehoerige1_TelefonMobil;Handy Nummer der Angehörigen des Patienten
+9767;102146;Untersuchung_ZNS_Reflexe;
+8781;104958;NEV_CRRT_Doku_AbschlussBegruendung;
+8715;104914;NEV_HD_Doku_SpüllösungAntikoag;
+8468;105096;Fall_Wertsachen_Kleidungsstuecke;
+8259;104951;NEV_HD_VO_Antikoagulation;
+8220;105017;Schrittmacher_Osypka101H_ES_Betriebsart;Listenauswahl
+7867;104912;NEV_HD_Doku_FuellenMit;
+7774;104981;NEV_CRRT_Doku_Fuellen_Mit;
+7674;104957;NEV_CRRT_Doku_AbschlussUrteil;
+7350;104857;NEV_HD_Doku_Abschlussbeurteilung;
+7248;105100;Fall_Wertsachen_Wertgegenstaende_Ort;
+7160;104947;NEV_HD_VO_4008HS_Dialysezeit;
+6883;104894;NEV_HD_ES_4008HS_Dialysezeit;
+6621;101416;Lungenersatzverfahren_Doku_ECMOAntikoagulation;
+6599;105031;Schrittmacher_Osypka203H_ES_Betriebsart;Liste
+6436;104856;NEV_HD_Doku_Abschlussbegründung;
+6364;102157;Untersuchung_Status_Wasserhaushalt;
+6298;102140;Untersuchung_Abdomen_Leber;
+6261;102149;Untersuchung_ZNS_Sensibilitaet;
+6238;104950;NEV_HD_VO_Bolus;
+6160;105092;Fall_Wertsachen_Prothese;
+6137;103117;Nierenverfahren_Doku_AbschlussBeurteilung;
+5904;103118;Nierenverfahren_Doku_Abschlussbegruendung;
+5901;105094;Fall_Wertsachen_Pflegeuntensilien;
+5744;103115;Nierenverfahren_Doku_FüllenMit;Füllen des Systems
+5675;104869;NEV_HD_MS_4008HS_Rest_Zeit;
+5540;102130;Untersuchung_Kopf_Ohren;
+5295;104982;NEV_CRRT_Doku_SpülloesungAntikoag;
+5281;105098;Fall_Wertsachen_Papiere;
+5207;103097;Nierenverfahren_Doku_SpuellösungAntikoagulanz;Spülung zur Vorbereitung
+5130;105034;Schrittmacher_Osypka203H_ES_V-Sense;
+5072;102928;Nierenverfahren_VO_Filter;Filter  für extrakorporale Verfahren
+5007;102927;Nierenverfahren_VO_Zugang;VO Gefäßzugang extracorporale Verfahren
+4906;102147;Untersuchung_ZNS_Hirnnerven;
+4826;105097;Fall_Wertsachen_Kleidungsstuecke_Ort;
+4715;102933;Nierenverfahren_VO_SpülloesungAntikoagulanz;Spüllösung zum Vorbereiten des extrakorporalen Verfahrens
+4619;101328;Patient_Pseudonym;
+4581;104911;NEV_HD_Doku_Bolusgabe;
+4462;102934;Nierenverfahren_VO_FüllenMit;Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss
+4201;104354;IABP_DatascopeCS300_ES_IABP_Frequenz;Dokumentation der IABP Frequenz.
+3904;102160;Untersuchung_Status_Stuhl;
+3901;103250;Nierenverfahren_VO_Dialysekonzentrat;Dialyskonzentratbehälter
+3863;106506;Angehoerige2_Verwandtschaftsgrad;
+3839;104355;IABP_DatascopeCS300_ES_Triggerauswahl_EKG_RR_Pacer;Dokumentation des ausgewählten Triggers der IABP.
+3784;102932;Nierenverfahren_VO_Antikoagulanz;Antikoagulation Medikament
+3733;104353;IABP_DatascopeCS300_ES_EKG_Ableitung;Dokumentation der gewählten EG Ableitung für den IABP Einsatz.
+3724;102141;Untersuchung_Abdomen_Gallenblase;
+3719;102150;Untersuchung_ZNS_Vegetativum;
+3714;108728;P_Impella_Impella_ES_Leistungsstufe;
+3520;105012;NEV_CRRT_VO_Zugang;
+3461;105011;NEV_CRRT_VO_Filter;
+3456;103375;Schrittmacher_Doku_Art;
+3428;103339;IABP_Doku_Ballonkatheter;Kathetertyp
+3247;106505;Angehoerige2_Name;
+3115;105002;NEV_CRRT_VO_Fuellen_Mit;
+3076;106472;IABP_CARDIOSAVE_ES_IABP_Frequenz;Dokumentation der IABP Frequenz
+3068;106498;Angehoerige2_TelefonMobil;
+3067;105095;Fall_Wertsachen_Prothese_Ort;
+3064;105009;NEV_CRRT_VO_Dialysatloesung;
+3014;105033;Schrittmacher_Osypka203H_ES_A-Sense;
+2980;100031;Betreuer_Name;Betreuer des Patienten
+2943;103622;Lungenersatzverfahren_Doku_Zugang;Gefäßzugang
+2938;106470;IABP_CARDIOSAVE_ES_EKG_Ableitung;Dokumentation der gewählten EKG Ableitung für den IABP Einsatz
+2896;105003;NEV_CRRT_VO_SpülloesungAntikoag;
+2867;106473;IABP_CARDIOSAVE_ES_Triggerauswahl_EKG_RR_Pacer;Dokumentation des ausgewählten Triggers der IABP
+2759;105093;Fall_Wertsachen_Pflegeuntensilien_Ort;
+2638;110802;P_NEV_HD_ES_5008onl_Dialyse_Zeit;
+2633;110818;P_NEV_HD_VO_5008onl_Dialyse_Zeit;
+2581;103744;Hypothermie_Doku_Kuehlverfahren;Listenauswahl
+2578;103623;Lungenersatzverfahren_Doku_Schlauchsystem;Schlauchsystembeschichtung relevant
+2573;106504;Angehoerige2_Vorname;
+2526;103829;Waermesysteme_Warmtouch_Doku_Temperatur;Liste
+2497;103135;Nierenverfahren_VO_Bolus;Medikament
+2475;101791;Betreuer_Status;
+2462;103745;Nierenverfahren_ES_BM25_Temperaturstufe;Liste
+2458;105007;NEV_CRRT_VO_CitratLoesung;
+2442;105006;NEV_CRRT_VO_CalciumLoesung;
+2433;100029;Betreuer_Telefon;Telefonummer des Patientenbetreuers
+2420;106325;CardioHelpMaquet_DOKU_Antikoagulation;
+2404;103630;Lungenerstazverfahren_Doku_ECMO_Oxygenator;Gerätetyp
+2342;105099;Fall_Wertsachen_Papiere_Ort;
+2331;104351;IABP_DatascopeCS300_ES_Doku_Ballonkatheter;Dokumentation des verwendeten Ballonkatheters.
+2304;105005;NEV_CRRT_VO_Antikoagulation;
+2128;101482;Beatmung_Einstellung_Anfeuchtung;
+2122;101766;Betreuer_Vorname;
+2071;103136;Nierenverfahren_Doku_Bolus;Medikament
+2058;103336;Nierenverfahren_ES_GeräteDesinfektion;Desinfektionsprogramme Gerät 
+2037;103828;Waermesysteme_Warmtouch_Doku_Geblaese;Liste
+1972;103718;IABP_DatascopeCS100_ES_IABPFrequenz;
+1972;106499;Angehoerige2_Telefon;
+1963;105050;NEV_CRRT_VO_Multi_Temp;Neuanlage 18.05.2012 String
+1805;106517;Waermesysteme_BairHugger_Doku_Temperatur;Liste
+1750;103717;IABP_DatascopeCS100_ES_Triggerauswahl;
+1698;106406;Hypothermie_ArticSun_MS_Flussrate;
+1691;101771;Betreuer_TelefonMobil;
+1519;105081;Beatmung_ES_C2_F_SIMV;Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.
+1499;103721;IABP_DatascopeCS100_ES_EKGAbleitung;
+1476;101463;Angehoerige1_TelefonArbeit;Berufliche Telefonnummer der Angehörigen des Patienten
+1451;110886;P_Patient_Gewicht_WaageBezeichnung;Die Nummer der Waage, mit der das Gewicht ermittelt wurde.
+1429;105052;NEV_Apherese_ES_Multi_Temp;Anlage 18.05.2012
+1393;106496;Angehoerige3_Verwandtschaftsgrad;
+1342;106518;Waermesysteme_BairHugger_Doku_Geblaese;Liste
+1331;107989;P_Beatmung_ES_C3_F_SIMV;Eingestellte SIMV Frequenz
+1231;101404;Nierenersatzverfahren_Dokumentation_Antikoagulatio;
+1209;106326;CardioHelpMaquet_DOKU_Flushen;
+1203;101406;Nierenersatzverfahren_Dokumentation_HFLoesung;
+1128;101773;Patient_Verfügung;
+1125;102504;Nierenersatzverfahren_Dokumentation_Abschluss;
+1116;106495;Angehoerige3_Name;
+1075;106489;Angehoerige3_TelefonMobil;
+1062;103572;IABP_Datascope_ES_IABPFrequenz;LIste
+1039;103624;Lungenersatzverfahren_Doku_Kathetertyp;Kathetertyp
+1004;102201;HZV_VigilanceCGeraet;

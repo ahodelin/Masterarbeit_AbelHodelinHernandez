@@ -1,0 +1,34 @@
+\section{Data Mapping} \label{subsec:tbasub}
+
+Data Mapping oder Datenzuordnung ist die Herstellung der Verbindung zwischen den Attributen zweier unterschiedlicher Datenmodelle (Quelle und Ziel) \cite{datamappingqs}. Dieses Verfahren wird angewendet, um unterschiedliche Datenquellen zu integrieren und sinnvoll zu nutzen \cite{datamappingastera}. Die Datenzuordnung ist entscheidend für weitere Schritte in Projekten bei denen zwei oder mehrere Datenmodelle eine Rolle spielen \cite{datamappingqs}. Das Ziel der Datenzuordnung ist die Gewährleistung des Transports von Information von der Quelle zum Ziel mit so wenig Datenverlust wie möglich \cite{datamappingastera}. Für den Erfolg des Data Mappings sollte man genau wissen, wie die Daten vom Quellsystem zum Zielsystem fließen \cite{datamappingqs}. 
+
+In der Gesundheitsbranche hilft die Datenzuordnung durch die Abgleichung von Daten zwischen Quell- und Zielsystemen die Interoperabilität für die \aclu{ehr} zu erreichen \cite{interop, datamappingastera}. Allerdings hilft die Datenzuordnung auch dem medizinischen Personal, Informationen von Patienten und Patientinnen auszutauschen und Gesundheitsdaten aus den verschiedenen Datenquellen zu kombinieren \cite{datamappingastera}.
+
+Dadurch dass der Staging Bereich eines \ac{dw} der Zwischenspeicher ist, in dem die Daten aus den Quellsystemen für die spätere Transformationen gelagert werden, benötigt das Mapping die inhaltliche Information und Datenstruktur verschiedener Tabellen aus dem Quellsystem \cite{datamappingqs, datawarehouse}.
+
+Für die Durchführung eines Data Mappings sind drei Elementen entscheidend: das \ac{ldm}, das \ac{pdm} und die fachlichen Spezialisten \cite{datamappingqs}. Einerseits liefert das \ac{ldm} die Details der Strukturdefinition der Datenquelle \cite{datamappingqs, datamodel}. Andererseits beschreibt das \ac{pdm} die Spezifikationen der Implementierung des \ac{ldm} \cite{datamodel}. Die fachlichen Spezialisten besitzen das Fachwissen über eine bestimmte Thematik und stehen somit bei Fragen und Problemen zur Verfügung \cite{smeitlexicon}.
+
+Es gibt drei Data Mapping-Haupttechniken \cite{datamappingastera}:
+\begin{enumerate}
+  \item Manuelle Datenzuordnung: Manuelle Kodierung der Datenquellen oder manuelle Zuordnung des Zielschemas.
+  \item Schemazuordnung: Halbautomatischer Prozess bei dem eine Beziehung zwischen Quell- und Zielschema hergestellt wird und die Verbindungen geprüft und gegebenenfalls angepasst werden.
+  \item Vollautomatische Datenzuordnung: Diese Technik bietet eine bequeme, einfache und effiziente meist codefreie Benutzeroberfläche.
+\end{enumerate}
+
+Das Data Mapping wird in verschiedenen Szenarien angewendet. Eines davon ist, wie bei diesem Projekt, der elektronische Datenaustausch von Gesundheitsdaten, bei dem die Quelldaten in verschiedene Formate konvertiert werden sollen \cite{datamappingastera}.
+
+Das Data Mapping besteht aus sechs Schritten \cite{datamappingtalend}. 
+\begin{enumerate}
+  \item Definition der Daten für die Verschiebung - Tabellen, Felder und Datenformat der Felder werden definiert
+  \item Zuweisung der Quell- und Zielfelder
+  \item Transformation - Programmierung der Transformationsregeln
+  \item Test - Test mit Beispieldaten aus der Quelle, um mögliche Anpassungen vorzunehmen
+  \item Implementierung 
+  \item Migration oder Integration der Daten
+\end{enumerate}
+
+In dieser Masterarbeit werden zum Teil einige Transformationsregeln definiert, und programmiert.
+
+Dadurch dass Data Mapping eine dynamische Schnittstelle ist, sollte es regelmäßig gewartet und aktualisiert werden \cite{datamappingtalend}.
+
+Dieses Projekt befasst sich mit dem manuellen Data Mapping für den Datenaustausch von Biosignaldaten aus der \ac{copra}-Instanz des Staging Bereichs eines \ac{dw}, als Quellsystem, zu einem Zielsystem in \ac{fhir}. Das manuelle Data Mapping wurde ausgewählt, denn bis jetzt existieren noch keine vorherigen Projekte weder an der Universitätsmedizin Mainz noch an anderen \ac{mii} Standorte, welche sich mit dem Data Mapping von Biosignaldaten aus \ac{copra} mit \ac{fhir}-Profilen befassen. Dieses Projekt könnte auch der Grundstein für den Ideenaustausch und die Kooperation mit anderen \ac{mii}-Standorten werden.

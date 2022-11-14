@@ -1,0 +1,20 @@
+conf_var_id;conf_var_name;conf_var_description;conf_var_unit
+104974;NEV_CRRT_ES_Multi_CalciumFiltrat;;
+105006;NEV_CRRT_VO_CalciumLoesung;;
+6;Patient_Gewicht;Gewicht des Patienten;
+101322;Patient_AufnGewicht;Aufnahmegewicht (fallbezogen);
+106468;IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole;Dokumentation des gemessenen Blutdruckes unter IABP;
+104356;IABP_DatascopeCS300_MS_Systole_Mittel_Diastole;Dokumentation des gemessenen Blutdruckes unter IABP.;
+102051;HZV;Herzzeitvolumen;
+102184;VigilanceC_HZV;Herzzeitvolumen;
+7;Patient_Groesse;Größe des Patienten;
+102047;PVPI;Pulmonalvaskuläer Permeabilitätsindex ;
+102926;Beatmung_MS_G5_IEVerhaeltnis;gemessenes I:E Verhältnis;
+102978;Nierenverfahren_ES_Multi_Substituat;Umsatz, Austausch Substituat ml/h;
+102992;Nierenverfahren_ES_BM25_Umsatz;Austausch, Substituat, ml/h;
+110777;P_NEV_HD_MS_5008onl_effBlutfluss;;
+110796;P_NEV_HD_ES_5008onl_Blutfluss;;
+104872;NEV_HD_MS_4008HS_effBlutfluss;;
+104888;NEV_HD_ES_4008HS_Blutfluss;;
+106468;IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole;Dokumentation des gemessenen Blutdruckes unter IABP;
+104356;IABP_DatascopeCS300_MS_Systole_Mittel_Diastole;Dokumentation des gemessenen Blutdruckes unter IABP.;

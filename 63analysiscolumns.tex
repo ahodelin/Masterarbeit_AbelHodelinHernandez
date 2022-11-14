@@ -1,0 +1,83 @@
+\section{Analyse der Tabellen für die Datendefinition} \label{sec:analysiscolums}
+
+Mit der Information der relevanten Parameter von \ac{copra} zusammen mit den Parametern der \ac{fhir}-Profile, wurden die geeigneten Spalten der Tabellen von \ac{copra} und der Tabelle \texttt{mii\_icu} in der \ac{db} \texttt{mii\_copra} ausgewählt, die die Parameter für die Überführung der Biosignaldaten in \ac{fhir} beinhalten.
+
+Die Spalten \texttt{profile\_name} und \texttt{loinc} in der Tabelle \texttt{mii\_icu} (\ref{tab:miiicu}), und die Spalten \texttt{name} und \texttt{description} in der Tabelle \texttt{co6\_config \_variables} (\ref{tab:co6confvar}) wurden als geeignete Kandidaten ausgewählt, um die Konfigurationsvariablen aus \ac{copra} mit den \ac{fhir}-Profilen miteinander zu verlinken, denn diese Spalten beinhalten die Hauptinformation für den späteren Zuordnung-Prozess.
+ 
+ Einerseits beinhaltet die Spalte \texttt{profile\_name} die Namen der \ac{fhir}-Profile, die wiederum auch die Namen von Verfahren oder Messungen sind. Andererseits ist \ac{loinc} das meist verwendete Codesystem in den \ac{fhir}-Profilen (\ref{tab:profilcodes}), und nach der Analyse der gespeicherten \ac{loinc}-Codes wurden auch Abkürzungen gefunden, die für den späteren Pattern Matching-Prozess von Bedeutung sind, denn sie dienen als zusätzliche Namen \glqq Short Name\grqq{} in der Beschreibung der \ac{loinc}-Codes. Manche dieser \glqq Short Names\grqq{} werden auch in der alltäglichen Kommunikation unter dem Gesundheitspersonal benutzt. Diese Besonderheit ist in der \ref{tab:shortname} dargestellt. Solche \glqq Short Names\grqq{} mit einigen Variationen wurden auch in den Namen und Beschreibungen von den Konfigurationsvariablen in \ac{copra} erkannt.
+
+\begin{table}[ht]
+	\centering 
+	\caption[Beispiel von \acs{loinc}-\glqq Short Name\grqq{}]{Beispiel von \acs{loinc}-\glqq Short Name\grqq{}. Das \ac{fhir}-Profil \glqq Sauerstofffraktion\grqq{} hat den \ac{loinc}-Code, \href{https://loinc.org/71835-3/}{71835-3}. Dieser wiederum besitzt den \glqq Short Name\grqq{}, 
+		FIO2.}
+	\label{tab:shortname}
+	\begin{tabular}{|p{4cm}|l|l|}
+		\hline
+		\rowcolor{lightgray} Profile-Name & \ac{loinc}-URL & Short Name \\ \hline
+		Sauerstofffraktion & \url{https://loinc.org/71835-3/} & 
+		FIO2 \\ \hline 
+	\end{tabular}
+\end{table}
+
+In der Tabelle \texttt{co6\_config\_variables} sind die, an dem Standort, angegebenen \ac{copra}-Namen für Messungen oder Techniken. Diese sind in der Spalte \texttt{name} registriert. Die \ac{copra}-Namen können Fachtermini oder eine Zusammensetzung von Namensabkürzungen des angewendeten Verfahrens und Namensabkürzungen des Gerätes sein. Manche der Abkürzungen des Verfahrens sind Varianten des vorher erläuterten \ac{loinc}-\glqq Short Name\grqq{}. Sodass mit Hilfe von den \ac{loinc}-\glqq Short Names\grqq{} auch Konfigurationsvariablen bei dem Pattern Matching Prozess erkannt werden können. Diese Details der \ac{copra}-Namen führten dazu, dass die Spalte \texttt{description} für die Zuordnung der Konfigurationsvariablen mit den \ac{fhir}-Profilen betrachtet werden sollte, denn diese Spalte beinhaltet eine kurze Beschreibung der Verfahren.
+
+Die Maßeinheiten der Konfigurationsvariablen und somit der Biosignaldaten befinden sich in der Spalte \texttt{unit} der Tabelle \texttt{co6\_config\_variables}. Andererseits befinden sich die Maßeinheiten der Profile in der Spalte \texttt{valuequan tity\_code} der Tabelle \texttt{mii\_icu}. Die Maßeinheiten sind entscheidend, da diese in beiden Systemen vergleichbar seien müssen. Das bedeutet, dass die Maßeinheiten beider Systeme dieselben Dimensionen der physikalischen Größen besitzen müssen, sodass eine Umrechnung zwischen den Einheiten beider Systeme möglich ist.
+
+Dadurch dass ein Identifikator der Patienten in den \ac{fhir}-Profilen als Referenz zu der \ac{fhir}-Ressource \glqq Patient\grqq{} in der Kerndatensatz der \ac{mii} benutzt wird, um die Biosignaldaten zu den korrespondierenden, behandelnden Personen zu verlinken, werden solchen Parameter vom \ac{copra}-System benötigt. Diese Information befindet sich in der Tabelle \texttt{co6\_medic\_patient} in der Spalte \texttt{patid}. Der Inhalt dieser Spalte ist ein Pseudonym der Patientennummer im \ac{kis}. Auch in der Tabelle \texttt{co6\_medic\_patient} (\ref{tab:patient}) soll  die Spalte \texttt{id} berücksichtigt werden, denn diese ist der primäre Schlüssel dieser Tabelle und ist somit Fremdschlüssel in den Werttabellen. Damit werden die Daten der Patienten mit ihren Biosignaldaten im \ac{copra}-System verknüpft. Die Spalte \texttt{deleted} in der Tabelle \texttt{co6\_medic\_patient} wird benötigt, um über die Löschung einer Person aus dem System in Kenntnis gesetzt zu werden.
+
+Die Werte und Zeitangaben der Messungen und Beobachtungen für die Überführung der Daten in die \ac{fhir}-Profile befinden sich in den Werttabellen. Diese Werte sind in der Spalte \texttt{val} der Tabellen \texttt{co6\_data\_decimal\_6\_3} und \texttt{co6\_data\_string} (\ref{tab:valuetab}), und in den Spalten \texttt{systolic}, \texttt{mean} und \texttt{diastolic} der Tabelle \texttt{co6\_medic\_pressure} (\ref{tab:valuepress}) zu finden. Die Zeiten der Messungen sind in der Spalte \texttt{datetimeto} aller Werttabellen zu finden.
+
+ Die Werttabellen beinhalten den Hauptschlüssel der Tabelle \texttt{co6\_medic \_patient} in der Spalte \texttt{parent\_id} als Fremdschlüssel, wenn das Wert diese Spalte gleich 1 ist. Damit wird die Information der Biosignaldaten den Patienten zugewiesen. In der Spalte \texttt{var\_id} ist der Schlüssel der Konfigurationsvariable in der Tabelle \texttt{co6\_config\_variables} für die Zuweisung der Variablen mit den Werten der Biosignale zu finden. Der Hauptschlüssel einer Werttabelle (\texttt{id}) in Kombination mit dem Namen der Werttabelle wird benutzt, um einen Ersatzschlüssel für die Überführung der Daten von \ac{copra} in \ac{fhir}-Ressourcen zu erstellen.
+
+Nach der Datendefinition wird die Zuordnung der Konfigurationsvariablen mit den \ac{fhir}-Profilen durch das Pattern Matching durchgeführt und das Ergebnis in der Tabelle \texttt{mapping\_mii\_co6} (\ref{tab:mapping}) gespeichert.
+
+\begin{longtable}{|p{3.5cm}|l|p{6.5cm}|}
+	\caption[Tabelle für die Speicherung der Zuordnung der Konfigurationsvariablen mit den \acs{fhir}-Profilen]{Tabelle für die Speicherung der Zuordnung der Konfigurationsvariablen mit den \acs{fhir}-Profilen nach dem Pattern Matching. Die Spalten mit \texttt{coding\_system} in den Namen speichern die \ac{uri} (Anhang \ref{sec:uri}) der Terminologie-Systeme.}
+	\label{tab:mapping}
+	\endfirsthead
+	\hline			
+		\rowcolor{lightgray} Spalte & Datentyp & Information \\ \hline		
+		profile\_id & int & Generierter numerischer Identifikator des zugeordneten \ac{fhir}-Profils \\ \hline
+		profile\_name & varchar & Name des \ac{fhir}-Profils, z.B. Atemzugvolumen-Waehrend-Beatmung \\ \hline
+		category\_coding \_system & text & \acsu{url} der Kategorie. Dies kann ein \ac{snomedct}-\ac{url} bei einigen \glqq Observations\grqq{} sein. \\ \hline
+		category\_coding \_code & varchar & \glqq vital-signs\grqq{} oder \ac{snomedct}-ID \\ \hline
+		code\_coding \_system\_snomed & text & http://snomed.info/sct \\ \hline 
+		code\_coding \_code\_snomed & varchar & \ac{snomedct} des \ac{fhir}-Profils, z.B. 250874002 \\ \hline
+		code\_coding \_system\_loinc & text & http://loinc.org \\ \hline
+		code\_coding \_code\_loinc & varchar & \ac{loinc}-Code des \ac{fhir}-Profils, z.B. 76222-9 \\ \hline
+		code\_coding \_system\_ieee & text & urn:iso:std:iso:11073:10101 \\ \hline
+		code\_coding \_code\_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel des \ac{fhir}-Profils, z.B. 151980 \\ \hline
+		valuequantity \_system & text & http://unitsofmeasure.org \\ \hline
+		valuequantity\_code & varchar & Maßeinheiten im \ac{fhir}-Profil, z.B. mL \\ \hline
+		conf\_var\_unit & varchar & Maßeinheiten der Konfigurationsvariable in \ac{copra}, z.B. ml \\ \hline
+		device\_reference & text & Zuweisung zur Art der Prozedur (gemessen, eingestellt oder erhoben). Diese Prozedur befindet sich in den Profilen des Typs \glqq DeviceMetric\grqq{} \\ \hline
+		meta\_profile & text &  \ac{url} um das Profil zu identifizieren \\ \hline
+		conf\_var\_id & bigint & Primärer Schlüssel der Tabelle \texttt{co6\_config\_variables}, z.B. 104726 \\ \hline
+		conf\_var\_parent\_id & bigint & Schlüssel des Bezuges der Variable, z.B. 1 für Patientenbezug \\ \hline
+		conf\_var\_parent \_name & varchar & Name des Bezuges, z.B. Patient \\ \hline
+		conf\_var\_name & varchar & Name der Konfigurationsvariable, z.B. Beatmung\_MS\_Pallas\_Vt \\ \hline
+		conf\_var\_description & varchar & Beschreibung der Konfiguratiovsvariable, z.B. Gemessenes Tidalvolumen \\ \hline
+		conf\_var\_types\_id & int & Schlüssel des Datentyps in der Tabelle \texttt{co6\_config\_variable\_types}, z.B. 6 für nummerische Werte \\ \hline
+		conf\_var\_types\_name & varchar & Name des Datentyps in der Tabelle \texttt{co6\_config\_variable\_types}, z.B. Decimal\_6\_3 \\ \hline
+		code\_systolic \_coding\_system \_snomed & text & http://snomed.info/sct \\ \hline
+		code\_systolic \_coding\_code \_snomed & varchar & \ac{snomedct}-ID der systolischen Blutdruckmessung, z.B. 271649006 \\ \hline
+		code\_systolic \_coding\_system \_loinc & text & http://loinc.org \\ \hline
+		code\_systolic \_coding\_code \_loinc & varchar & \ac{loinc}-Code der systolischen Blutdruckmessung, z.B. 8406-1 \\ \hline
+		code\_systolic \_coding\_system \_ieee & text & urn:iso:std:iso:11073:10101 \\ \hline
+		code\_systolic \_coding\_code \_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel der systolischen Blutdruckmessung, z.B. 150107 \\ \hline
+		code\_mean \_coding\_system \_snomed & text & http://snomed.info/sct \\ \hline
+		code\_mean \_coding\_code \_snomed & varchar & \ac{snomedct}-ID der mittleren Blutdruckmessung, z.B. 6797001 \\ \hline
+		code\_mean \_coding\_system \_loinc & text & http://loinc.org \\ \hline
+		code\_mean \_coding\_code \_loinc & varchar & \ac{loinc}-Code der mittleren Blutdruckmessung, z.B. 8478-0 \\ \hline
+		code\_mean \_coding\_system \_ieee & text & urn:iso:std:iso:11073:10101 \\ \hline
+		code\_mean \_coding\_code \_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel der mittleren Blutdruckmessung, z.B. 150019 \\ \hline
+		code\_diastolic \_coding\_system \_snomed & text & http://snomed.info/sct \\ \hline
+		code\_diastolic \_coding\_code \_snomed & varchar & \ac{snomedct}-ID der diastolischen Blutdruckmessung, z.B. 271650006 \\ \hline
+		code\_diastolic \_coding\_system \_loinc & text & http://loinc.org \\ \hline
+		code\_diastolic \_coding\_code \_loinc & varchar & \ac{loinc}-Code der diastolischen Blutdruckmessung, z.B. 8462-4 \\ \hline
+		code\_diastolic \_coding\_system \_ieee & text & urn:iso:std:iso:11073:10101 \\ \hline
+		code\_diastolic \_coding\_code \_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel der diastolischen Blutdruckmessung, z.B. 150018 \\ \hline
+		matching\_valide & bool & Ergebnis der Validierung der Zuordnung, \texttt{true} oder \texttt{false} \\ \hline
+\end{longtable}
+
+ %der Konfigurationsvariablen mit den \ac{fhir}-Profilen in der \ac{db} in der Tabelle \texttt{mapping\_mii \_co6} (\ref{tab:mapping}) gespeichert. In dieser Tabelle befinden sich nur die Profile des Typs \glqq Observation\grqq{}, weil alle \ac{fhir}-Profile, die zugeordnet wurden, zu diesem Typ gehören. Andere Anmerkung ist, dass an dieser Stelle nicht berücksichtigt wurde, ob eine \glqq Observation\grqq{} zu der Gruppe der \glqq Blutdruck Generisch\grqq{} gehören oder nicht, sodass bei den gespeicherten Zuordnungen die zu dieser Gruppe nicht gehören, werden die charakteristischen Spalten für die Attributen der Blutdruckmessung immer leer sein.

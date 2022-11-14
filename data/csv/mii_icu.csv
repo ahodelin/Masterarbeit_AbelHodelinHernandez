@@ -1,0 +1,83 @@
+profile_name;profile_type;profile_unit;status
+Arterieller Druck;Observation;;Active
+Atemfrequenz;Observation;;Active
+Atemwegsdruck Mittlerem Expiratorischem Gasfluss;Observation;;Active
+Atemwegsdruck Null Expiratorischem Gasfluss;Observation;;Active
+Atemzugvolumen Einstellung;Observation;;Active
+Atemzugvolumen Waehrend Beatmung;Observation;;Active
+Beatmung;Procedure;;Active
+Beatmungsvolumen Pro Minute Machineller Beatmung;Observation;;Active
+Beatmungszeit Hohem Druck;Observation;;Active
+Beatmungszeit niedriegem Druck;Observation;;Active
+Blutdruck;Observation;;Active
+Blutdruck Generisch;Observation;;Active
+Blutfluss Cardiovasculaeres Geraet;Observation;;Active
+Blutfluss Extrakorporaler Gasaustausch;Observation;;Active
+Blutflussindex Extrakoporaler Gasaustausch;Observation;;Active
+Dauer extrakoporaler Gasaustausch;Observation;;Active
+Dauer Haemodialysesitzung;Observation;;Active
+DeviceMetric eingestellte gemessene Parameter Beatmung;DeviceMetric;;Active
+DeviceMetric eingestellte gemessene Parameter extrakorporale Verfahren;DeviceMetric;;Active
+Druckdifferenz Beatmung;Observation;;Active
+Dynamische Kompliance;Observation;;Active
+Eingestellter Inspiratorischer Gasfluss;Observation;;Active
+Einstellung Ausatmungszeit Beatmung;Observation;;Active
+Einstellung Einatmungszeit Beatmung;Observation;;Active
+Endexpiratorischer Kohlendioxidpartialdruck;Observation;;Active
+Exspiratorischer Gasfluss;Observation;;Active
+Exspiratorischer Sauerstoffpartialdruck;Observation;;Active
+extrakorporales Verfahren;Procedure;;Active
+Haemodialyse Blutfluss;Observation;;Active
+Herzfrequenz;Observation;;Active
+Herzzeitvolumen;Observation;;Active
+Horowitz In Arteriellem Blut;Observation;;Active
+ICU Device;Device;;Active
+Ideales Koerpergewicht;Observation;;Active
+Inspiratorischer Gasfluss;Observation;;Active
+Intrakranieller Druck;Observation;;Active
+Ionisiertes Kalzium Nierenersatzverfahren;Observation;;Active
+Koerpergewicht;Observation;;Active
+Koerpergewicht Percentil Altersabhaengig;Observation;;Active
+Koerpergroesse;Observation;;Active
+Koerpergroesse Percentil;Observation;;Active
+Koerpertemperatur Kern;Observation;;Active
+Kopfumfang;Observation;;Active
+Linksatrialer Druck;Observation;;Active
+Linksventrikulaerer Druck;Observation;;Active
+Linksventrikulaerer Herzindex;Observation;;Active
+Linksventrikulaerer Herzindex durch Indikatorverduennung;Observation;;Active
+Linksventrikulaerer Schlagvolumenindex;Observation;;Active
+Linksventrikulaerer Schlagvolumenindex durch Indikatorverduennung;Observation;;Active
+Linksventrikulaeres Herzzeitvolumen durch Indikatorverduennung;Observation;;Active
+Linksventrikulaeres Schlagvolumen;Observation;;Active
+Linksventrikulaeres Schlagvolumen durch Indikatorverduennung;Observation;;Active
+Maximaler Beatmungsdruck;Observation;;Active
+Mechanische Atemfrequenz Beatmet;Observation;;Active
+Mittlerer Beatmungsdruck;Observation;;Active
+Monitoring und Vitaldaten;Observation;;Active
+Parameter von Beatmung;Observation;;Active
+Parameter von extrakorporalen Verfahren;Observation;;Active
+Periphere Artierielle Sauerstoffsaettigung ICU;Observation;;Active
+Positv Endexpiratorischer Druck;Observation;;Active
+Pulmonalarterieller Blutdruck;Observation;;Active
+Pulmonalarterieller Wedge Druck;Observation;;Active
+Pulmonalvaskulaerer Widerstandsindex;Observation;;Active
+Rechtsatrialer Druck;Observation;;Active
+Rechtsventrikulaerer Druck;Observation;;Active
+Sauerstofffraktion;Observation;;Active
+Sauerstofffraktion Eingestellt;Observation;;Active
+Sauerstoffgasfluss;Observation;;Active
+Sauerstoffsaettigung im arteriellen Blut Per Pulsoxymetrie;Observation;;Active
+Sauerstoffsaettigung im Blut postduktal durch Pulsoxymetrie;Observation;;Active
+Sauerstoffsaettigung im Blut preductal durch Pulsoxymetrie;Observation;;Active
+Spontane Atemfrequenz Beatmet;Observation;;Active
+Spontane Mechanische Atemfrequenz Beatmet;Observation;;Active
+Spontanes Atemzugvolumen;Observation;;Active
+Spontanes Mechanisches Atemzugvolumen Waehrend Beatmung;Observation;;Active
+Substituatfluss;Observation;;Active
+Substituatvolumen;Observation;;Active
+Systemischer Vaskulaerer Widerstandsindex;Observation;;Active
+Unterstuzungsdruck Beatmung;Observation;;Active
+Venoeser Druck;Observation;;Active
+Zeitverhaeltnis Ein Ausatmung;Observation;;Active
+Zentralvenoeser Blutdruck;Observation;;Active

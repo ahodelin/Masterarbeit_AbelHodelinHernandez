@@ -1,0 +1,169 @@
+\section{Zuweisung der Quell- und Zielfelder und weitere Transformationsregeln} \label{sec:transfer}
+
+Für die Zuweisung der Quell- und Zielfelder und die Definition von weiteren Transformationsregeln im Data Mapping sollen die Werte der Biosignaldaten von \ac{copra} und deren Attribute mit den Parametern der \ac{fhir}-Profile zusammengeführt werden.
+
+Die Werte der Biosignaldaten für die Erzeugung der \ac{fhir}-Ressourcen des Erweiterungsmoduls \glqq Intensivmedizin\grqq{} befinden sich in der \ac{copra}-Instanz des Staging Bereichs des \ac{dw} des \ac{diz} der Universitätsmedizin Mainz. Die Datensätze für die Überführung der Information liegen in mehreren Tabellen und müssen hierzu im Regelfall zusammengeführt werden. Diese Tabellen wurden vorher erkannt und analysiert (\ref{sec:analysiscolums}). Die Tabellen in \ac{copra} und die dazu für die Überführung der Daten notwendigen Attribute sind in der folgenden Liste zusammengefasst:
+\begin{itemize}
+  \item \texttt{co6\_config\_variables}: Namen und Schlüssel der Konfigurationsvariablen, die den \ac{fhir}-Profilen zugeordnet wurden
+  \item \texttt{co6\_medic\_patient}: Pseudonymisierte Patientennummer und interne Identifikatoren der behandelnden Personen
+  \item \texttt{co6\_data\_decimal\_6\_3}: Numerische Werte der Biosignale, Datum und Uhrzeit der Messung, interner Identifikator der Patienten und Schlüssel der Konfigurationsvariablen
+  \item \texttt{co6\_data\_string}: String-Werte der Biosignale, Datum und Uhrzeit der Messung, interner Identifikator der Patienten und Schlüssel der Konfigurationsvariablen
+  \item \texttt{co6\_medic\_pressure}: Systolische, mittlere und diastolische Blutdruckwerte, Datum und Uhrzeit der Messung, interner Identifikator der Patienten und Schlüssel der Konfigurationsvariablen
+\end{itemize}
+
+Die \ac{fhir}-Attribute für die Überführung der Biosignaldaten zusammen mit den Faktoren für die Umrechnung der \ac{copra}-Maßeinheiten befinden sich in der Tabelle \texttt{mapping\_mii\_co6\_2} (\ref{sec:unitscopra}) der \ac{db} \texttt{mii\_copra}. Für die Arbeit mit den Daten dieser Tabelle in den \ac{copra}-Instanz des Staging Bereichs des \ac{dw} wurde eine gleichnamige Tabelle in der \ac{copra}-Instanz in \ac{sql} codiert. Danach wurde den Inhalt von \texttt{mapping\_mii\_co6\_2} in der \ac{db} in einer \ac{csv}-Datei kopiert und in die erzeugte Tabelle \texttt{mapping\_mii\_co6\_2} der \ac{copra}-Instanz importiert. Diese Tabelle in dem \ac{dw} dient die Zusammenführung der Werte der Biosignaldaten in \ac{copra} mit den Attributen der \ac{fhir}-Profile.
+
+Die verlinkten \ac{fhir}-Profile zu den Konfigurationsvariablen mit numerischen Werten und String-Werten sind ähnlich aufgebaut. Im Gegensatz dazu haben die Profile für Blutdruckmessungen eine etwas andere Struktur, trotzdem sind die Blutdruckmessungen-Profile untereinander auch gleich strukturiert (\ref{subsec:icumodul}). Diese strukturelle Ähnlichkeit der \ac{fhir}-Profile erleichtert die Modellierung der Zuweisung der Quell- und Zielfelder (\ref{subsec:modellinksystems}) und die Definition von weiteren Transformationsregeln.
+%zukünftige Implementierung für die Überführung der Biosignaldaten von \ac{copra} in die \ac{fhir}-Ressourcen.
+
+Für die Zuweisung der Quell- und Zielfelder werden weitere Transformationen definiert. Eine davon ist die Nutzung der, im PostgreSQL implementierten, MD5-Hashfunktion für die Erzeugung der \ac{fhir}-Ressourcen eindeutigen Identifikatoren. 
+
+Eine weitere Transformation ist die Umwandlung des Datentyps \glqq type casting\grqq{} bei manchen Werten in der Tabelle \texttt{co6\_data\_string}. Zu diesem Zweck werden hier auch PostgreSQL Funktionen für die Validierung des Formats und Konversion des Datentyps des Werts in der Spalte \texttt{val} der Tabelle \texttt{co6\_data\_string} angewandt.
+
+\subsection{Modellierung der Zuweisung der Felder beider Systeme} \label{subsec:modellinksystems}
+
+Die Zuweisung der Felder beider Systeme für die Überführung von Biosignaldaten der Type \glqq Decimal\grqq{} und \glqq String\grqq{} ist wie folgt:
+\vspace{4mm}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensätze aus \ac{copra}
+	\begin{itemize}
+	\item \texttt{co6\_config\_variables}
+	\item \texttt{co6\_medic\_patient}
+	\item \texttt{co6\_data\_decimal\_6\_3} 
+	\item \texttt{co6\_data\_string}
+	\end{itemize}
+	\item Datensatz aus den \ac{fhir}-Profile
+	\begin{itemize}
+	 \item \texttt{mapping\_mii\_co6\_2}
+    \end{itemize}
+	\item Datensatz aus \texttt{information\_schema} von PostgreSQL
+\begin{itemize}
+	\item \texttt{tables}
+\end{itemize}
+\end{itemize}
+Output:
+\begin{itemize}
+	\item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{} - numerische und String Werte
+\end{itemize}
+%\clearpage
+\begin{longtable}{|l|l|p{7.5cm}|} 
+	\hline
+	\rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich) - numerische und String Werte} \\ \hline
+	id &  & MD5-Hash aus der Kombination des Namens der Werttabelle mit den Hauptschlüssel der Werte in dieser Tabelle und des Namens des \ac{fhir}-Profils: md5(\texttt{tables.table\_name}, \texttt{co6\_data\_decimal\_6\_3.id} und \texttt{mapping\_mii\_co6\_2.profile\_name}) oder md5(\texttt{tables.table\_name}, \texttt{co6\_data\_string.id} und \texttt{mapping\_mii\_co6\_2.profile\_name}) \\ \hline
+	meta & profile & \texttt{mapping\_mii\_co6\_2.meta\_profile} \\ \hline 
+	status &  & final  \\ \hline 
+	category & coding & system: \texttt{mapping\_mii\_co6\_2.categoriy\_ coding\_system} \\ 
+	\cline{3-3}
+	& & code: \texttt{mapping\_mii\_co6\_2.categoriy\_ coding\_code} \\ \hline
+	code & coding & system (\ac{snomedct}-\acs{url}): \texttt{mapping \_mii\_co6\_2.code\_coding\_system\_snomed} \\ 
+	\cline{3-3} 
+	 &   & code (\ac{snomedct}): \texttt{mapping\_mii \_co6\_2.code\_coding\_code\_snomed} \\
+	 \cline{2-3} 
+	 &  coding & system (\ac{loinc}-\ac{url}): \texttt{mapping\_mii \_co6\_2.code\_coding\_system\_loinc} \\ 
+	 \cline{3-3} 
+	  &  & code (\ac{loinc}): \texttt{mapping\_mii\_co6\_2. code\_coding\_code\_loinc} \\ 
+	 \cline{2-3} 
+	  & coding & system (\ac{ieee}-\acs{urn}): \texttt{mapping\_mii \_co6\_2.code\_coding\_system\_ieee} \\ 
+	 \cline{3-3} 
+	 &  & code (\ac{ieee}): \texttt{mapping\_mii\_co6\_2. code\_coding\_code\_ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung multipliziert mit dem Umrechnungsfaktor: \texttt{co6\_data\_decimal\_6\_3.val} mal \texttt{mapping\_mii\_co6\_2.unit\_transform} oder to\_numeric(\texttt{co6\_data\_string.val}) mal \texttt{mapping\_mii\_co6\_2.unit\_transform}. Wobei to\_numeric() die Funktionen für das type casting darstellen.\\
+	 \cline{2-3}
+	 & system & \texttt{mapping\_mii\_co6\_2.valueQuantity \_system} \\ 
+	 \cline{2-3}
+	 & code & Maßeinheit: \texttt{mapping\_mii\_co6\_to\_ transfer.profile\_unit}\\ \hline
+    effectiveDataTime & & Datum und Uhrzeit der Messung: \texttt{co6\_data\_decimal\_6\_3.datetimeto} oder \texttt{co6\_data\_string.datetimeto} \\  \hline
+\end{longtable}
+
+Die Zuweisung der Felder beider Systeme für die Überführung der Biosignalparameter von Blutdruckmessungen ist wie folgt:
+\vspace{4mm}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensätze aus \ac{copra}
+	\begin{itemize}
+		\item \texttt{co6\_config\_variables}
+		\item \texttt{co6\_medic\_patient}
+		\item \texttt{co6\_medic\_pressure} 
+	\end{itemize}
+	\item Datensatz aus den \ac{fhir}-Profilen
+	\begin{itemize}
+		\item \texttt{mapping\_mii\_co6\_2}
+	\end{itemize}
+	\item Datensatz aus \texttt{information\_schema} von PostgreSQL
+	\begin{itemize}
+		\item \texttt{tables}
+	\end{itemize}
+\end{itemize}
+
+Output:
+\begin{itemize}
+	\item \ac{fhir}-Ressource der Kategorie \glqq Observation\grqq{} - Blutdruckmessungen
+\end{itemize}
+\clearpage
+\begin{longtable}{|l|l|p{7cm}|} 
+	\hline
+	\rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich) - Blutdruckmessungen} \\ \hline
+	id &  & MD5-Hash aus der Kombination des Namens der Werttabelle mit den Hauptschlüssel der Werte in dieser Tabelle und des Namens des \ac{fhir}-Profils: md5(\texttt{tables.table\_name}, \texttt{co6\_data\_medic\_pressure.id} und \texttt{mapping\_mii\_co6\_2.profile\_name}) \\ \hline
+	meta & profile & \texttt{mapping\_mii\_co6\_2.meta\_profile} \\ \hline 
+	status &  & final  \\ \hline 
+	category & coding & system: \texttt{mapping\_mii\_co6\_2.categoriy\_ coding\_system} \\ 
+	\cline{3-3}
+	& & code: \texttt{mapping\_mii\_co6\_2.categoriy\_ coding\_code} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline	
+	effectiveDateTime & & Datum und Uhrzeit der Messung:  \texttt{co6\_medic\_pressure.datetimeto} \\ \hline
+	\multicolumn{3}{|c|}{component} \\ \hline
+	code (Systolisch) & coding & system (\ac{snomedct}-\acs{url}): \texttt{mapping \_mii\_co6\_2.code\_systolic\_coding \_system\_snomed} \\ 
+	\cline{3-3} 
+	&  & code (\ac{snomedct}): \texttt{mapping\_mii \_co6\_2.code\_systolic\_coding\_code \_snomed} \\
+	\cline{2-3} 
+	&  coding & system (\ac{loinc}-\ac{url}): \texttt{mapping\_mii \_co6\_2.code\_systolic\_coding\_system \_loinc} \\ 
+	\cline{3-3} 
+	&  & code (\ac{loinc}): \texttt{mapping\_mii\_co6\_2. code\_systolic\_coding\_code\_loinc} \\ 
+	\cline{2-3} 
+	&  coding & system (\ac{ieee}-\acs{urn}): \texttt{mapping\_mii \_co6\_2.code\_systolic\_coding\_system \_ieee} \\ 
+	\cline{3-3} 
+	&  & code (\ac{ieee}): \texttt{mapping\_mii\_co6\_2. code\_systolic\_coding\_code\_ieee} \\ \hline
+	valueQuantity & value & Systolischer Wert: \texttt{co6\_medic\_pressu re.systolic} \\
+	\cline{2-3}
+	& system & http://unitsofmeasure.org \\ 
+	\cline{2-3}
+	& code & Maßeinheit: \texttt{mapping\_mii\_co6\_to\_ transfer.profile\_unit} \\ \hline
+	code (Mittel) & coding & system (\ac{snomedct}-\acs{url}): \texttt{mapping \_mii\_co6\_2.code\_mean\_coding \_system\_snomed} \\ 
+	\cline{3-3} 
+	&  & code (\ac{snomedct}): \texttt{mapping\_mii \_co6\_2.code\_mean\_coding\_code \_snomed} \\
+	\cline{2-3} 
+	& coding & system (\ac{loinc}-\ac{url}): \texttt{mapping\_mii \_co6\_2.code\_mean\_coding\_system \_loinc} \\ 
+	\cline{3-3} 
+	&  & code (\ac{loinc}): \texttt{mapping\_mii\_co6\_2. code\_mean\_coding\_code\_loinc} \\ 
+	\cline{2-3} 
+	&  coding & system (\ac{ieee}-\acs{urn}): \texttt{mapping\_mii \_co6\_2.code\_mean\_coding\_system \_ieee} \\ 
+	\cline{3-3} 
+	&  & code (\ac{ieee}): \texttt{mapping\_mii\_co6\_2. code\_mean\_coding\_code\_ieee} \\ \hline
+	valueQuantity & value & Systolischer Wert: \texttt{co6\_medic\_pressu re.mean} \\
+	\cline{2-3}
+	& system & http://unitsofmeasure.org \\ 
+	\cline{2-3}
+	& code & Maßeinheit: \texttt{mapping\_mii\_co6\_to\_ transfer.profile\_unit} \\ \hline
+	code (Diastolisch) & coding & system (\ac{snomedct}-\acs{url}): \texttt{mapping \_mii\_co6\_2.code\_diastolic\_coding \_system\_snomed} \\ 
+	\cline{3-3} 
+	&  & code (\ac{snomedct}): \texttt{mapping\_mii \_co6\_2.code\_diastolic\_coding\_code \_snomed} \\
+	\cline{2-3} 
+	&  coding & system (\ac{loinc}-\ac{url}): \texttt{mapping\_mii \_co6\_2.code\_diastolic\_coding\_system \_loinc} \\ 
+	\cline{3-3} 
+	&  & code (\ac{loinc}): \texttt{mapping\_mii\_co6\_2. code\_diastolic\_coding\_code\_loinc} \\ 
+	\cline{2-3} 
+	&  coding & system (\ac{ieee}-\acs{urn}): \texttt{mapping\_mii \_co6\_2.code\_diastolic\_coding\_system \_ieee} \\ 
+	\cline{3-3} 
+	&  & code (\ac{ieee}): \texttt{mapping\_mii\_co6\_2. code\_diastolic\_coding\_code\_ieee} \\ \hline
+	valueQuantity & value & Diastolischer Wert: \texttt{co6\_medic\_pressu re.diastolic} \\
+	\cline{2-3}
+	& system & http://unitsofmeasure.org \\ 
+	\cline{2-3}
+	& code & Maßeinheit: \texttt{mapping\_mii\_co6\_to\_ transfer.profile\_unit} \\ \hline
+\end{longtable}
+
+Mit den vorherigen Spezifikationen für die Überführung der Daten wurden danach die \ac{sql}-Views in der \ac{copra}-Instanz des Staging Bereichs des \ac{dw} programmiert, um die Daten der \ac{copra}-Instanz für die Überführung in die \ac{fhir}-Ressourcen bereitzustellen.
+%zusammenzuführen. Somit sind die Biosignaldaten aus \ac{copra} für die Überführung in die \ac{fhir}-Ressourcen bereitgestellt.

@@ -1,0 +1,29 @@
+\section{\acs{regex}} \label{sec:regex}
+% . Es gibt viele Formalismen für reguläre Ausdrücke. Die gängigsten Operatoren sind Verkettung, Vereinigung, Schnittmenge, Komplement \glqq Negation\grqq{}, Iteration und Komposition
+Die \acfp{regex} oder reguläre Ausdrücke sind eine Art Sprache, die in der Informatik für diverse Zwecke angewendet werden kann, insbesondere bei der Bearbeitung von Texten oder bei der Suche von bestimmten Mustern in einem Text \cite{regexconf}. Ein regulärer Ausdruck wird als eine Expression definiert, die eine Menge von Zeichenketten \glqq reguläre Sprache\grqq{} oder eine Menge von geordneten Paaren von Zeichenketten \glqq reguläre Beziehung\grqq{} beschreibt \cite{regexhandbook}. Sie sind in einer Vielzahl von Programmiersprachen und \ac{it}-Anwendungen verfügbar. Ein \ac{regex} wird mit einem Muster von Symbolen erstellt, das sogenannte Metazeichen, die zur Definition des Musters dienen und auch syntaktische Regeln besitzen \cite{regexweb1}.
+
+\begin{itemize}
+	\item \textbackslash d: Platzhalter für eine Ziffer, z.B. 5
+	\item \textbackslash w: Platzhalter für ein alphanumerisches Zeichen oder Unterstrich \glqq\_\grqq{}, z.B. G
+	\item \textbackslash W: Platzhalter für ein Zeichen, dass keine alphanumerisches Zeichen oder Unterstrich ist, z.B. ?
+	\item $[...]$: Definiert ein Set von Zeichen, z.B.  [acd]
+	\item $\vert$:  Trennung von zwei oder mehreren Alternativen, z.B. x $\vert$ y
+	\item +: Mindestens einmal
+	\item \{n\}: Genau \texttt{n}-mal
+	\item \{min, max\}: Mindestens \texttt{min}-mal und maximal \texttt{max}-mal	
+	\item \{min, \}: Mindestens \texttt{min}-mal
+	\item \{, max\}: Maximal \texttt{max}-mal
+	\item (...): Gruppierung
+\end{itemize}
+
+Der \ac{regex} \glqq[cm]m\textbackslash WH(g$\vert$2O)\textbackslash W\grqq{} definiert eine Zeichenkette mit \glqq c\grqq{} oder \glqq m\grqq{} gefolgt von \glqq m\grqq{}. Nach diesem Charakter muss ein nicht alphanumerisches Zeichen platziert werden, dieses ist von einem \glqq H\grqq{} und  einer Gruppe von Charakteren mit entweder \glqq g\grqq{} oder \glqq 2O\grqq{} gefolgt. Nach der Gruppierung muss sich ein nicht-alphanumerisches Zeichen befinden. Mit der Definition dieses \ac{regex} werden Zeichenketten, wie die Maßeinheiten cm[Hg] oder mm[H2O], in einem Text gesucht. Diese Prozedur ist die sogenannte Zeichenkettensuche oder das Pattern Matching (\ref{subsec:pattmatch}).
+
+\subsection{Pattern Matching} \label{subsec:pattmatch}
+
+Bei der Zeichenkettensuche oder dem Pattern Matching ist das Problem, alle Elemente einer Zeichenkette \texttt{x} der Länge \texttt{p} (Pattern) in einer anderen Zeichenkette \texttt{t} (Text) der Länge \texttt{n} zu lokalisieren \cite{patternmatchingapostolico}. Eine weitere hilfreiche Definition, um das Pattern Matching in der Praktik zu verstehen, ist die Bezeichnung \glqq Teilwort\grqq{}. \glqq Ein Wort \texttt{T} heißt Teilwort des Wortes \texttt{W}, wenn es Worte \texttt{U, V} gibt, so dass gilt: W = \texttt{UTV}\grqq{} \cite{teilwort}. Genau gesagt, ist das Pattern Matching der Prozess ein Teilwort eines Wortes zu erkennen.
+
+Das Pattern Matching wird in verschiedenen Szenarien, wie die Textverarbeitung \cite{patternmatchingeffi}, Netzwerksysteme oder \ac{db}-Schemata, verwendet \cite{patternmatchingapps}. Einige der Anwendungsbereiche sind Texteditoren in Computern für die Syntaxprüfung von Sprachen oder Rechtschreibprüfung, Programmierung von Datenbankabfragen, in Bioinformatik für den Abgleich von DNA- oder Eiweißsequenzen, Entwicklung von Systemen zur Erkennung von Eindringlingen in Netzwerke, digitale Bibliotheken, Suchmaschinen und viele weitere Anwendungen \cite{regexconf, patternmatchingapps}.
+
+Manche \ac{dbms}, wie PostgreSQL, besitzen zusammen mit dem \ac{sql}-Befehl \glqq \texttt{LIKE}\grqq{}, extra Features für das Pattern Matching, um in einem Text nach Mustern zu durchsuchen \cite{patternmatchingpostgres}.
+
+Alle bisher genanten Argumente machen das Verfahren des Pattern Matchings zur Technik der Wahl in diesem Projekt für die Mustererkennung von Namen der \ac{fhir}-Profilen oder \ac{loinc}-Parametern in den Konfigurationsvariablen des \ac{copra}-Systems mit Hilfe von \ac{sql}-Befehlen in einer \ac{db}.

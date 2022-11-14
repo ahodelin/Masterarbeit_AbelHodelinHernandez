@@ -1,0 +1,108 @@
+\chapter{Dokumentation Biosignaldaten-to-\acs{fhir}} \label{ch:docutranf}
+
+\section{Modul Intensivmedizin} \label{sec:docutransfer}
+
+Version 1.0.0
+
+\noindent Neue Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html}
+
+
+Das Erweiterungsmodul Intensivmedizin oder \ac{icu}, \acs{pdms}/Biosignale spezifiziert akutmedizinische Daten für die Primär- und Sekundärnutzung und hat Bezüge zu den Basismodulen. Ziel der Modellierung dieses Erweiterungsmoduls ist an erster Stelle die Datenabbildung der Intensivmedizin und die Darstellung gleichartiger Daten der Notfallmedizin, stationärer und ambulanter Medizin.
+
+Die benötigte Daten für die Erzeugung der \ac{fhir}-Ressourcen des Erweiterungsmoduls Intensivmedizin befinden sich in der \acsu{copra}-Instanz des \acsu{dw} des \ac{diz} der Universitätsmedizin Mainz. Die Datensätze für die Überführung der Daten liegen in mehreren Tabellen und müssen hierzu im Regelfall zusammengeführt werden.
+
+\begin{itemize}
+  \item \texttt{co6\_config\_variables}: Name der Konfigurationsvariablen oder Biosignalparameter die mit den Namen der Profile zugeordnet wurden.
+  \item \texttt{co6\_medic\_patient}: Pseudonymisierten Patientennummer und interne Identifikatoren der behandelnden Personen.
+  \item \texttt{co6\_data\_decimal\_6\_3}: Nummerische Werte der Biosignale, Datum und Uhrzeit der Messung, interner Identifikator der Patienten, Schlüssel der Konfigurationsvariablen
+  \item \texttt{co6\_data\_string}: String-Werte der Biosignale, Datum und Uhrzeit der Messung, interner Identifikator der Patienten, Schlüssel der Konfigurationsvariablen.
+  \item \texttt{co6\_medic\_pressure}: Systolische, mittlere und diastolische Blutdruckwerte, Datum und Uhrzeit der Messung, interner Identifikator der Patienten, Schlüssel der Konfigurationsvariablen.
+\end{itemize}
+\vspace{4mm}
+
+\noindent Version 1.0.0
+
+\noindent Profile: \url{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{co6\_data\_decimal\_6\_3} und \texttt{co6\_data\_string}
+\end{itemize}
+Output:
+\begin{itemize}
+	\item \ac{fhir}-Profile der Kategorie \glqq Observation\grqq{} - nummerische und String Werte
+\end{itemize}
+\begin{longtable}{|l|l|p{7.5cm}|} 
+	\hline
+	\rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich) - nummerische und String Werte} \\ \hline
+	id &  & ID in den Tabellen \texttt{co6\_data\_decimal\_6\_3} oder \texttt{co6\_data\_string} \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{Profile\_Name} \\ \hline 
+	status &  & final  \\ \hline 
+	category & coding & system: http://terminology.hl7.org/ CodeSystem/observation-category \\ 
+	\cline{3-3}
+	& & code: vital-signs \\ \hline
+	code & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	 &  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	valueQuantity & value & Wert der Messung: \texttt{co6\_data\_decimal\_6\_3.val} oder \texttt{co6\_data\_string.val} \\
+	\cline{2-3}
+	 & system & http://unitsofmeasure.org \\ 
+	 \cline{2-3}
+	 & code & Mapping auf http://unitsofmeasure.org. (\texttt{mapping\_mii\_co6\_to\_transfer.profile \_unit}) z.B. °C - Cel: \texttt{co6\_config\_variables.unit} \\ \hline
+    effectivePeriod & start & Datum und Uhrzeit am Anfang der Messung: \texttt{co6\_data\_decimal\_6\_3.datetimeto} oder \texttt{co6\_data\_string.datetimeto} \\ 
+    \cline{2-3}
+     & end & Datum und Uhrzeit am Ende der Messung: \texttt{co6\_data\_decimal\_6\_3.datetimeto} oder \texttt{co6\_data\_string.datetimeto} \\ \hline
+\end{longtable}
+
+\vspace{4mm}
+
+\noindent Input:
+\begin{itemize}
+	\item Datensatz aus \texttt{co6\_ config\_variables}, \texttt{co6\_medic\_patient}, \\ \texttt{co6\_medic\_pressure}
+\end{itemize}
+Output:
+\begin{itemize}
+	\item \ac{fhir}-Profile der Kategorie \glqq Observation\grqq{} - Blutdruckmessungen
+\end{itemize}
+\begin{longtable}{|l|l|p{7cm}|} 
+	\hline
+	\rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich) - Blutdruckmessungen} \\ \hline
+	id &  & ID in der Tabelle \texttt{co6\_medic\_pressure}  \\ \hline
+	meta & profile & https://medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/\textbf{Profile\_Name} \\ \hline 
+	status &  & final  \\ \hline 
+	category & coding & system: http://terminology.hl7.org/ CodeSystem/observation-category \\ 
+	\cline{3-3}
+	& & code: vital-signs \\ \hline
+	code (Blutdruck) & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	&  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline
+	subject & reference & Pseudonymisierte Patientennummer: \texttt{co6\_medic\_patient.patid} \\ \hline
+	effectiveDateTime & & Datum und Uhrzeit am Anfang der Messung:  \texttt{co6\_medic\_pressure.datetimeto} \\ \hline
+	\multicolumn{3}{|l|}{component} \\ \hline
+	code (Systolisch)  & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	&  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline	
+	valueQuantity & value & Systolischer Wert: \texttt{co6\_medic\_pressure.systolic} \\
+	\cline{2-3}
+	& system & http://unitsofmeasure.org \\ 
+	\cline{2-3}
+	& code & Mapping auf http://unitsofmeasure.org. z.B. mmHg - mm[Hg]: \texttt{co6\_config\_variables.unit} \\ \hline
+	code (Mittel)  & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	&  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline	
+	valueQuantity & value & Mittlerer Wert: \texttt{co6\_medic\_pressure.mean} \\
+	\cline{2-3}
+	& system & http://unitsofmeasure.org \\ 
+	\cline{2-3}
+	& code & Mapping auf http://unitsofmeasure.org. z.B. mmHg - mm[Hg]: \texttt{co6\_config\_variables.unit} \\ \hline
+	code (Diastolisch)  & coding & system: Url von \ac{loinc}, \ac{snomedct}, und / oder \ac{ieee} \\ 
+	\cline{3-3} 
+	&  & code: \ac{loinc}, \ac{snomedct}, oder \ac{ieee} \\ \hline	
+	valueQuantity & value & Diastolischer Wert: \texttt{co6\_medic\_pressure.diastolic} \\
+	\cline{2-3}
+	& system & http://unitsofmeasure.org \\ 
+	\cline{2-3}
+	& code & Mapping auf http://unitsofmeasure.org. z.B. mmHg - mm[Hg]: \texttt{co6\_config\_variables.unit} \\ \hline
+\end{longtable}
+\clearpage

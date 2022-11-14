@@ -1,0 +1,110 @@
+Arterieller Druck;Observation;Active;18/3/2022
+Atemfrequenz;Observation;Active;29/4/2022
+Atemwegsdruck Mittlerem Expiratorischem Gasfluss;Observation;Active;16/3/2022
+Atemwegsdruck Null Expiratorischem Gasfluss;Observation;Active;16/3/2022
+Atemzugvolumen Einstellung;Observation;Active;16/3/2022
+Atemzugvolumen Waehrend Beatmung;Observation;Active;16/3/2022
+Beatmung;Procedure;Active;18/5/2022
+Beatmungsvolumen Pro Minute Maschineller Beatmung;Observation;Active;7/4/2022
+Beatmungszeit Hohem Druck;Observation;Active;16/3/2022
+Beatmungszeit Niedrigem Druck;Observation;Active;21/3/2022
+Blutdruck;Observation;Active;8/4/2022
+Blutdruck Generisch;Observation;Active;29/4/2022
+Blutfluss Cardiovasculaeres Geraet;Observation;Active;6/4/2022
+Blutfluss Extrakorporaler Gasaustausch;Observation;Active;22/3/2022
+Blutflussindex Extrakorporaler Gasaustausch;Observation;Active;22/3/2022
+Dauer Extrakorporaler Gasaustausch;Observation;Active;22/3/2022
+Dauer Haemodialysesitzung;Observation;Active;21/3/2022
+DeviceMetric Eingestellte Gemessene Parameter Beatmung;DeviceeMetric;Active;21/3/2022
+DeviceMetric Eingestellte Gemessene Parameter Extrakorporale Verfahren;DeviceeMetric;Active;25/4/2022
+Druckdifferenz Beatmung;Observation;Active;16/3/2022
+Dynamische Kompliance;Observation;Active;16/3/2022
+Eingestellter Inspiratorischer Gasfluss;Observation;Active;16/3/2022
+Einstellung Ausatmungszeit Beatmung;Observation;Active;7/4/2022
+Einstellung Einatmungszeit Beatmung;Observation;Active;7/4/2022
+Endexpiratorischer Kohlendioxidpartialdruck;Observation;Active;6/4/2022
+Exspiratorischer Gasfluss;Observation;Active;16/3/2022
+Exspiratorischer Sauerstoffpartialdruck;Observation;Active;6/4/2022
+Extrakorporales Verfahren;Procedure;Active;22/4/2022
+Haemodialyse Blutfluss;Observation;Active;8/4/2022
+Herzfrequenz;Observation;Active;29/4/2022
+Herzzeitvolumen;Observation;Active;8/4/2022
+Horowitz In Arteriellem Blut;Observation;Active;16/3/2022
+ICU Device;Devicee;Active;16/3/2022
+Ideales Koerpergewicht;Observation;Active;16/3/2022
+Inspiratorisch Sauerstofffraktion Eingestellt;Observation;Active;25/4/2022
+Inspiratorische Sauerstofffraktion;Observation;Active;19/4/2022
+Inspiratorischer Gasfluss;Observation;Active;16/3/2022
+Intrakranieller Druck;Observation;Active;16/3/2022
+Ionisiertes Kalzium Nierenersatzverfahren;Observation;Active;21/3/2022
+Koerpergewicht;Observation;Active;29/4/2022
+Koerpergewicht Percentil Altersabhaengig;Observation;Active;19/4/2022
+Koerpergroesse;Observation;Active;29/4/2022
+Koerpergroesse Percentil;Observation;Active;22/4/2022
+Koerpertemperatur Achsel;Observation;Active;20/5/2022
+Koerpertemperatur Atemwege;Observation;Active;20/5/2022
+Koerpertemperatur Blut;Observation;Active;20/5/2022
+Koerpertemperatur Brust;Observation;Active;20/5/2022
+Koerpertemperatur Brustwirbelsaeule;Observation;Active;20/5/2022
+Koerpertemperatur Gelenk;Observation;Active;20/5/2022
+Koerpertemperatur Halswirbelsaeule;Observation;Active;20/5/2022
+Koerpertemperatur Harnblase;Observation;Active;20/5/2022
+Koerpertemperatur Kern;Observation;Active;29/4/2022
+Koerpertemperatur Leiste;Observation;Active;20/5/2022
+Koerpertemperatur Lendenwirbelsaeule;Observation;Active;20/5/2022
+Koerpertemperatur Myokard;Observation;Active;20/5/2022
+Koerpertemperatur nasal;Observation;Active;20/5/2022
+Koerpertemperatur Nasen Rachen Raum;Observation;Active;20/5/2022
+Koerpertemperatur rektal;Observation;Active;20/5/2022
+Koerpertemperatur Speiseroehre;Observation;Active;20/5/2022
+Koerpertemperatur Stirn;Observation;Active;20/5/2022
+Koerpertemperatur Trommelfell;Observation;Active;20/5/2022
+Koerpertemperatur unter der Zunge;Observation;Active;20/5/2022
+Koerpertemperatur vaginal;Observation;Active;20/5/2022
+Kopfumfang;Observation;Active;29/4/2022
+Linksatrialer Druck;Observation;Active;8/4/2022
+Linksventrikulaerer Druck;Observation;Active;16/3/2022
+Linksventrikulaerer Herzindex;Observation;Active;6/4/2022
+Linksventrikulaerer Herzindex Durch Indikatorverduennung;Observation;Active;8/4/2022
+Linksventrikulaerer Schlagvolumenindex Durch Indikatorverduennung;Observation;Active;8/4/2022
+Linksventrikulaeres Herzzeitvolumen Durch Indikatorverduennung;Observation;Active;8/4/2022
+Linksventrikulaeres Schlagvolumen;Observation;Active;7/4/2022
+Linksventrikulaeres Schlagvolumen Durch Indikatorverduennung;Observation;Active;23/3/2022
+Linksventrikulaeres Schlagvolumenindex;Observation;Active;8/4/2022
+Maximaler Beatmungsdruck;Observation;Active;21/4/2022
+Mechanische Atemfrequenz Beatmet;Observation;Active;8/4/2022
+Mittlerer Beatmungsdruck;Observation;Active;21/4/2022
+Monitoring und Vitaldaten;Observation;Active;29/4/2022
+Parameter von Beatmung;Observation;Active;23/5/2022
+Parameter von Extrakorporalen Verfahren;Observation;Active;23/5/2022
+Periphere Artierielle Sauerstoffsaettigung ICU;Observation;Active;16/3/2022
+Positv Endexpiratorischer Druck;Observation;Active;16/3/2022
+Pulmonalarterieller Blutdruck;Observation;Active;16/3/2022
+Pulmonalarterieller Wedge Druck;Observation;Active;21/3/2022
+Pulmonalvaskulaerer Widerstandsindex;Observation;Active;8/4/2022
+Puls;Observation;Active;25/4/2022
+Rechtsatrialer Druck;Observation;Active;8/4/2022
+Rechtsventrikulaerer Druck;Observation;Active;16/3/2022
+Sauerstofffraktion;Observation;Active;7/4/2022
+Sauerstofffraktion Eingestellt;Observation;Active;7/4/2022
+Sauerstoffgasfluss;Observation;Active;8/4/2022
+Sauerstoffsaettigung Im Arteriellen Blut Per Pulsoxymetrie;Observation;Active;29/4/2022
+Sauerstoffsaettigung Im Blut Postduktal Durch Pulsoxymetrie;Observation;Active;29/4/2022
+Sauerstoffsaettigung Im Blut Preduktal Durch Pulsoxymetrie;Observation;Active;29/4/2022
+Spontane Atemfrequenz Beatmet;Observation;Active;8/4/2022
+Spontane Mechanische Atemfrequenz Beatmet;Observation;Active;8/4/2022
+Spontanes Atemzugvolumen;Observation;Active;16/3/2022
+Spontanes Plus Mechanisches Atemzugvolumen;Observation;Active;8/4/2022
+Substituatfluss;Observation;Active;23/3/2022
+Substituatvolumen;Observation;Active;23/3/2022
+Systemischer Vaskulaerer Widerstandsindex;Observation;Active;8/4/2022
+Unterstuzungsdruck Beatmung;Observation;Active;16/3/2022
+Venoeser Druck;Observation;Active;31/3/2022
+Zeitverhaeltnis Ein Ausatmung;Observation;Active;16/3/2022
+Zentralvenoeser Blutdruck;Observation;Active;16/3/2022
+Observation - VitalSignDE - Kopfumfang;Observation;Active;19/4/2022
+SD MII Prozedur Procedure;Procedure;Active;2/5/2022
+VitalSignDE;Observation;Active;19/4/2022
+VitalSignDE Atemfrequenz;Observation;Active;22/4/2022
+VitalSignDE Koerpergewicht;Observation;Active;19/4/2022
+VitalSignDE Koerpergroesse;Observation;Active;19/4/2022

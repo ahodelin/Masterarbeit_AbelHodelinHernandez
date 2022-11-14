@@ -1,0 +1,26 @@
+\section[Zuordnung der \acs{copra}-Biosignaldaten mit den \acs{fhir}-Profilen des Erweiterungsmoduls \glqq Intensivmedizin\grqq{}]{Zuordnung der \acs{copra}-Biosignaldaten \\ mit den \acs{fhir}-Profilen des Erweiterungsmoduls \glqq Intensivmedizin\grqq{}} \label{sect:resdatamapping}
+
+Das Hauptziel dieser Arbeit wurde erreicht, also die ersten Schritten des Data Mappings der Biosignaldaten aus \ac{copra} mit dem Standardformat \ac{fhir} aus der Spezifikationen des Erweiterungsmoduls \glqq Intensivmedizin\grqq{}. Innerhalb dieser Schritte ist einen Datensatz mit der Zuordnung der \ac{copra}-Biosignaldaten mit den \ac{fhir}-Profilen entstanden. Mit Hilfe von diesem Datensatz wurden am Ende \ac{sql}-Views in die \ac{copra}-Instanz des Staging Bereichs des \ac{dw} des \ac{diz} programmiert. Solche virtuellen Tabellen dienen der Zusammenführung und Bereitstellung der Parameter beider Systeme und können somit das Gerüst für die \ac{fhir}-Ressourcen sein.
+
+Am Ende dieses Projekts wurden 70 Biosignaldaten vom \ac{copra}-System richtig 39 \ac{fhir}-Profilen zugeordnet. Dieses Ergebnis wurde in einem Datensatz mit 75 Einträgen registriert.
+
+Die meisten Werten der Bioparameter sind der Typ Dezimal (64), wie die \ref{fig:signaldatatyps} zeigt. Diese Erkenntnis ist in Konkordanz mit dem spezifizierten Datentyp der \ac{fhir}-Profile. Auch die Datentypen der Werten und der Aufbau der Biosignaldaten für die Blutdruckmessungen in \ac{copra} stimmen mit der Struktur der \ac{fhir}-Profile. Nur eine Konfigurationsvariable war der Typ String (\ref{tab:stringvalue}) aber mit registrierten numerischen Werten, die bei der Programmierung der Transformationsregeln umgewandelt wurde (\ref{sec:prepdwtofhir}).
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[height=8.5cm]{figures/biosignal_data_types}
+	\caption[Datentypen der Biosignaldaten]{Datentypen der Biosignaldaten.}
+	\label{fig:signaldatatyps}
+\end{figure}
+
+Auch die Distribution der Datenarten der \ac{fhir}-Profile ist zu berücksichtigen (\ref{fig:datenarten}). Die meist repräsentierte Datenart der Profile in dem Datensatz der Zuordnung ist die \glqq Parameter von Beatmung\grqq{} mit 36 zugeordneten Biosignaldaten. Diese Datenart ist auch die meist repräsentierte Art in dem Erweiterungsmodul \glqq Intensivmedizin\grqq{}.
+
+\clearpage
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[height=8.5cm]{figures/datenarten}
+	\caption[Datenarten der Profile]{Datenarten der Profile.}
+	\label{fig:datenarten}
+\end{figure}
+

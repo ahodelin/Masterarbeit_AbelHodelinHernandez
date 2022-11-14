@@ -1,0 +1,96 @@
+\section{Codesysteme} \label{sec:codesys}
+
+Um die semantische Interoperabilität im Gesundheitswesen zu gewährleisten, werden auch Codesysteme benötigt. Ein Codesystem ist eine organisierte Sammlung von Begriffen, in der jeder Begriff durch mindestens einen intern eindeutigen Code dargestellt wird \cite{bluecodesy}. Weiterhin kann ein Codesystem auch eine sprachabhängige Definition enthalten, wobei einige Konzepte sehr spezifisch sind, andere hingegen können sehr allgemein sein \cite{interop, bluecodesy}.
+
+Codesysteme sind ein wesentlicher Teil bei den medizinischen Anwendungen und den interoperablen Spezifikationen für den Austausch von Daten zwischen Computern \cite{interop}. Außerdem definieren die Codesysteme, welche Symbole oder Ausdrucke existieren und wie sie zu verstehen sind \cite{interop, fhircodesys}.
+
+Manche Codesysteme beinhalten komplexe Ideen mit vielen Subklassifikationen, wie die \ac{icd}, andere wiederum sind weit gefasst, wie \ac{snomedct} (\ref{subsec:snomed}), oder sind auf spezifischen Bereiche fokussiert, wie \ac{loinc} (\ref{subsec:loinc}), weiterhin überlappen sich diverse Codesysteme miteinander, wie \ac{icd} und \ac{snomedct} \cite{bluecodesy}.
+
+\subsection{\acsu{snomedct}} \label{subsec:snomed}
+
+Weltweite Standards für Gesundheitsbegriffe werden von der \ac{ihtsdo} bestimmt, weiterhin ist die \ac{ihtsdo} für die Pflege, Weiterentwicklung, Qualitätssicherung und Veröffentlichung des ontologiebasierten Terminologiestandards \ac{snomedct} verantwortlich \cite{snomedofic}. 
+
+\acf{snomedct} ist die umfangreichste mehrsprachige klinische Gesundheitsterminologie, sodass sie in elektronischen Patientenakten verwendet wird \cite{telemedizin, interop}. Darüber hinaus erleichtert die Nutzung von \ac{snomedct} die klinische Dokumentierung und die Berichterstattung \cite{telemedizin}. Außerdem hilft \ac{snomedct} bei der Ermittlung und Analyse von klinischen Daten und darüber hinaus ist \ac{snomedct} sowohl ein Codierschema zur Ermittlung von Begriffen und Konzepten, als auch eine mehrdimensionale Klassifizierung, die es ermöglicht, Konzepte miteinander in Verbindung zu bringen, zu gliedern und nach verschiedenen Kategorien zu analysieren \cite{interop}. 
+
+Das logische Datenmodell von \ac{snomedct} (\ref{fig:snomedmodel}) beinhaltet drei Komponenten: Konzepte (Concepts), Beschreibungen (Descriptions) und Relationen (Relationships), die sich durch \ac{refsets} ergänzen, außerdem sind alle \ac{snomedct}-Komponente durch eine eindeutige numerische Kennung identifizierbar \cite{snomedguide}. 
+\begin{itemize}
+	\item Die Konzepte repräsentieren medizinische Begriffe und werden hierarchisch von allgemein zu speziell angeordnet.
+	\item Die Beschreibungen verknüpfen medizinische Begriffe mit Konzepten. Außerdem beinhaltet ein Konzept eine eindeutige, unmissverständliche Beschreibung dessen Bedeutung und kann auch weitere Beschreibungen erhalten (Synonyme). Dazu enthält jede Übersetzung der \ac{snomedct} eine zusätzliche Menge von Beschreibungen, die Fachbegriffe in anderen Sprachen mit demselben Konzept verlinken.
+	\item Die Relationen verknüpfen zwei Konzepte miteinander. Ein Relationstyp oder Attribut wird benutzt, um die Bedeutung der Verbindung zwischen Ausgangskonzept und Zielkonzept zu repräsentieren, weiterhin verbindet der Relationstyp \glqq is-a\grqq{} ein Konzept zu allgemeineren Konzepten und bildet so die Konzepthierarchien in \ac{snomedct}, andere Relationstypen hingegen repräsentieren Aspekte eines Konzepts.
+	\item Die \ac{refsets} sind standardisierte \ac{snomedct}-Implementierungen für die Unterstützung von Anforderungen für Anpassungen und Erweiterungen.
+\end{itemize}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[height=3cm]{figures/snomedmodel}
+	\caption[\acs{snomedct}-Datenmodell]{\acs{snomedct}-Datenmodell.}
+	\label{fig:snomedmodel}
+\end{figure}
+
+Die drei \ac{snomedct}-Komponenten des Elements Blutdruck (Blood pressure) werden in der \ref{tab:snomedexample} repräsentiert.
+
+\begin{table}[ht]
+	\centering 
+	\small 
+	\caption[Blutdruck in \acs{snomedct}]{Blutdruck in \acs{snomedct}.}
+	\label{tab:snomedexample}
+	\begin{tabular}{|p{2.5cm}|p{3.2cm}|p{5.3cm}|}
+		\hline
+		\rowcolor{lightgray} Konzept & Beschreibung & Relation \\ \hline
+		ID: 75367002 - Blood pressure & Blood pressure (observable entity) &  Is a  $\to$  ID: 310611001 - Cardiovascular measure \\ \hline		    
+	\end{tabular}
+\end{table}
+
+\subsection{\acsu{loinc}} \label{subsec:loinc}
+
+Das \acf{loinc}-System ist seit 1994 eine internationale Zusammenstellung von Begriffen (Terminologie) zur eindeutigen Identifizierung und Kodierung für Laboruntersuchungen, klinische und medizinisch-technische Untersuchungen, medizinische Dokumententypen und Fragebögen/Fragen \cite{loincbfarm, loincpaper}. Somit ermöglicht \ac{loinc} das Zusammenführen von Untersuchungsergebnissen durch standardisierte Bezeichnungen für den Datenaustausch im Gesundheitswesen und die elektronische Kommunikation von Daten zwischen Labor, Klinik und Praxis \cite{interop}. \ac{loinc} erstellt Codes und einen formalen Namen für jedes Konzept, das einer einzelnen Art von Beobachtungsmessung oder Testergebnis entspricht \cite{interop}. Dieser formale \ac{loinc}-Name ist vollständig spezifiziert, sodass er die Merkmale zur erforderlichen Unterscheidung zwischen ähnlichen und unterschiedlichen klinischen Beobachtungen enthält \cite{telemedizin}. \ac{hl7}-\ac{fhir} bietet auch Unterstützung für \ac{loinc} \cite{loincpaper}.
+
+Die \ac{loinc}-\ac{db} stellt einen Satz von eindeutigen Namen und Identifikatoren für die Identifikation von Laboruntersuchungen und weiteren klinischen Testen zur Verfügung \cite{loincbas}. In dieser \ac{db} befinden sich zusammen mit den \ac{loinc}-Coden weitere Parameter, die eine Untersuchung beschreiben, z.B. Maßeinheiten, \glqq Short Name\grqq{} oder Alias und Basis Attribute, wie der Typ der Untersuchung.
+
+Die Struktur eines \ac{loinc}-Codes beinhaltet heutzutage zwischen drei und sieben Zeichen in der Form \glqq Ziffern-Ziffer\grqq{}. Das \glqq-\grqq{} befindet sich immer an der vorletzten Stelle und die letzte Ziffer des Codes zischen 0 und 9 sich befinden muss. Diese letzte Zahl ist eine Prüfzahl für den \ac{loinc}-Server um Fehler bei der Übertragung des Codes zu vermeiden. Diese Menge an Zeichen kann mit dem Wachstum der \ac{loinc}-\ac{db} vergrößert werden \cite{loincoffi}.
+
+Ein \ac{loinc}-Code ist durch sechs Dimensionen in der folgenden Reihenfolge definiert \cite{loincbfarm}: 
+\begin{itemize}
+	\item Component oder Analyte: Gemessene oder beobachtete Substanz oder Entität
+	\item Property: Merkmal oder Attribut der Substanz oder Entität
+	\item Time: Zeitintervall, in dem eine Beobachtung gemacht wurde
+	\item System: Beobachtetes System (Probenmaterial, Körperteil oder Umgebung)
+	\item Scale: Wie der Beobachtungswert quantifiziert oder ausgedrückt wird: quantitativ, ordinal oder nominal
+	\item Method: Methode, mit der die Messung oder Beobachtung stattgefunden hat.
+\end{itemize}
+
+Die Dimension \glqq Method\grqq{} ist operationell und wird nur verwendet, wenn die Technik die klinische Interpretation der Ergebnisse beeinflusst \cite{interop}. Ein Beispiel der \ac{loinc}-Dimensionen ist in der \ref{tab:loincdimensions} dargestellt.
+
+\begin{table}[ht]
+	\centering 
+	\small 
+	\caption[\acs{loinc}-Dimensionen]{\ac{loinc}-Dimensionen des pulmonalvaskulären Widerstandsindexes. \ac{loinc}-Code: \href{https://loinc.org/8834-4/}{8834-4}. ArResis steht für  Resistance/Area\grqq (Widerstand/Fläche), Pt für Point time (Zeitpunkt-Messungen) und Qn für Quantity. Diese Entität besitzt keine Methode, die die Interpretation der Ergebnisse beeinflusst.}
+	\label{tab:loincdimensions}
+	\begin{tabular}{|p{3cm}|l|l|p{2cm}|l|l|}
+		\hline
+		\rowcolor{lightgray} Component & Property & Time & System & Scale & Method \\ \hline
+		Hemodynamic resistance/Body surface area & ArResis & Pt & Pulmonary vasculature & Qn & - \\ \hline	
+	\end{tabular}
+\end{table}
+
+\subsection{\acsu{iso}/\acsu{ieee} 11073\texttrademark{}} \label{subsec:ieee}
+
+Das \acf{ieee} ist die weltweit größte technische Fachorganisation, die sich für den Technologiefortschritt zum Nutzen der Bevölkerung einsetzt, und entwickelt somit \ac{iso} Normen, die die Grundlage für viele der heutigen Produkte und Dienstleistungen in den Informationstechnologie darstellen \cite{ieeeiso}. Die verabschiedeten Standards des \ac{ieee} sind häufig die zentrale Quelle für die Standardisierung eines breiten Spektrums aufstrebender Technologien \cite{ieeeglance}. Eine dieser Familien von Standards ist die \acs{iso}/\ac{ieee} 11073\texttrademark{} \cite{ieeeglance, ieeearch}. Diese Serie definiert die Komponente eines Systems, die den Austausch und die Auswertung Vitaldaten zwischen medizinischen Geräten, zusammen mit der Fernsteuerung solcher Geräte, ermöglichen \cite{ieeearch}. Weiterhin sind diese Standards ein Ansatz, um das Problem der nicht interoperablen Medizinprodukte zu lösen. 
+
+\subsubsection{\acs{iso}/\acs{ieee} 11073-10101\texttrademark{} Nomenklatur} \label{subsub:ieee1107310101}
+
+Die \acs{iso}/\ac{ieee} 11073-10101\texttrademark{} Nomenklatur wurde von dem \acs{iso}/\ac{ieee} 11073\texttrademark{} Standard Komitee der \glqq \ac{ieee} Engineering in Medicine and Biology Society\grqq{} vorbereitet \cite{ieeeiso}. Die \acs{iso}/\ac{ieee} 11073-10101\texttrademark{} Nomenklatur legt Nomenklaturcodes fest, die die Interoperabilität von Medizinprodukten auf semantischer Ebene erleichtern \cite{ieeearch}. Dieser Standard ist auf medizinischen Geräten für die Akutversorgung und Informationen über die Vitalparameter der Patienten und Patientinnen fokussiert \cite{ieeeiso}. Die \acs{iso}/\ac{ieee} 11073-10101\texttrademark{} definiert sowohl die Architektur als auch die Hauptkomponenten der Nomenklatur, zusammen mit ausführlichen Definitionen für jeden konzeptionellen Bereich \cite{ieeesa}. Dieser Standard ermöglicht die Verlinkung mit \ac{loinc} und \ac{snomedct}, außerdem werden auch \ac{fhir}-Extensions entwickelt, die \acs{iso}/\ac{ieee} 11073-10101\texttrademark{} unterstützen \cite{ieeeextending}. Der Abschnitt von \ac{json}-Code \ref{list:jsonieee} zeigt die Anwendung von einem \acs{iso}/\ac{ieee} 11073-10101\texttrademark{}-Identifikator in dem \ac{fhir}-Profil Atemzugvolumen-Während-Beatmung von dem Erweiterungsmodul \glqq\ac{icu}\grqq{} des Kerndatensatzes der \ac{mii}.
+
+%\newpage
+
+\begin{lstlisting}[caption={[\acs{iso}/\acs{ieee} 11073-10101\texttrademark{} in \acs{fhir}] Beispiel der Anwendung von \acs{iso}/\acs{ieee} 11073-10101\texttrademark{} in \acs{fhir}.},language=JavaScript, label=list:jsonieee, captionpos=b]
+{
+  "system": "urn:iso:std:iso:11073:10101",
+  "code": "151980"
+}
+\end{lstlisting}
+
+
+\subsection{\acs{ucum}} \label{sub:ucum}
+
+Der \ac{ucum} ist ein sehr stabiles Codesystem, das alle gegenwärtigen in der internationalen Wissenschaft, Technik und Wirtschaft verwendeten Maßeinheiten umfassen soll \cite{ucumwebnih}. Das Ziel des \ac{ucum} besteht darin, die eindeutige elektronische Übermittlung und Interpretation von Größen zusammen mit ihren Maßeinheiten zu erleichtern \cite{ucumwebnih, ucumweb}. Aus diesem Grund wurde \ac{ucum} bereits von Standardorganisationen wie \ac{hl7} übernommen \cite{ucumweb}.

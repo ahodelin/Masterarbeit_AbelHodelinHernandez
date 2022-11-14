@@ -1,0 +1,75 @@
+\section{Analyse der \acs{fhir}-Profile des \acs{mii} - Moduls \acs{icu}} \label{sec:fhiricuresult}
+
+Bevor die Parameter der \ac{fhir}-Profile in die \ac{db} importiert wurden, erfolgte eine Analyse der bis \textit{dato} 80 \ac{fhir}-Profile. In dieser Analyse wurde beobachtet, dass zwei Profile dieselben Namen besitzen, aber unterschiedliche Information beinhalten. Diese sind unter dem Profil-Name \glqq Linksventrikulärer Schlagvolumenindex\grqq{} zu finden. In einem der Profile wird tatsächlich die Information des linksventrikulären Schlagvolumenindex spezifiziert. Das andere hingegen sollte das linksventrikuläre Schlagvolumen definieren. Dieses Ereignis wurde durch das Attribut \glqq code\grqq{} beider Profile erkannt. Dieses Attribut spezifiziert die Codesysteme des Profils. An dieser Stelle wurde beobachtet, dass das Profil für den linksventrikulären Schlagvolumenindex den \ac{loinc}-Code \href{https://loinc.org/76297-1/}{76297-1} \glqq Left ventricular Stroke volume index \grqq{}besitzt. Das Profil für das linksventrikuläre Schlagvolumen beinhaltet wiederum den \ac{loinc}-Code \href{https://loinc.org/20562-5/}{20562-5} \glqq Left ventricular Stroke volume\grqq{}. Noch dazu sind die spezifizierten \ac{snomedct}-IDs und \ac{ieee}-Schlüssel beider Profile in dem Attribut \glqq code\grqq{} auch unterschiedlich. Diese Problematik war in der SIMPLIFIER-Webseite des Moduls vorher korrigiert. Aus diesem Grund wurde diese Anmerkung als Issue nicht gemeldet.
+
+Nach der durchgeführten Analyse der 80 \acs{fhir}-Profile, wurden die \ac{fhir}-Elemente der Profile in der Tabelle \texttt{mii\_icu} der \ac{db} \texttt{mii\_copra} geschrieben. Mit diesen Daten in der \ac{db} wurde die Einteilung der Profile analysiert.
+
+Die \ref{tab:proficu} zeigt die Anzahl an Profilen je Kategorie in dem Modul \glqq\ac{icu}\grqq{}. Die meist repräsentierten \ac{fhir}-Profile, nämlich 76, gehören zu der Kategorie \glqq Observation\grqq{}. Es ist zu erwarten, dass die meisten Biosignaldaten von \ac{copra} auch unter dieser Kategorie sich befinden.
+
+\begin{table}[ht]
+	\centering 
+	\caption[\acs{fhir}-Profile in dem Modul \acs{icu}]{\acs{fhir}-Profile in dem Modul \acs{icu}.}
+	\label{tab:proficu}
+	\begin{tabular}{|l|l|}
+		\hline
+		\rowcolor{lightgray} Anzahl der Profile & Profiltyp \\ \hline
+		76 & Observation \\ \hline
+		2 & Procedure \\ \hline   
+		2 & DeviceMetric \\ \hline
+		80 & Gesamt \\ \hline
+	\end{tabular}
+\end{table}
+
+In den logischen Tabellen der \ac{fhir}-Profile sind die standardisierten Codesysteme der Biosignaldaten in dem Attribut \glqq code \grqq{} registriert. Dieses Attribut ist charakteristisch für Profile der Typen \glqq Observation\grqq{} und \glqq Procedure\grqq{}. Die Distribution der Codesysteme in der \ac{fhir}-Profile ist in der \ref{tab:profilcodes} dargestellt. Das meist repräsentierte Codesystem ist \ac{loinc} mit 62 Profile. Aus diesem Grund wurde dieses Codesystem als zusätzlicher Parameter für das Pattern Matching angewendet. Von den 78 \ac{fhir}-Profilen unter der Kategorien \glqq Observation\grqq{} und \glqq Procedure\grqq{} besitzen fünf kein Codesystem.
+
+%\clearpage
+
+\begin{table}[ht]
+	\centering 
+	\caption[Codesysteme der \acs{fhir}-Profile in dem Modul \acs{icu}]{Distribution der Codesysteme der \acs{fhir}-Profile in dem Modul \acs{icu}.}
+	\label{tab:profilcodes}
+	\begin{tabular}{|l|l|}
+		\hline
+		\rowcolor{lightgray} Anzahl der Profile & Codesystem \\ \hline		
+		62 & \ac{loinc} \\ \hline
+		54 & \ac{snomedct} \\ \hline   
+		36 & \acs{iso}/\acs{ieee} 11073-10101\texttrademark{} \\ \hline
+		5 & - \\ \hline
+	\end{tabular}
+\end{table}
+
+Die Profile der Typen \glqq Observation\grqq{}, die keine Codesysteme beinhalten (\ref{tab:profilnocode}), gehören zu den generischen Profilen. Diese sind nicht für die direkte Umsetzung konzipiert, sondern zur Modellierung der Daten. Die \glqq Procedure\grqq{}-Profile beinhalten keine Codesysteme, weil diese Information sich in dem Basismodul der Kerndatensatz der \ac{mii} \glqq Prozedur\grqq{} befindet. Die Profile unter der Kategorie \glqq DeviceMetric\grqq{} besitzen auch keine Codesysteme, denn diese die Messung beschreiben.
+
+\begin{table}[ht]
+	\centering  
+	\caption[\glqq Observation\grqq{}-Profile ohne Codesystem]{\glqq Observation\grqq{}-Profile ohne Codesystem.}
+	\label{tab:profilnocode}
+	\begin{tabular}{|p{8.5cm}|l|}
+		\hline
+		\rowcolor{lightgray} \ac{fhir}-Profile & Profiltyp \\ \hline
+		Parameter von extrakorporalen Verfahren & Observation \\ \hline
+		Monitoring und Vitaldaten  & Observation \\ \hline
+		Parameter von Beatmung  & Observation \\ \hline
+	\end{tabular}
+\end{table}
+
+Ein weiterer wichtiger Aspekt ist die Analyse der Maßeinheiten der 76 Profile des Typs \glqq Observation\grqq{}. An dieser Stelle wurden 73 Profile mit definierten und drei ohne definierte Maßeinheiten in dem Modul gefunden. Diese letzten drei Profile sind dieselbe \glqq Observation\grqq{}-Profile ohne Codesysteme (\ref{tab:profilnocode}).
+
+Eine andere Beobachtung hinsichtlich der Maßeinheiten mancher Profile ist, dass die Schreibweise einer Maßeinheit oder deren Untereinheiten bei verschiedenen Profilen nicht immer dieselbe war. Diese Unregelmäßigkeit wurde an der SIMPLIFIER-Webseite des Moduls gemeldet (\href{https://simplifier.net/medizininformatikinitiative-modul-intensivmedizin/~issues/2083}{Issue \#2083}), und von den Autoren und Entwickler des Moduls korrigiert. Nach der Korrektur wurden die Schreibweise der Maßeinheiten der \ac{fhir}-Profile in der Spalte \texttt{valuequantity\_code} der Tabelle \texttt{mii\_icu} geändert.
+
+Ein Detail bei der Benennung der Profile ist, dass die Namen 26 Profile Umlaute beinhalten. Bei sechs Profilnamen hingegen wurden die Umlaute zusammen mit dem Buchstabe Eszett \glqq ß\grqq{} vermieden. Die \ref{tab:umlaut} zeigt einige Beispiele davon. Dieses Phänomen wurde auch als Issue gemeldet (\href{https://simplifier.net/medizininformatikinitiative-modul-intensivmedizin/~issues/2394}{Issue \#2394}), denn dieselben \ac{fhir}-Profile in der \href{https://simplifier.net/guide/MedizininformatikInitiative-ModulICU-ImplementationGuide/IGMIIKDSModulICU?version=current}{ImplementationGuide} der SIMPLIFIER-Webseite beinhalten ebenso Umlaute oder das Eszett im Namen.
+
+\begin{table}[ht]
+	\centering 
+	\caption[An- un Abwesenheit von Umlauten in den Profilnamen]{An- un Abwesenheit von Umlauten in den Profilnamen}
+	\label{tab:umlaut}
+	\begin{tabular}{|l|}
+		\hline
+		\rowcolor{lightgray} Namen mit Umlaut \\ \hline
+		Hämodialyse Blutfluss \\ \hline 
+		Zeitverhältnis-Ein-Ausatmung \\ \hline \hline
+		\rowcolor{lightgray} Namen ohne Umlaut und ohne Eszett\\ \hline
+	    Spontanes-Mechanisches-Atemzugvolumen-Waehrend-Beatmung\\ \hline            
+		Koerpergroesse \\ \hline                
+	\end{tabular}
+\end{table}

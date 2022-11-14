@@ -1,0 +1,7 @@
+\chapter{Methode} \label{ch:methods}
+
+Um das Ziel dieses Projekts zu erreichen, werden die, in dem \ac{pdms} der Universitätsmedizin Mainz, gespeicherten Biosignaldaten zu den \ac{fhir}-Profilen des Erweiterungsmoduls \glqq Intensivmedizin\grqq{} des Kerndatensatzes der \ac{mii} zugeordnet und für die Überführung in \ac{fhir}-Ressourcen bereitgestellt. Dazu werden etablierte \ac{it}-Werkzeuge, wie \ac{sql}, Data Mapping, Pattern Matching und \ac{etl}-Prozesse angewendet.
+
+Für die Durchführung dieses Projekts an der Universitätsmedizin Mainz werden die Parameter der \ac{fhir}-Profile des Erweiterungsmoduls \ac{icu} zusammen mit den, in der \ac{copra}-Instanz des Staging Bereichs des \ac{dw} des \ac{diz}, gespeicherten Konfigurationsvariablen in eine \ac{db} importiert. Diese Variablen stellen unter anderem die Messungen und Beobachtungen der Bioparameter dar. In dieser \ac{db} werden die notwendigen Schritte für die Zuordnung der Konfigurationsvariablen mit den \ac{fhir}-Profilen durchgeführt. 
+
+Nach dieser Zuordnung wird der resultierende validierte Datensatz in dem \ac{copra}-Instanz des Staging Bereichs des \ac{dw} für die Bereitstellung der Daten für die Implementierung und Automatisierung des Prozesses des Exports der Biosignaldaten in \ac{fhir}-Ressourcen gespeichert.

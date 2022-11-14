@@ -1,0 +1,11 @@
+\chapter{Fazit} \label{ch:conclussion}
+
+Innerhalb dieser Masterarbeit wurden die Biosignaldaten aus der Routineversorgung in der Universitätsmedizin Mainz mit den \ac{fhir}-Profilen des Erweiterungsmoduls Intensivmedizin zusammengefügt, um diese Daten wissenschaftlich weiterzunutzen. Um dieses Ziel zu erreichen wurden bestimmte Parameter der \ac{fhir}-Profile des Modul \ac{icu} zusammen mit Parameter des \ac{pdms}-System der Universitätsmedizin Mainz in eine \ac{db} importiert. Mit Hilfe von \ac{sql}-Abfragen und \ac{regex} wurden manche interessante Biosignalparameter erkannt. 
+
+Eine der erkannten Problematik für die Durchführung dieses Projekts war den Mangel an Standards und viele Unregelmäßigkeiten bei der Benennung der Variablen die, die Biosignaldaten im \ac{pdms}-System speichern. Andererseits besitzen viele Biosignalen im System keine Beschreibung im Backend, nämlich in der \ac{db} von \ac{copra}. Manche erkannte Biosignaldaten beinhalten keine Masseneinheiten oder diese sind nicht dieselbe wie in den \ac{fhir}-Profilen, sodass einige Vitalparameter am Ende nicht berücksichtigen könnten.
+
+Einer der positiven Aspekte dieser Arbeit ist die Erkennung von vielen interessanten Biosignaldaten in dem \ac{pdms}-System, die mit bestimmten \ac{fhir}-Profilen verlinkt wurden und nach diesem Prozess wurde eine Dokumentation und Planung für die spätere Implementierung der Überführung der Biosignaldaten aus \ac{copra} in die \ac{fhir}-Profile. Ein interessanter Punkt zu berücksichtigen ist der Umfang des Erweiterungsmoduls Intensivmedizin. Obwohl dieses Erweiterungsmodul mit circa 81 Profile das größte der \ac{mii} ist, sind die meisten Profile strukturell ähnlich aufgebaut. Diese Eingenschaft reduziert die Komplexität und Aufwendigkeit der Arbeit mit den Profilen. 
+
+%sind die Kollaboration der \ac{sme} der \ac{pdms}-Abteilung an der Universitätsmedizin für die Weitergabe von Information des \ac{copra}-Systems und Validierung der generierten Datensätzen für die Überführung der Daten von \ac{copra} in die \ac{fhir}-Profile.
+
+
