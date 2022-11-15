@@ -1,44 +1,32 @@
 \section{\acl{dw}} \label{sec:dw}
 
-Ein \acf{dw} ist \glqq eine fachlich orientierte, integrierte, nicht volatile und in der Zeit veränderliche Sammlung von Daten zur Unterstützung von Management-Entscheidungen\grqq{} \cite{dworiginal}. Die Eigenschaft der Fachorientierung eines \ac{dw} ermöglicht auch die Nutzung solche Systeme für Forschungszwecke \cite{dwhcliniinv}. Ein \ac{dw} ist auch \glqq eine physische Datenbank, die eine integrierte Sicht auf beliebige Daten zu Analysezwecken ermöglicht\grqq{} \cite{dwgoeken}. Die folgenden Eigenschaften lassen sich aus der Definition ableiten \cite{planungdatawarehouse}.
+Ein \acf{dw} ist \glqq eine fachlich orientierte, integrierte, nicht volatile und in der Zeit veränderliche Sammlung von Daten zur Unterstützung von Entscheidungen\grqq{} \cite{dworiginal}. Die Eigenschaft der Fachorientierung eines \ac{dw} ermöglicht auch die Nutzung solche Systeme für Forschungszwecke \cite{dwhcliniinv}. Ein \ac{dw} ist auch \glqq eine physische Datenbank, die eine integrierte Sicht auf beliebige Daten zu Analysezwecken ermöglicht\grqq{} \cite{dwgoeken}. Die folgenden Eigenschaften lassen sich aus der Definition ableiten \cite{planungdatawarehouse}.
 
 \begin{itemize}
-	\item Fachorientierung: Die Datenstruktur im \ac{dw} wird für die Unterstützung von klinischen Problemstellungen und Entscheidungen optimiert und somit für die Berechnung von Kennzahlen und deren Zuordnung.
-	\item Integration: Daten aus diversen Datenquellen werden in getrennte \acp{db} integriert.
+	\item Fachorientierung: Die Datenstruktur im \ac{dw} wird für die Unterstützung von klinischen Problemstellungen und Entscheidungen optimiert und somit für die Berechnung von Kennzahlen und deren Zuordnung
+	\item Integration: Daten aus diversen Datenquellen werden in getrennte \acp{db} integriert, z. B. die Informationen der verschiedenen Quellsysteme in einem Krankenhaus werden in unterschiedlichen \acp{db} des Staging Bereichs eines \ac{dw} gesammelt
 	\item Beständigkeit: Die geladenen Daten im \ac{dw} bleiben unverändert.
-	\item Historisierung: Die über lange Zeit gespeicherten Daten ermöglichen die Erkennung von Entwicklungen und Trends in den Daten.
+	\item Historisierung: Die über lange Zeit gespeicherten Daten ermöglichen die Erkennung von Entwicklungen und Trends in den Daten
 \end{itemize}
 
-Die Anwendungsbereiche von \acp{dw} in klinischen Einrichtungen umfasst die Bereitstellung von Information, komplexe und flexible Datenanalyse, die Entwicklung von Forschungsprojekten und die Unterstützung der Planungsprozesse \cite{planungdatawarehouse}.
+Die Anwendungsbereiche von \acp{dw} in klinischen Einrichtungen umfasst die Bereitstellung von Informationen, komplexe und flexible Datenanalyse, die Entwicklung von Forschungsprojekten und die Unterstützung der Planungsprozesse \cite{planungdatawarehouse}.
 
-Die Architektur eines \ac{dw} besteht aus fünf Ebenen \cite{dwbauer}. Die Ebene der Datenquellen umfasst die internen und externen Datenquellen mit relevanten Daten \cite{dwgoeken}. In der Datenerfassungsebene werden diese Daten mit Hilfe von \ac{etl}-Prozessen (\ref{subsec:etl}) für das Laden in die zentrale \ac{db}-System (Datenhaltungsebene) extrahiert, aufbereitet und konvertiert \cite{dworiginal}. Diese zentrale \ac{db} ist in mehreren \acp{dm} ausgeteilt, und jede davon stellt eine bestimmte Datenquelle dar \cite{dwgoeken}. In der Datenbereitstellungsebene werden die gespeicherten Daten für multidimensionale Analysen aufbereitet \cite{dwbauer}. Auf der Präsentationsebene befinden sich Anwendungsprogramme mit Zugriff auf die aufbereiteten Daten für die Analyse \cite{dwtool}.
+Die Architektur eines \ac{dw} besteht aus fünf Ebenen \cite{dwbauer}. Die Ebene der Datenquellen umfasst die internen und externen Datenquellen mit relevanten Daten \cite{dwgoeken}. In der Datenerfassungsebene werden diese Daten mit Hilfe von \ac{etl}-Prozessen (\ref{subsec:etl}) für das Laden in die zentrale \ac{db}-System (Datenhaltungsebene) extrahiert, aufbereitet und konvertiert \cite{dworiginal}. Diese zentrale \ac{db} ist in mehreren \acp{db} ausgeteilt, und jede davon stellt eine bestimmte Datenquelle dar \cite{dwgoeken}. In der Datenbereitstellungsebene werden die gespeicherten Daten für multidimensionale Analysen aufbereitet \cite{dwbauer}. Auf der Präsentationsebene befinden sich Anwendungsprogramme mit Zugriff auf die aufbereiteten Daten für die Analyse \cite{dwtool}.
 
 %Zwei wesentliche Komponenten in der Architektur eines \ac{dw} sind die \ac{etl}-Prozesse auf der Datenerfassungsebene und das \ac{olap}-System (\ref{subsec:olap}) auf der Datenbereitstellungsebene.
 
 \subsection{\acs{etl}} \label{subsec:etl} 
 
-Die Erfassungsprozesse oder \acf{etl}-Pro- zesse in einem \ac{dw} dienen der Aufbereitung und dem Laden der Daten in die \ac{db} des \ac{dw}. Diese Prozesse sind je nach Datenmenge und Design des \ac{dw} sehr zeitintensiv \cite{dwbauer, dwtool}.
+Die \acf{etl}-Prozesse oder Erfassungsprozesse in einem \ac{dw} dienen der Aufbereitung und dem Laden der Daten in die \acp{db} des \ac{dw}. Diese Prozesse sind je nach Datenmenge und Design des \ac{dw} sehr zeitintensiv \cite{dwbauer, dwtool}.
 
 Zuerst werden bei der Datenextraktion die Daten aus den verschiedenen Datenquellen extrahiert und in einen Zwischenspeicher übertragen, dem sogenannten Staging Bereich \cite{dwtool}. In diesem Prozess werden die ersten Umwandlungen, wie die Pseudonymisierung von personenbezogenen Daten und die Konvertierung von Datentypen zwischen dem Quellsystem und dem \ac{dw}, vorgenommen \cite{dwbauer}.
 
-Nach der Datenextraktion werden die Daten transformiert. Ziel der Transformation ist eine hohe Qualität der Daten zu gewährleisten. Damit werden die extrahierten Daten bereinigt, harmonisiert und zusammengeführt. Bei der Transformation werden Fehler und Inkonsistenzen beseitigt. Ein weiterer Aspekt der Datentransformation ist die Erstellung von Metadaten und künstlichen Schlüsseln zur Erleichterung der Referenzen auf die Datensätze im \ac{dw}, denn in manchen Fällen werden die Schlüssel der Quellsysteme nicht verwendet \cite{dwbauer, dwtool}.
+Nach der Datenextraktion werden die Daten transformiert. Ziel der Transformation ist eine hohe Qualität der Daten zu gewährleisten. Damit werden die extrahierten Daten bereinigt, harmonisiert und zusammengeführt. Bei der Transformation werden Fehler und Inkonsistenzen beseitigt. Ein weiterer Aspekt der Datentransformation ist die Erstellung von Metadaten und künstlichen Schlüsseln zur Erleichterung der Referenzen auf die Datensätze im \ac{dw}, denn in manchen Fällen werden die Schlüssel der Quellsysteme nicht verwendet, denn zwei oder mehrere Quellsystemen können dasselbe Schlüsselschema haben \cite{dwbauer, dwtool}, z. B. die Nutzung von fortlaufenden Nummern als Primärschlüssel für die Identifikation von Diagnosen in verschiedenen Datenquellen.
 
 Die Ladephase ist die Letzte in dem \ac{etl}-Prozess. Damit werden die transformierten Daten physikalisch in die Zieltabellen des \ac{dw} überführt \cite{dwgoeken, dwtool}.
-\begin{comment}
-	
 
-\subsection{\acs{olap}} \label{subsec:olap}
+Ein Beispiel eines \ac{etl}-Prozesses ist in der \ref{fig:dizummz} im Kapitel \glqq Realisierung\grqq{} (\ref{ch:results}) dieses Projekts dargestellt.
 
-In der Datenbereitstellungsebene des \ac{dw} befindet sich das \acf{olap}-System, dessen Aufgaben die Aufbereitung und Aufstellung der Daten, die für die Werkzeuge auf der Präsentationsebene liegen, ist \cite{dwbauer}. Die drei Begriffe des \ac{olap}-Konzepts werden im Folgenden verdeutlicht:
-
-\begin{enumerate}
-	\item Die Kennzeichnung \glqq Online\grqq{} steht für den direkten Zugriff auf den Datenbankstand, um die Daten zu betrachten \cite{dwbauer}.
-	\item \glqq Analytical\grqq{} steht für die Bereitstellung der Information, die für das Management von Bedeutung sind \cite{dwgoeken}.
-	\item Mit dem \glqq Processing\grqq{} wird eine schnelle Berechnung und Manipulation von großen Datenmengen gewährleistet \cite{planungdatawarehouse, dwbauer}.
-\end{enumerate}
-
-Die vorherigen Eigenschaften von \ac{olap}-Systemen, machen solche Anwendungen für die dynamischen, multidimensionalen Analysen auf konsolidierten Unternehmensdatenbeständen sehr geeignet \cite{planungdatawarehouse, dwgoeken}.
-\end{comment}
 \subsection{Datenmodell eines \acs{dw}} \label{subsec:datamodel}
 
 Das Datenmodell eines \ac{dw} orientiert sich an Sachverhalten eines Unternehmens, und somit ist ein \ac{dw} themenorientiert und bietet eine aggregierte Sicht auf das Geschehen \cite{dwgoeken}.
@@ -54,6 +42,6 @@ Die Daten in einem multidimensionalen Datenmodell werden in einer physikalischen
 \begin{figure}[ht]
 	\centering
 	\includegraphics[height=8.5cm]{figures/starschema}
-	\caption[Sternschema]{Sternschema. Die Dimensionstabellen beinhalten Kategorien. Die Faktentabelle beinhaltet die Hauptschlüssel der Dimensionstabellen und die Ergebnisse von Analysen.}
+	\caption[Sternschema]{Sternschema. Die Dimensionstabellen beinhalten Kategorien. Die Faktentabelle beinhaltet die Hauptschlüssel der Dimensionstabellen und die Ergebnisse von Analysen. \glqq PK\_\grqq{} stellt die Hauptschlüssel der Tabellen dar.}
 	\label{fig:starschema}
 \end{figure}
