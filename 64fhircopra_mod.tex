@@ -2,11 +2,11 @@
 
 Nach der Erkennung der 701 relevanten Konfigurationsvariablen und der Datendefinition, wurde das Pattern Matching durchgeführt, um bestimmte Muster zwischen Parametern der \ac{fhir}-Profile und Attributen der \ac{copra}-Konfigurationsvariablen zu erkennen. 
 
-Der erste Schritt für das Pattern Matching war die Zuordnung der \ac{fhir}-Profile mit den Konfigurationsvariablen durch eine unscharfe Suche. Für diesen Zweck wurden der Parameter \texttt{profile\_name} der Tabelle \texttt{mii\_icu} zusammen den Parametern \texttt{name} und \texttt{description} der Tabelle \texttt{co6\_config \_variables} in einem \ac{csv}-Datei extrahiert. 
+Der erste Schritt für das Pattern Matching war die Zuordnung der \ac{fhir}-Profile mit den Konfigurationsvariablen durch eine unscharfe Suche. Für diesen Zweck wurden der Parameter \texttt{profile\_name} der Tabelle \texttt{mii\_icu} zusammen mit den Parametern \texttt{name} und \texttt{description} der Tabelle \texttt{co6\_config \_variables} in einem \ac{csv}-Datei extrahiert. 
 
-Mit einem Python-Skript und der extrahierten \ac{csv}-Datei wurde die unscharfe Suche durchgeführt. Dieser Prozess liefert einen Datensatz mit 400 Paaren von zugeordneten Profilen mit Konfigurationsvariablen. 355 Paaren davon waren falsche Zuordnungen, wie die Beispiele der \ref{tab:wrongpaar} zeigen.
+Mit einem Python-Skript und der extrahierten \ac{csv}-Datei wurde die unscharfe Suche durchgeführt. Dieser Prozess liefert einen Datensatz mit 400 Paaren von zugeordneten Profilen mit Konfigurationsvariablen. 355 Paare davon waren falsche Zuordnungen, wie die Beispiele der \ref{tab:wrongpaar} zeigen.
 
-\begin{lstlisting}[language=python, caption={[Python-Skript für das Pattern Matching] Python-Skript für das Pattern Matching. Die Option \glqq token\_set\_ratio\grqq{} ermöglicht eine flexiblere fuzzy-Suche (\ref{sub:levdist}), denn die Länge der Namen der Profile, Namen und  Beschreibungen der Konfigurationsvariablen deutlich unterschiedlich sind.} , captionpos=b, label=list:testr]
+\begin{lstlisting}[language=python, caption={[Python-Skript für das Pattern Matching] Python-Skript für das Pattern Matching. Die Option \glqq token\_set\_ratio\grqq{} ermöglicht eine flexiblere fuzzy-Suche (\ref{sub:levdist}), denn die Länge der Namen der Profile, Namen und  Beschreibungen der Konfigurationsvariablen sind deutlich unterschiedlich.} , captionpos=b, label=list:testr]
 from thefuzz import process, fuzz  # Bibliotheken laden
 
 with open("profils_names.csv") as fp: # Datei mit den Namen der Profile
@@ -26,7 +26,7 @@ for profil in prn: # Bei jeden Namen der Profile
 
 \begin{table}[ht]
 	\centering 
-	\caption[Beispiele von falsch zugeordneten \acs{fhir}-Profile]{Beispiele von falsch zugeordneten \acs{fhir}-Profile. Die Namen der Konfigurationsvariablen und deren Beschreibung sind durch \glqq-\grqq{} getrennt.}
+	\caption[Beispiele von falsch zugeordneten \acs{fhir}-Profilen]{Beispiele von falsch zugeordneten \acs{fhir}-Profilen. Die Namen der Konfigurationsvariablen und deren Beschreibung sind durch \glqq-\grqq{} getrennt.}
 	\label{tab:wrongpaar}
 	\begin{tabular}{|l|l|}
 		\hline
@@ -96,9 +96,9 @@ or description ~* 'intra[ck]'
 ;
 \end{lstlisting}
 
-In dem Code \ref{list:pattermatc} werden, wie bei dem Code \ref{list:pattdruck}, die Spalten \texttt{name} und \texttt{description} gleichzeitig untersucht. In diesem Beispiel befinden sich in den eckigen Klammern die Buchstaben \glqq c\grqq{} und \glqq k\grqq{}, um die Teilwörter \glqq intrakraniell\grqq{} oder \glqq intracranial\grqq{}, auf Englisch, zu identifizieren.
+In dem Code \ref{list:pattermatc} werden, wie bei dem Code \ref{list:pattdruck}, die Spalten \texttt{name} und \texttt{description} gleichzeitig untersucht. In diesem Beispiel befinden sich in den eckigen Klammern die Buchstaben \glqq c\grqq{} und \glqq k\grqq{}, um die Teilwörter \glqq intrakraniell\grqq{}, oder \glqq intracranial\grqq{} auf Englisch, zu identifizieren.
 
-Ein vorher genannter Aspekt ist die allgemeine, umgangssprachliche Anwendung der \ac{loinc}-\glqq Short Names\grqq{} vom Personal des Gesundheitswesens und wie dieser Parameter in der Konfigurationsvariablen zu finden ist. Ein Beispiel des Ergebnisses eines Pattern Matchings, um \glqq Short Names\grqq{} der \ac{loinc}-Codes zu berücksichtigen ist in der \ref{tab:shortnamepattern} dargestellt. In diesem Beispiel ist die Erkennung eines \glqq Short Name\grqq{} in der Spalte \texttt{name} der Tabelle \texttt{co6\_config\_variables} repräsentiert.
+Ein vorher genannter Aspekt ist die allgemeine, umgangssprachliche Anwendung der \ac{loinc}-\glqq Short Names\grqq{} vom Personal des Gesundheitswesens und wie dieser Parameter in der Konfigurationsvariablen zu finden ist. Ein Beispiel des Ergebnisses eines Pattern Matchings, um \glqq Short Names\grqq{} der \ac{loinc}-Codes zu berücksichtigen, ist in der \ref{tab:shortnamepattern} dargestellt. In diesem Beispiel ist die Erkennung eines \glqq Short Name\grqq{} in der Spalte \texttt{name} der Tabelle \texttt{co6\_config\_variables} repräsentiert.
 
 \begin{table}[ht]
 	\centering 
@@ -113,4 +113,4 @@ Ein vorher genannter Aspekt ist die allgemeine, umgangssprachliche Anwendung der
 
 Am Ende des Pattern Matching-Prozesses konnten von den 701 Konfigurationsvariablen 75 einem \ac{fhir}-Profil zugeordnet werden, und von den 80 \ac{fhir}-Profilen wurden dann 41 mit einer \ac{copra}-Variable verlinkt. Das sind insgesamt 80 importierte Einträge in der Tabelle \texttt{mapping\_mii\_co6}, weil einem Profil mehrere Konfigurationsvariablen zugeordnet wurden. 
 
-Interessanterweise sind alle zugeordneten Konfigurationsvariablen - Biosignaldaten patientenbezogen. 
+Interessanterweise sind alle zugeordneten Konfigurationsvariablen patientenbezogene Biosignalparameter. 
