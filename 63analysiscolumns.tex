@@ -12,7 +12,7 @@ Die Spalten \texttt{profile\_name} und \texttt{loinc} in der Tabelle \texttt{mii
 	\label{tab:shortname}
 	\begin{tabular}{|p{4cm}|l|l|}
 		\hline
-		\rowcolor{lightgray} Profile-Name & \ac{loinc}-URL & Short Name \\ \hline
+		\bfseries Profile-Name & \bfseries \ac{loinc}-URL & \bfseries Short Name \\ \hline
 		Sauerstofffraktion & \url{https://loinc.org/71835-3/} & 
 		FIO2 \\ \hline 
 	\end{tabular}
@@ -35,7 +35,7 @@ Nach der Datendefinition wird die Zuordnung der Konfigurationsvariablen mit den 
 	\label{tab:mapping}
 	\endfirsthead
 	\hline			
-		\rowcolor{lightgray} Spalte & Datentyp & Information \\ \hline		
+		\bfseries Spalte & \bfseries Datentyp & \bfseries Information \\ \hline		
 		profile\_id & int & Generierter numerischer Identifikator des zugeordneten \ac{fhir}-Profils \\ \hline
 		profile\_name & varchar & Name des \ac{fhir}-Profils, z. B. Atemzugvolumen-Waehrend-Beatmung \\ \hline
 		category\_coding \_system & text & \acsu{url} der Kategorie. Dies kann ein \ac{snomedct}-\ac{url} bei einigen \glqq Observations\grqq{} sein. \\ \hline
@@ -78,5 +78,3 @@ Nach der Datendefinition wird die Zuordnung der Konfigurationsvariablen mit den 
 		code\_diastolic \_coding\_code \_ieee & varchar & \ac{iso}/\ac{ieee} 11073-10101\texttrademark{}-Schlüssel der diastolischen Blutdruckmessung, z. B. 150018 \\ \hline
 		matching\_valide & bool & Ergebnis der Validierung der Zuordnung, \texttt{true} oder \texttt{false} \\ \hline
 \end{longtable}
-
- %der Konfigurationsvariablen mit den \ac{fhir}-Profilen in der \ac{db} in der Tabelle \texttt{mapping\_mii \_co6} (\ref{tab:mapping}) gespeichert. In dieser Tabelle befinden sich nur die Profile des Typs \glqq Observation\grqq{}, weil alle \ac{fhir}-Profile, die zugeordnet wurden, zu diesem Typ gehören. Andere Anmerkung ist, dass an dieser Stelle nicht berücksichtigt wurde, ob eine \glqq Observation\grqq{} zu der Gruppe der \glqq Blutdruck Generisch\grqq{} gehören oder nicht, sodass bei den gespeicherten Zuordnungen die zu dieser Gruppe nicht gehören, werden die charakteristischen Spalten für die Attributen der Blutdruckmessung immer leer sein.

@@ -12,7 +12,7 @@ Die Struktur der Tabelle \texttt{mii\_icu} zur Speicherung der Elemente der \ac{
 	\caption[Struktur der Tabelle mii\_icu]{Struktur der Tabelle \texttt{mii\_icu}. In dem Feld Spalte befinden sich die gegebenen Namen der \ac{fhir}-Elemente der Profile. Der Datentyp ist der Typ mit dem die Daten in der Tabelle \texttt{mii\_icu} gespeichert werden. Die Spalte Information speichert die Beschreibung des Elements.} \label{tab:miiicu}
 	\endfirsthead
 		\hline
-		\rowcolor{lightgray} Spalte & Datentyp & Information \\ \hline
+		\bfseries Spalte & \bfseries Datentyp & \bfseries Information \\ \hline
 		profile\_id & int & Generierter nummerischer Identifikator des zugeordneten \ac{fhir}-Profils \\ \hline
 		profile\_name & varchar & Name des \ac{fhir}-Profils, z. B. Atemzugvolumen-Waehrend-Beatmung \\ \hline
 		category\_coding \_system & text & \acsu{url} der Kategorie \glqq Observation\grqq{}. Dies kann ein \ac{snomedct}-\ac{url} sein \\ \hline

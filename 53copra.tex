@@ -8,7 +8,7 @@ Die Tabelle \texttt{co6\_config\_variables} beschreibt die Entitäten im \ac{cop
 	\caption[Relevante Spalten von co6\_config\_variables]{Relevante Spalten von co6\_config\_variables.}\label{tab:co6confvar}
 	\endfirsthead
 	\hline  
-	\rowcolor{lightgray} Spalte & Datentyp & Information \\ \hline
+	\bfseries Spalte & \bfseries Datentyp & \bfseries Information \\ \hline
 	id & bigint & Hauptschlüssel der Tabelle, z. B. 100 \\ \hline 
 	name & varchar & Name der Konfigurationsvariable in der Tabelle, z. B. AF  \\ \hline 
 	description & varchar & Beschreibung oder Name der Entitäten, z. B. Atemfrequenz \\ \hline
@@ -25,7 +25,7 @@ Die Tabelle \texttt{co6\_config\_variable\_types} enthält die Datentypen der Ko
 	\label{tab:co6confvartype}
 	\begin{tabular}{{|p{3.5cm}|l|p{6.7cm}|}}
 		\hline
-		\rowcolor{lightgray} Spalte & Datentyp & Information \\ \hline
+		\bfseries Spalte & \bfseries Datentyp & \bfseries Information \\ \hline
 		id & bigint & Hauptschlüssel der Tabelle, z. B. 2 \\ \hline 
 		name & varchar & Name des Datentyps, z. B. String  \\ \hline 
 		tableName & varchar & Name der Tabelle, in der die Information im \ac{copra} gespeichert wird, z. B. co6\_data\_string \\ \hline 
@@ -39,7 +39,7 @@ Eine weitere wichtige Tabelle für die spätere Überführung der Daten ist \tex
 	\label{tab:patient}
 	\endfirsthead
 	\hline
-	\rowcolor{lightgray} Spalte & Datentyp & Information \\ \hline
+	\bfseries Spalte & \bfseries Datentyp & \bfseries Information \\ \hline
 	id & bigint & Hauptschlüssel der Tabelle, z. B. 25 \\ \hline
 	patid & varchar & Patientennummer \\ \hline
 	deleted & boolean & \texttt{false}, wenn die Person noch im System ist, sonst \texttt{true} \\ \hline
@@ -55,7 +55,7 @@ Die Werttabellen (\ref{tab:valuetable}) beinhalten die gespeicherten Werte der K
 	\label{tab:valuetable}
 	\begin{tabular}{|l|l|}
 		\hline
-		\rowcolor{lightgray} Werttabelle & Datentypen \\ \hline
+		\bfseries Werttabelle & \bfseries Datentypen \\ \hline
 		co6\_data\_decimal\_6\_3 & numerische Werte \\ \hline
 		co6\_data\_string & Zeichenketten \\ \hline
 		co6\_medic\_pressure & Blutdruckmessungen \\ \hline
@@ -69,7 +69,7 @@ Die Werttabellen \texttt{co6\_data\_decimal\_6\_3} und \texttt{co6\_data\_string
 	\label{tab:valuetab}
 	\endfirsthead
 		\hline
-		\rowcolor{lightgray} Spalte & Datentyp & Information \\ \hline
+		\bfseries Spalte & \bfseries Datentyp & \bfseries Information \\ \hline
 		id & bigint & Hauptschlüssel der Tabelle, z. B. 2595 \\ \hline
 		varid & int & Fremdschlüssel, der zur Spalte id in der Tabelle co6\_config\_variables zeigt, z. B. 102 \\ \hline
 		deleted & boolean & \texttt{false}, wenn der Wert noch im System ist, sonst \texttt{true} \\ \hline
@@ -88,7 +88,7 @@ Die Werttabelle \texttt{co6\_medic\_pressure} (\ref{tab:valuepress}) beinhaltet 
 	\label{tab:valuepress}
 	\endfirsthead
 		\hline
-		\rowcolor{lightgray} Spalte & Datentyp & Information \\ \hline
+		\bfseries Spalte & \bfseries Datentyp & \bfseries Information \\ \hline
 		id & bigint & Hauptschlüssel der Tabelle, z. B. 2595 \\ \hline
 		varid & int & Fremdschlüssel, der zur Spalte id in der Tabelle co6\_config\_variables zeigt, z. B. 102 \\ \hline
 		deleted & boolean & \texttt{false}, wenn der Wert noch im System ist, sonst \texttt{true} \\ \hline

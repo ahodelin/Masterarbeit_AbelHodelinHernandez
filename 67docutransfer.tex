@@ -50,7 +50,7 @@ Output:
 %\clearpage
 \begin{longtable}{|l|l|p{7.5cm}|} 
 	\hline
-	\rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich) - numerische und String Werte} \\ \hline
+	\multicolumn{3}{|l|}{\bfseries Data Mapping (inhaltlich) - numerische und String Werte} \\ \hline
 	id &  & MD5-Hash aus der Kombination des Namens der Werttabelle mit den Hauptschlüssel der Werte in dieser Tabelle und des Namens des \ac{fhir}-Profils: md5(\texttt{tables.table\_name}, \texttt{co6\_data\_decimal\_6\_3.id} und \texttt{mapping\_mii\_co6\_2.profile\_name}) oder md5(\texttt{tables.table\_name}, \texttt{co6\_data\_string.id} und \texttt{mapping\_mii\_co6\_2.profile\_name}) \\ \hline
 	meta & profile & \texttt{mapping\_mii\_co6\_2.meta\_profile} \\ \hline 
 	status &  & final  \\ \hline 
@@ -105,7 +105,7 @@ Output:
 \clearpage
 \begin{longtable}{|l|l|p{7cm}|} 
 	\hline
-	\rowcolor{lightgray} \multicolumn{3}{|l|}{Data Mapping (inhaltlich) - Blutdruckmessungen} \\ \hline
+	\multicolumn{3}{|l|}{\bfseries Data Mapping (inhaltlich) - Blutdruckmessungen} \\ \hline
 	id &  & MD5-Hash aus der Kombination des Namens der Werttabelle mit den Hauptschlüssel der Werte in dieser Tabelle und des Namens des \ac{fhir}-Profils: md5(\texttt{tables.table\_name}, \texttt{co6\_data\_medic\_pressure.id} und \texttt{mapping\_mii\_co6\_2.profile\_name}) \\ \hline
 	meta & profile & \texttt{mapping\_mii\_co6\_2.meta\_profile} \\ \hline 
 	status &  & final  \\ \hline 
@@ -166,4 +166,3 @@ Output:
 \end{longtable}
 
 Mit den vorherigen Spezifikationen für die Überführung der Daten wurden danach die \ac{sql}-Views in der \ac{copra}-Instanz des Staging Bereichs des \ac{dw} programmiert, um die Daten der \ac{copra}-Instanz für die Überführung in die \ac{fhir}-Ressourcen bereitzustellen.
-%zusammenzuführen. Somit sind die Biosignaldaten aus \ac{copra} für die Überführung in die \ac{fhir}-Ressourcen bereitgestellt.
