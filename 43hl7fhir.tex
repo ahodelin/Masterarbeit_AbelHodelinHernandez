@@ -16,7 +16,7 @@ Der \acf{fhir}-Standard eignet sich für den Einsatz in verschiedenen Szenarien,
 
 In \ac{fhir} werden Konzepte aus der realen Welt als Ressourcen mit entsprechenden für Menschen und Maschinen lesbaren Werten dargestellt \cite{ehealtOk}. Diese wiederum sind logische Einheiten des Datenaustausches mit einem konkreten, definierten Verhalten und eindeutiger Semantik \cite{fhir}. Die Definition der Ressourcen deckt häufig die meisten Anwendungsfälle \cite{ehealtOk}. Jede Ressource besteht aus strukturierten Daten, Narrativen und Ergänzungen (Extensions) \cite{fhir}. Während die strukturierten Daten 80\% der weitverbreiteten Einsatzszenarien abdecken, lassen sich manche Ressourcen durch die Ergänzungen erweitern, die nicht in \ac{fhir} erhältlich sind, um speziellere Anwendungsfälle abdecken zu können \cite{fhir, ehealtOk}. Die Narrative sind dann menschenlesbare Texte, um den Inhalt der Ressourcen zusammenzufassen \cite{fhir}.
 
-Die Referenzen ermöglichen es, dass mehrere Ressourcen und deren Informationseinheiten aufeinander verweisen können, um Beziehungen aufzubauen \cite{fhir}. Ein Beispiel dafür sind die \glqq Observation\grqq{}-Ressourcen im Erweiterungsmodul \glqq Intensivmedizin\grqq{} verweisen auf die \glqq Patient\grqq{}-Ressourcen im Basismodul \glqq Person\grqq{} des Kerndatensatzes der \ac{mii} (\ref{fig:mii}).
+Die Referenzen ermöglichen es, dass mehrere Ressourcen und deren Informationseinheiten aufeinander verweisen können, um Beziehungen aufzubauen \cite{fhir}. Ein Beispiel dafür sind die \glqq Observation\grqq{}-Ressourcen im Erweiterungsmodul \glqq Intensivmedizin\grqq{}. Diese verweisen auf die \glqq Patient\grqq{}-Ressourcen im Basismodul \glqq Person\grqq{} des Kerndatensatzes der \ac{mii} (\ref{fig:mii}).
 
 Viele Werte in den \ac{fhir}-Ressourcen sind optional, sodass eine Umsetzung kompatibel ist, wenn sie nur die minimal obligatorischen Daten liefert. Diese Werte können von außen über die Profile modifiziert werden, und können wiederum sich aufeinander verweisen \cite{ehealtOk}. Das bedeutet die \ac{fhir}-Profile sind die Spezifikationen, die die \ac{fhir}-Ressourcen beschreiben und definieren, z. B. die Festlegung von konkreten Codesystemen \cite{fhir, fhircompact}.
 
@@ -43,7 +43,7 @@ Eine logische Tabelle eines \ac{fhir}-Profils beinhaltet die Spalten: Name, Flag
 \begin{figure}[ht]
 	\centering
 	\includegraphics[height=6cm]{figures/beatmung}
-	\caption[Logische Tabelle eines \acs{fhir}-Profils]{Fragment der logischen Tabelle des \acs{fhir}-Profils Beatmung des Erweiterungsmoduls \glqq Intensivmedizin\grqq{} des Kerndatensatzes der \acs{mii}.}
+	\caption[Logische Tabelle eines \acs{fhir}-Profils]{Fragment der logischen Tabelle des \acs{fhir}-Profils \glqq Beatmung\grqq{} des Erweiterungsmoduls \glqq Intensivmedizin\grqq{} des Kerndatensatzes der \acs{mii}.}
 	\label{fig:logic-table}
 \end{figure}
 
