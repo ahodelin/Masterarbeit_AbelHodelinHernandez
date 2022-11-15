@@ -1,6 +1,6 @@
 \section{Angepasste Tabellen von \acs{copra}} \label{sec:copratables}
 
-Das Datenmodell der \ac{copra}-Instanz des Staging Bereichs des \ac{dw} des \ac{diz} an der Universitätsmedizin Mainz (\ref{fig:copraschema}) zusammen mit dem Inhalt der Tabellen dieser \ac{copra}-Instanz wurden analysiert, denn in \ac{copra} befinden sich die Daten und Metadaten der Bioparameter. Die Tabellen der \ac{copra}-Instanz beinhalten nicht nur die notwendigen Parameter für die Entwicklung dieses Projekts, sondern auch weitere administrative Attributen, die nicht für die Zwecke dieser Arbeit relevant sind. Aus diesem Grund werden nur die relevanten Spalten für das Data Mapping betrachtet. Infolgedessen wurden gleichnamigen angepassten Tabellen für die Tabellen der Metadaten (\texttt{co6\_config\_variables} und \texttt{co6\_config\_variable\_types}) in der \ac{db} \texttt{mii\_copra} für die Bearbeitung der Daten codiert.
+Das Datenmodell der \ac{copra}-Instanz des Staging Bereichs des \ac{dw} des \ac{diz} an der Universitätsmedizin Mainz (\ref{fig:copraschema}) zusammen mit dem Inhalt der Tabellen dieser \ac{copra}-Instanz wurden analysiert, denn in \ac{copra} befinden sich die Daten und Metadaten der Bioparameter. Die Tabellen der \ac{copra}-Instanz beinhalten nicht nur die notwendigen Parameter für die Entwicklung dieses Projekts, sondern auch administrative Attribute, die nicht für die Zwecke dieser Arbeit relevant sind. Aus diesem Grund werden nur die relevanten Spalten für das Data Mapping betrachtet. Infolgedessen wurden gleichnamige angepasste Tabellen für die Tabellen der Metadaten (\texttt{co6\_config\_variables} und \texttt{co6\_config\_variable\_types}) in der \ac{db} \texttt{mii\_copra} für die Bearbeitung der Daten codiert.
 
 Die Tabelle \texttt{co6\_config\_variables} beschreibt die Entitäten im \ac{copra}-System und somit beinhaltet diese Tabelle die Namen und Beschreibungen der Biosignalparameter. In dieser Tabelle wurden nur die Konfigurationsvariablen mit den notwendigen Eigenschaften ausgewählt (\ref{sec:configvarcopra}). Die Dokumentierung der relevanten Spalten von \texttt{co6\_config\_variables} ist in der \ref{tab:co6confvar} dargestellt.
 
@@ -18,7 +18,7 @@ Die Tabelle \texttt{co6\_config\_variables} beschreibt die Entitäten im \ac{cop
 	deleted & varchar & \texttt{null} wenn die Konfigurationsvariable noch in Nutzung ist, sonst Datum der Löschung \\ \hline	
 \end{longtable}
 
-Die Tabelle \texttt{co6\_config\_variable\_types} enthält die Datentypen der Konfigurationsvariablen und, unter anderem, die Information in welchen Werttabellen die korrespondierenden Werte der Messungen oder Beobachtungen der Biosignale im \ac{copra} sich befinden. Denn die Daten in \ac{copra} in separaten Tabellen je nach Datentyp gespeichert werden. Die wichtigsten Spalten der Tabelle \texttt{co6\_config\_variable\_types} sind in der \ref{tab:co6confvartype} aufgelistet.
+Die Tabelle \texttt{co6\_config\_variable\_types} enthält die Datentypen der Konfigurationsvariablen und, unter anderem, die Information in welchen Werttabellen die korrespondierenden Werte der Messungen oder Beobachtungen der Biosignale im \ac{copra} sich befinden. Denn die Daten werden in \ac{copra} in separaten Tabellen je nach Datentyp gespeichert. Die wichtigsten Spalten der Tabelle \texttt{co6\_config\_variable\_types} sind in der \ref{tab:co6confvartype} aufgelistet.
 
 \begin{table}[ht]
 	\caption[Relevante Spalten von co6\_config\_variable\_types]{Relevante Spalten von co6\_config\_variable\_types.}
@@ -28,10 +28,10 @@ Die Tabelle \texttt{co6\_config\_variable\_types} enthält die Datentypen der Ko
 		\rowcolor{lightgray} Spalte & Datentyp & Information \\ \hline
 		id & bigint & Hauptschlüssel der Tabelle, z. B. 2 \\ \hline 
 		name & varchar & Name des Datentyps, z. B. String  \\ \hline 
-		tableName & varchar & Name der Tabelle, wo die Information im \ac{copra} gespeichert wird, z. B. co6\_data\_string \\ \hline 
+		tableName & varchar & Name der Tabelle, in der die Information im \ac{copra} gespeichert wird, z. B. co6\_data\_string \\ \hline 
 	\end{tabular}
 \end{table}
-
+\newpage
 Eine weitere wichtige Tabelle für die spätere Überführung der Daten ist \texttt{co6\_medic\_data\_patient} (\ref{tab:patient}). Diese beinhaltet die Basisinformation der behandelnden Personen. Diese Tabelle beinhaltet zusammen mit der Patientennummer einen Hauptschlüssel für die Verlinkung der Werte der Biosignaldaten in den Werttabellen mit der korrespondierenden Person. Aus diesem Grund befindet sich dieser Schlüssel als Fremdschlüssel auch in den Werttabellen.
 %\clearpage
 \begin{longtable}{{|p{3.5cm}|l|p{6.7cm}|}}
@@ -42,7 +42,7 @@ Eine weitere wichtige Tabelle für die spätere Überführung der Daten ist \tex
 	\rowcolor{lightgray} Spalte & Datentyp & Information \\ \hline
 	id & bigint & Hauptschlüssel der Tabelle, z. B. 25 \\ \hline
 	patid & varchar & Patientennummer \\ \hline
-	deleted & boolean & \texttt{false}, wenn die Person noch im System ist, \texttt{true} sonst \\ \hline
+	deleted & boolean & \texttt{false}, wenn die Person noch im System ist, sonst \texttt{true} \\ \hline
 \end{longtable}
 
 \subsection{Werttabellen} \label{subsec:valuetables}
@@ -51,7 +51,7 @@ Die Werttabellen (\ref{tab:valuetable}) beinhalten die gespeicherten Werte der K
 
 \begin{table}[ht]
 	\centering  
-	\caption[Werttabellen in der \acs{copra}-Instanz]{Werttabellen in der \ac{copra}-Instanz des \ac{dw}. Alle Tabellen beinhalten die Hauptschlüssel der Tabellen \texttt{co6\_medic\_data\_patient} und \texttt{co6\_config\_variables} als Fremdschlüssel. Die Tabellen \texttt{co6\_data\_decimal\_6\_3} und \texttt{co6\_data\_string} besitzen eine Spalte \texttt{val} für die Speicherung der Werte oder Parameter der angewendeten Techniken. Die Tabelle \texttt{co6\_medic\_pressure} wiederum beinhaltet drei Spalten für die Speicherung der systolischen, mittleren, und diastolische Werte der Blutdruckmessungen.}
+	\caption[Werttabellen in der \acs{copra}-Instanz]{Werttabellen in der \ac{copra}-Instanz des \ac{dw}. Alle Tabellen beinhalten die Hauptschlüssel der Tabellen \texttt{co6\_medic\_data\_patient} und \texttt{co6\_config\_variables} als Fremdschlüssel. Die Tabellen \texttt{co6\_data\_decimal\_6\_3} und \texttt{co6\_data\_string} besitzen eine Spalte \texttt{val} für die Speicherung der Werte oder Parameter der angewandten Techniken. Die Tabelle \texttt{co6\_medic\_pressure} wiederum beinhaltet drei Spalten für die Speicherung der systolischen, mittleren, und diastolischen Werte der Blutdruckmessungen.}
 	\label{tab:valuetable}
 	\begin{tabular}{|l|l|}
 		\hline
@@ -72,16 +72,16 @@ Die Werttabellen \texttt{co6\_data\_decimal\_6\_3} und \texttt{co6\_data\_string
 		\rowcolor{lightgray} Spalte & Datentyp & Information \\ \hline
 		id & bigint & Hauptschlüssel der Tabelle, z. B. 2595 \\ \hline
 		varid & int & Fremdschlüssel, der zur Spalte id in der Tabelle co6\_config\_variables zeigt, z. B. 102 \\ \hline
-		deleted & boolean & \texttt{false}, wenn der Wert noch im System ist, \texttt{true} sonst \\ \hline
+		deleted & boolean & \texttt{false}, wenn der Wert noch im System ist, sonst \texttt{true} \\ \hline
 		parent\_id & bigint & Fremdschlüssel, der zur Spalte id in der Tabelle co6\_data\_patient zeigt, wenn das Wert von parent\_id gleich 1 ist \\ \hline
 		parent\_varid & int & Fremdschlüssel, der zur Spalte id in der Tabelle co6\_config\_variables zeigt. Diese Spalte is der Bezug der Biosignaldaten, z. B. 1 für Patientenbezug \\ \hline
 		datetimeto & timestamp & Datum und Uhrzeit der Messung in \acs{iso} 8601 Format (JJJJ-MM-DD HH:mm:ss)\\ \hline
-		validated & boolean & \texttt{true} wenn den Eintrag validiert wurde, \texttt{false} sonst. \\ \hline
-		flagcurrent & boolean & \texttt{true} wenn den Eintrag noch aktuell ist, \texttt{false} sonst. \\ \hline
+		validated & boolean & \texttt{true} wenn den Eintrag validiert wurde, sonst \texttt{false}. \\ \hline
+		flagcurrent & boolean & \texttt{true} wenn den Eintrag noch aktuell ist, sonst \texttt{false}. \\ \hline
 		val & numeric/varchar & Wert der Biosignaldaten. Der Wert ist eine Zahl in der Tabelle co6\_data\_decimal\_6\_3, z. B. 38, und eine Zeichenkette in der Tabelle co6\_data\_string, z. B. blass \\ \hline
 \end{longtable}
 
-Die Werttabelle \texttt{co6\_medic\_pressure} (\ref{tab:valuepress}) beinhaltet die systolischen, mittleren und diastolische Blutdruckwerte.
+Die Werttabelle \texttt{co6\_medic\_pressure} (\ref{tab:valuepress}) beinhaltet die systolischen, mittleren und diastolischen Blutdruckwerte.
 
 \begin{longtable}{|l|l|p{8cm}|}
 	\caption[Relevante Spalten von co6\_medic\_pressure]{Relevante Spalten von co6\_medic\_pressure.}
@@ -91,12 +91,12 @@ Die Werttabelle \texttt{co6\_medic\_pressure} (\ref{tab:valuepress}) beinhaltet 
 		\rowcolor{lightgray} Spalte & Datentyp & Information \\ \hline
 		id & bigint & Hauptschlüssel der Tabelle, z. B. 2595 \\ \hline
 		varid & int & Fremdschlüssel, der zur Spalte id in der Tabelle co6\_config\_variables zeigt, z. B. 102 \\ \hline
-		deleted & boolean & \texttt{false}, wenn der Wert noch im System ist, \texttt{true} sonst \\ \hline
+		deleted & boolean & \texttt{false}, wenn der Wert noch im System ist, sonst \texttt{true} \\ \hline
 		parent\_id & bigint & Fremdschlüssel, der zur Spalte id in der Tabelle co6\_data\_patient zeigt, wenn das Wert von parent\_id gleich 1 ist \\ \hline
 		parent\_varid & int & Fremdschlüssel, der zur Spalte id in der Tabelle co6\_config\_variables zeigt. Diese Spalte is der Bezug der Biosignaldaten, z. B. 1 für Patientenbezug \\ \hline
 		datetimeto & timestamp & Datum und Uhrzeit der Messung in \acs{iso} 8601 Format (JJJJ-MM-DD HH:mm:ss)\\ \hline
-		validated & boolean & \texttt{true} wenn den Eintrag validiert wurde, \texttt{false} sonst. \\ \hline
-		flagcurrent & boolean & \texttt{true} wenn den Eintrag aktuell ist, \texttt{false} sonst. \\ \hline
+		validated & boolean & \texttt{true} wenn den Eintrag validiert wurde, sonst \texttt{false}. \\ \hline
+		flagcurrent & boolean & \texttt{true} wenn den Eintrag aktuell ist, sonst \texttt{false}. \\ \hline
 		systolic & numeric & Systolischer Blutdruckwert, z. B. 120 \\ \hline
 		mean & numeric & Mittel Blutdruckwert, z. B. 100 \\ \hline
 		diastolic & numeric & Diastolischer Blutdruckwert, z. B. 80 \\ \hline

@@ -1,4 +1,4 @@
-\section{Parameter der \acs{fhir}-Profile des Moduls \acs{icu}} \label{sec:fhirprofs}
+\section{Parameter der \acs{fhir}-Profile des Moduls \glqq\acs{icu}\grqq{}} \label{sec:fhirprofs}
 
 Die Information der \ac{fhir}-Profile des Moduls \glqq\ac{icu}\grqq{} des Kerndatensatzes der \ac{mii} wurde aus der Webseite \href{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html}{Medizininformatik Initiative - Modul ICU - ImplementationGuide} herausgenommen. Obwohl dieses Modul zum Abstimmverfahren von 25.02.2022 bis 08.04.2022 freigeben wurde, befindet es sich noch während der Entwicklung dieses Projekts in der ersten stabilen Ballot-Version. Das bedeutet für diese Arbeit, dass Unregelmäßigkeiten in den Profilen detektiert werden können, und als Issue gemeldet werden.
 
@@ -15,7 +15,7 @@ Die Struktur der Tabelle \texttt{mii\_icu} zur Speicherung der Elemente der \ac{
 		\rowcolor{lightgray} Spalte & Datentyp & Information \\ \hline
 		profile\_id & int & Generierter nummerischer Identifikator des zugeordneten \ac{fhir}-Profils \\ \hline
 		profile\_name & varchar & Name des \ac{fhir}-Profils, z. B. Atemzugvolumen-Waehrend-Beatmung \\ \hline
-		category\_coding \_system & text & \acsu{url} der Kategorie \glqq Observation\grqq{}. Dies kann ein \ac{snomedct}-\ac{url} sein. \\ \hline
+		category\_coding \_system & text & \acsu{url} der Kategorie \glqq Observation\grqq{}. Dies kann ein \ac{snomedct}-\ac{url} sein \\ \hline
 		category\_coding \_code & varchar & \glqq vital-signs\grqq{} oder \ac{snomedct}-ID \\ \hline
 		code\_coding \_system\_snomed & text & http://snomed.info/sct \\ \hline 
 		code\_coding \_code\_snomed & varchar & \ac{snomedct} des \ac{fhir}-Profils, z. B. 250874002 \\ \hline

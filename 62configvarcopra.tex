@@ -2,7 +2,7 @@
 
 Die Tabelle \texttt{co6\_config\_variables} in Zusammenhang mit den Werttabellen von \ac{copra} wurde untersucht, um die relevanten Konfigurationsvariablen für die Durchführung der Arbeit zu erkennen. Die Tabelle \texttt{co6\_config\_variables} beinhaltet 7409 Konfigurationsvariablen.
 
-Die Kriterien für die Wahl der Variablen sind folgende:
+Die Kriterien für die Wahl der Variablen sind Folgende:
 
 \begin{itemize}
 	\item Variablen in Benutzung: Spalte \texttt{deleted} der Tabelle der Konfigurationsvariablen hat den Wert \texttt{null}
@@ -13,7 +13,7 @@ Die Kriterien für die Wahl der Variablen sind folgende:
 	\item Variablen mit 1000 Werten oder mehr in den Werttabellen
 \end{itemize}
 
-Um die Konfigurationsvariablen auszuwählen, wurde für jede Werttabelle eine \ac{sql}-Abfrage, wie in dem Code \ref{list:selectconfigvar} realisiert.
+Um die Konfigurationsvariablen auszuwählen, wurde für jede Werttabelle eine \ac{sql}-Abfrage, wie in dem Code \ref{list:selectconfigvar}, realisiert.
 
 \begin{lstlisting}[language=SQL, caption={[SQL-Abfrage zur Auswahl der Konfigurationsvariablen] SQL-Abfrage zur Auswahl der Konfigurationsvariablen im COPRA-System. \glqq copra.value\_table cvt\grqq{} stellt die verschiedenen Werttabellen im System dar, also co6\_data\_decimal\_6\_3, co6\_data\_string und co6\_medic\_pressure. \glqq quantity\_in\_value\_table\grqq{} ist ein Alias für die Spalte der Menge an Werten in den Werttabellen.}, captionpos=b, label=list:selectconfigvar]
 	select 
