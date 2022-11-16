@@ -14,9 +14,7 @@ Mit den gespeicherten Informationen der \ac{fhir}-Profile und den Konfigurations
 
 Der Prozess für die Verlinkung der Konfigurationsvariablen mit den \ac{fhir}-Profilen generiert einen Datensatz mit den notwendigen Attributen der Konfigurationsvariablen und der \ac{fhir}-Profile. Dieser Datensatz wird validiert, und die Maßeinheiten beider Systeme werden verglichen, um Fehler und andere Irregularitäten zu detektieren, und wenn möglich, mit der Kooperation der fachlichen Spezialisten der \ac{pdms}-Abteilung und Transformationsregeln solche Probleme zu lösen. Diese Regeln werden in dem Datensatz der zugeordneten Konfigurationsvariablen mit den \ac{fhir}-Profilen eingefügt.
 
-Der Datensatz der zugeordneten Konfigurationsvariablen mit den \ac{fhir}-Profilen wird danach in die \ac{copra}-Instanz des Staging Bereichs des \ac{dw} angelegt, um 
-%die Überführung der Biosignaldaten aus \acs{copra} in den \ac{fhir}-Profile einzuplanen, und
- weitere Transformationsregeln für die Erzeugung der \ac{fhir}-Ressourcen aus den Biosignaldaten von \ac{copra} zu definieren.
+Der Datensatz der zugeordneten Konfigurationsvariablen mit den \ac{fhir}-Profilen wird danach in die \ac{copra}-Instanz des Staging Bereichs des \ac{dw} angelegt, um weitere Transformationsregeln für die Erzeugung der \ac{fhir}-Ressourcen aus den Biosignaldaten von \ac{copra} zu definieren.
 
 Mit dem Datensatz der zugeordneten Konfigurationsvariablen in dem Staging Bereich des \ac{dw} und mit der Identifikation der Felder von Quelle- und Zielsystemen werden \ac{sql}-Views in dem \ac{copra}-Instanz des Staging Bereichs programmiert, um die notwendigen Parameter der verschiedenen Tabellen zusammenzuführen. Diese Views können bei der Implementierung für die Erzeugung der \ac{fhir}-Ressourcen angewendet werden.
 
