@@ -1,10 +1,14 @@
 \section{Parameter der \acs{fhir}-Profile des Moduls \glqq\acs{icu}\grqq{}} \label{sec:fhirprofs}
 
-Die Information der \ac{fhir}-Profile des Moduls \glqq\ac{icu}\grqq{} des Kerndatensatzes der \ac{mii} wurde aus der Webseite \href{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html}{Medizininformatik Initiative - Modul ICU - ImplementationGuide} herausgenommen. Obwohl dieses Modul zum Abstimmverfahren von 25.02.2022 bis 08.04.2022 freigeben wurde, befindet es sich noch während der Entwicklung dieses Projekts in der ersten stabilen Ballot-Version. Das bedeutet für diese Arbeit, dass Unregelmäßigkeiten in den Profilen detektiert werden können, und als Issue gemeldet werden.
+Die Information der \ac{fhir}-Profile wurde aus der Webseite \href{https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Intensivmedizin/IGMIIKDSModulICU.html}{Medizininformatik Initiative - Modul ICU - ImplementationGuide} herausgenommen. 
 
-Die Parameter je Profil an der Webseite, nämlich Name, Typ, Attribute der Maßeinheit, Daten der Codesysteme und vorhandene Metrik des Geräts wurden in die Tabelle \texttt{mii\_icu} der \ac{db} \texttt{mii\_copra} eingefügt.
+Obwohl dieses Modul zum Abstimmverfahren von 25.02.2022 bis 08.04.2022 freigeben wurde, befindet es sich noch während der Entwicklung dieses Projekts in der ersten stabilen Ballot-Version. Das bedeutet für diese Arbeit, dass Unregelmäßigkeiten in den Profilen detektiert werden können, und als Issue gemeldet werden.
 
-Die meisten \ac{fhir}-Profile unter der Kategorie \glqq Observation\grqq{} besitzen eine ähnliche Struktur, sodass der Import in die Tabelle \texttt{mii\_icu} erleichtert wird. Die Ausnahmen bilden die Profile der Gruppe \glqq Blutdruck Generisch\grqq{} für die Speicherung der Blutdruckmessungen, z. B. \glqq Linksatrialer Druck\grqq{}. Diese Profile sind eine Zusammensetzung von drei separat kodierten \glqq Observations\grqq{}, die dieselben Attribute teilen, nämlich die Spezifikationen für den systolischen, mittleren und diastolischen Blutdruck. In solchen Fällen wurden auch die semantischen Annotationen der systolischen, mittleren und diastolischen Attribute in der Tabelle \texttt{mii\_icu} registriert.
+Die Parameter je Profil an der Webseite: Name, Typ, Attribute der Maßeinheit, Daten der Codesysteme und vorhandene Metrik des Geräts, wurden in die Tabelle \texttt{mii\_icu} der \ac{db} \texttt{mii\_copra} eingefügt.
+
+Die meisten \ac{fhir}-Profile unter der Kategorie \glqq Observation\grqq{} besitzen eine ähnliche Struktur, sodass der Import in die Tabelle \texttt{mii\_icu} erleichtert wird. Die Ausnahmen bilden die Profile der Gruppe \glqq Blutdruck Generisch\grqq{} zur Speicherung der Blutdruckmessungen, z. B. \glqq Linksatrialer Druck\grqq{}. Diese Profile sind eine Zusammensetzung von drei separat kodierten \glqq Observations\grqq{}, die dieselben Attribute teilen, nämlich die Spezifikationen für den systolischen, mittleren und diastolischen Blutdruck. In solchen Fällen wurden auch die semantischen Annotationen der systolischen, mittleren und diastolischen Attribute in der Tabelle \texttt{mii\_icu} registriert.
+
+\newpage
 
 Die Struktur der Tabelle \texttt{mii\_icu} zur Speicherung der Elemente der \ac{fhir}-Profile ist in der \ref{tab:miiicu} dargestellt.
 
