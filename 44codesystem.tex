@@ -81,15 +81,12 @@ Das \acf{ieee} ist die weltweit größte technische Fachorganisation, die sich f
 
 Die \acs{iso}/\ac{ieee} 11073-10101\texttrademark{} Nomenklatur wurde von dem \acs{iso}/\ac{ieee} 11073\texttrademark{} Standard Komitee der \glqq \ac{ieee} Engineering in Medicine and Biology Society\grqq{} vorbereitet \cite{ieeeiso}. Die \acs{iso}/\ac{ieee} 11073-10101\texttrademark{} Nomenklatur legt Nomenklaturcodes fest, die die Interoperabilität von Medizinprodukten auf semantischer Ebene erleichtern \cite{ieeearch}. Dieser Standard ist auf medizinischen Geräten für die Akutversorgung und Informationen über die Vitalparameter der Patienten und Patientinnen fokussiert \cite{ieeeiso}. Die \acs{iso}/\ac{ieee} 11073-10101\texttrademark{} definiert sowohl die Architektur als auch die Hauptkomponenten der Nomenklatur, zusammen mit ausführlichen Definitionen für jeden konzeptionellen Bereich \cite{ieeesa}. Dieser Standard ermöglicht die Verlinkung mit \ac{loinc} und \ac{snomedct}, außerdem werden auch \ac{fhir}-Extensions entwickelt, die \acs{iso}/\ac{ieee} 11073-10101\texttrademark{} unterstützen \cite{ieeeextending}. Der Abschnitt von \ac{json}-Code \ref{list:jsonieee} zeigt die Anwendung von einem \acs{iso}/\ac{ieee} 11073-10101\texttrademark{}-Identifikator in dem \ac{fhir}-Profil \glqq Atemzugvolumen-Während-Beatmung\grqq{} des Erweiterungsmoduls \glqq\ac{icu}\grqq{} des Kerndatensatzes der \ac{mii}.
 
-%\newpage
-
 \begin{lstlisting}[caption={[\acs{iso}/\acs{ieee} 11073-10101\texttrademark{} in \acs{fhir}] Beispiel der Anwendung von \acs{iso}/\acs{ieee} 11073-10101\texttrademark{} in \acs{fhir}.},language=JavaScript, label=list:jsonieee, captionpos=b]
 {
   "system": "urn:iso:std:iso:11073:10101",
   "code": "151980"
 }
 \end{lstlisting}
-
 
 \subsection{\acs{ucum}} \label{sub:ucum}
 

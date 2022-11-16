@@ -20,18 +20,6 @@ Die Referenzen ermöglichen es, dass mehrere Ressourcen und deren Informationsei
 
 Viele Werte in den \ac{fhir}-Ressourcen sind optional, sodass eine Umsetzung kompatibel ist, wenn sie nur die minimal obligatorischen Daten liefert. Diese Werte können von außen über die Profile modifiziert werden, und können wiederum sich aufeinander verweisen \cite{ehealtOk}. Das bedeutet die \ac{fhir}-Profile sind die Spezifikationen, die die \ac{fhir}-Ressourcen beschreiben und definieren, z. B. die Festlegung von konkreten Codesystemen \cite{fhir, fhircompact}.
 
-\begin{comment}
-Der \ac{fhir}-Standard besitzt fünf Begriffe für die Beschreibung der Stabilität-Ebene \cite{fhircompact}:
-
-\begin{enumerate}
-	\item Draft: Dies beschreibt eine nicht komplette oder nicht ausreichende überprüfende Spezifikation. Die Nutzung der Spezifikationen unter dieser Ebene ist riskant.
-	\item Trial Use: Solche Spezifikationen sind noch nicht veröffentlicht, trotzdem gut überprüft und von den Autoren für die Nutzung in Systemen empfohlen.
-	\item Normative: Diese sind die stabilen veröffentlichten Spezifikationen.
-	\item Informative: Diese Spezifikationen definieren keine Regeln und sind für die Assistenz der Implementierung konzipiert.
-	\item Deprecated: Die Spezifikationen unter dieser Ebene sind veraltet, und beinhalten Orientierungshilfe für die Anwender und Anwenderinnen. Somit sollen sie verhindern, neue Features in diesen Spezifikationen einzufügen.
-\end{enumerate}
-\end{comment}
-
 Ein zuvor genannter Aspekt von \ac{fhir} ist seine Fokussierung auf moderne Webprotokolle. Somit können die \ac{fhir}-Ressourcen, die auf einem Server liegen, über eine Schnittstelle via \ac{http} abgefragt werden \cite{telemedizin, ehealtOk}. Außerdem ist das Datenformat für diese Übertragung auch von \ac{fhir} festgelegt, diese kann entweder \ac{xml} oder \ac{json} sein \cite{ehealtOk}. Diese zwei Formate sind weitverbreitet und besitzen eine hohe Akzeptanz durch ihre Versatilität \cite{fhirformat}.
 
 Die \ac{fhir}-Profile können auf verschiedene Art und Weise dargestellt werden. Die am häufigsten benutzten Arten der Darstellung sind logische Tabellen, \ac{xml}- und \ac{json}-Schemata \cite{fhirformat}.

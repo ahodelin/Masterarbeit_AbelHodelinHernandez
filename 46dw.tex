@@ -5,15 +5,13 @@ Ein \acf{dw} ist \glqq eine fachlich orientierte, integrierte, nicht volatile un
 \begin{itemize}
 	\item Fachorientierung: Die Datenstruktur im \ac{dw} wird für die Unterstützung von klinischen Problemstellungen und Entscheidungen optimiert und somit für die Berechnung von Kennzahlen und deren Zuordnung
 	\item Integration: Daten aus diversen Datenquellen werden in getrennte \acp{db} integriert, z. B. die Informationen der verschiedenen Quellsysteme in einem Krankenhaus werden in unterschiedlichen \acp{db} des Staging Bereichs eines \ac{dw} gesammelt
-	\item Beständigkeit: Die geladenen Daten im \ac{dw} bleiben unverändert.
+	\item Beständigkeit: Die geladenen Daten im \ac{dw} bleiben unverändert
 	\item Historisierung: Die über lange Zeit gespeicherten Daten ermöglichen die Erkennung von Entwicklungen und Trends in den Daten
 \end{itemize}
 
 Die Anwendungsbereiche von \acp{dw} in klinischen Einrichtungen umfasst die Bereitstellung von Informationen, komplexe und flexible Datenanalyse, die Entwicklung von Forschungsprojekten und die Unterstützung der Planungsprozesse \cite{planungdatawarehouse}.
 
 Die Architektur eines \ac{dw} besteht aus fünf Ebenen \cite{dwbauer}. Die Ebene der Datenquellen umfasst die internen und externen Datenquellen mit relevanten Daten \cite{dwgoeken}. In der Datenerfassungsebene werden diese Daten mit Hilfe von \ac{etl}-Prozessen (\ref{subsec:etl}) für das Laden in die zentrale \ac{db}-System (Datenhaltungsebene) extrahiert, aufbereitet und konvertiert \cite{dworiginal}. Diese zentrale \ac{db} ist in mehreren \acp{db} ausgeteilt, und jede davon stellt eine bestimmte Datenquelle dar \cite{dwgoeken}. In der Datenbereitstellungsebene werden die gespeicherten Daten für multidimensionale Analysen aufbereitet \cite{dwbauer}. Auf der Präsentationsebene befinden sich Anwendungsprogramme mit Zugriff auf die aufbereiteten Daten für die Analyse \cite{dwtool}.
-
-%Zwei wesentliche Komponenten in der Architektur eines \ac{dw} sind die \ac{etl}-Prozesse auf der Datenerfassungsebene und das \ac{olap}-System (\ref{subsec:olap}) auf der Datenbereitstellungsebene.
 
 \subsection{\acs{etl}} \label{subsec:etl} 
 
