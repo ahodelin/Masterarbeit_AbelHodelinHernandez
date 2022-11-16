@@ -1,4 +1,4 @@
-\section{Bereitstellung der \acs{copra}-Daten in dem \acs{dw}} \label{sec:prepdwtofhir}
+\section{Bereitstellung der \acs{copra}-Daten im \acs{dw}} \label{sec:prepdwtofhir}
 
 Mit der Modellierung der Zuweisung der Felder und der Definition von neuen Transformationsregeln für die Überführung der Biosignaldaten aus \ac{copra} in die \ac{fhir}-Ressourcen des Erweiterungsmoduls \glqq Intensivmedizin\grqq{} wurden drei \ac{sql}-Views programmiert, um die Parameter der Profile, Attribute der Biosignaldaten in den Werttabellen, zusammen mit den dazugehörigen Daten der behandelnden Personen, zu verlinken und zu visualisieren. Die angelegten \ac{sql}-Views sind Folgende:
 
@@ -125,7 +125,7 @@ as
 
 Der Inhalt der Spalten der programmierten \ac{sql}-Views wurde in der vorherige Sektion (\ref{sec:transfer}) geklärt. 
 
-Mit diesen \ac{sql}-Views können \ac{fhir}-Ressourcen wie in dem Code \ref{list:fhirres} erzeugt werden, denn eine Zeile in der View entspricht einer \ac{fhir}-Ressource in dem Erweiterungsmodul \glqq Intensivmedizin\grqq{}.
+Mit diesen \ac{sql}-Views können \ac{fhir}-Ressourcen wie im Code \ref{list:fhirres} erzeugt werden, denn eine Zeile in der View entspricht einer \ac{fhir}-Ressource im Erweiterungsmodul \glqq Intensivmedizin\grqq{}.
 
 \begin{lstlisting}[caption={[Beispiel einer \acs{fhir}-Ressource aus \acs{copra}] Beispiel einer \acs{fhir}-Ressource einer Blutdruckmessung aus \acs{copra}.},language=JavaScript, label=list:fhirres, captionpos=b]
 	{

@@ -38,7 +38,7 @@ for profil in prn: # Bei jeden Namen der Profile
 	\end{tabular}
 \end{table}
 
-Nach dem vorherigen Ergebnis der unscharfen Suche wurden die \ac{fhir}-Profile und die Konfigurationsvariablen nochmal analysiert. Dieses Mal mit \ac{sql}-Abfragen mit \acp{regex} in den WHERE-Bedingungen. Für dieses Verfahren wurden Informationen der Spalten \texttt{profile\_name} und \texttt{loinc} der Tabelle \texttt{mii\_icu} benutzt, um Muster in den Spalten \texttt{name} und \texttt{description} der Tabelle \texttt{co6\_config\_variables} zu identifizieren. Die \ref{fig:mapping} zeigt eine Darstellung der angewandten Parameter der Tabellen und deren Zusammenführung in dem Pattern Matching-Prozess.
+Nach dem vorherigen Ergebnis der unscharfen Suche wurden die \ac{fhir}-Profile und die Konfigurationsvariablen nochmal analysiert. Dieses Mal mit \ac{sql}-Abfragen mit \acp{regex} in den WHERE-Bedingungen. Für dieses Verfahren wurden Informationen der Spalten \texttt{profile\_name} und \texttt{loinc} der Tabelle \texttt{mii\_icu} benutzt, um Muster in den Spalten \texttt{name} und \texttt{description} der Tabelle \texttt{co6\_config\_variables} zu identifizieren. Die \ref{fig:mapping} zeigt eine Darstellung der angewandten Parameter der Tabellen und deren Zusammenführung im Pattern Matching-Prozess.
 
 \clearpage
 
@@ -69,7 +69,7 @@ or description ~* 'mea.+pres.+(resp|vent)'
 ;
 \end{lstlisting}
 
-In dem Code \ref{list:pattdruck} werden die Spalten \texttt{name} und \texttt{description} der Tabelle \texttt{co6\_config\_variables} gleichzeitig zur Erkennung von Mustern untersucht. In der definierten \ac{regex} dieser \ac{sql}-Abfrage wird die Tilde \glqq$\sim$\grqq{} gefolgt von einem Sternchen \glqq$\ast$\grqq{} benutzt, um Groß- und Kleinschreibung nicht zu berücksichtigen. Die Teilwörter \glqq mitt\grqq{}, \glqq atm\grqq{} und \glqq druc\grqq{} des Profils \glqq Mittlerer Beatmungsdruck\grqq{} verbunden durch \glqq .+\grqq{}, für eine Folge von beliebigen Zeichen, haben das Ergebnis der \ref{tab:mittatmdruck} geliefert. Die Teilwörter \glqq mea\grqq{}, \glqq pres\grqq{} und die Gruppierung mit den Alternativen \glqq resp\grqq{} oder \glqq vent \grqq{} wurden benutzt, um den Name (Mean pressure Respiratory system airway --on ventilator) auf Englisch und den \glqq Short Name\grqq{} (Mean Pres on vent Airway) zu berücksichtigen.
+Im Code \ref{list:pattdruck} werden die Spalten \texttt{name} und \texttt{description} der Tabelle \texttt{co6\_config\_variables} gleichzeitig zur Erkennung von Mustern untersucht. In der definierten \ac{regex} dieser \ac{sql}-Abfrage wird die Tilde \glqq$\sim$\grqq{} gefolgt von einem Sternchen \glqq$\ast$\grqq{} benutzt, um Groß- und Kleinschreibung nicht zu berücksichtigen. Die Teilwörter \glqq mitt\grqq{}, \glqq atm\grqq{} und \glqq druc\grqq{} des Profils \glqq Mittlerer Beatmungsdruck\grqq{} verbunden durch \glqq .+\grqq{}, für eine Folge von beliebigen Zeichen, haben das Ergebnis der \ref{tab:mittatmdruck} geliefert. Die Teilwörter \glqq mea\grqq{}, \glqq pres\grqq{} und die Gruppierung mit den Alternativen \glqq resp\grqq{} oder \glqq vent \grqq{} wurden benutzt, um den Name (Mean pressure Respiratory system airway --on ventilator) auf Englisch und den \glqq Short Name\grqq{} (Mean Pres on vent Airway) zu berücksichtigen.
 
 \begin{longtable}{|l|p{5cm}|}
 	\caption[Erkannte Konfigurationsvariablen durch eine \acs{regex} mit einer Kombination von allgemeinen Teilwörtern]{Erkannte Konfigurationsvariablen bei der Anwendung der Kombination von allgemeinen Teilwörtern. Das \ac{fhir}-Profil Mittlerer Beatmungsdruck wurde drei Konfigurationsvariablen zugeordnet.}
@@ -96,7 +96,7 @@ or description ~* 'intra[ck]'
 ;
 \end{lstlisting}
 
-In dem Code \ref{list:pattermatc} werden, wie bei dem Code \ref{list:pattdruck}, die Spalten \texttt{name} und \texttt{description} gleichzeitig untersucht. In diesem Beispiel befinden sich in den eckigen Klammern die Buchstaben \glqq c\grqq{} und \glqq k\grqq{}, um die Teilwörter \glqq intrakraniell\grqq{}, oder \glqq intracranial\grqq{} auf Englisch, zu identifizieren.
+Im Code \ref{list:pattermatc} werden, wie bei dem Code \ref{list:pattdruck}, die Spalten \texttt{name} und \texttt{description} gleichzeitig untersucht. In diesem Beispiel befinden sich in den eckigen Klammern die Buchstaben \glqq c\grqq{} und \glqq k\grqq{}, um die Teilwörter \glqq intrakraniell\grqq{}, oder \glqq intracranial\grqq{} auf Englisch, zu identifizieren.
 
 Ein vorher genannter Aspekt ist die allgemeine, umgangssprachliche Anwendung der \ac{loinc}-\glqq Short Names\grqq{} vom Personal des Gesundheitswesens und wie dieser Parameter in der Konfigurationsvariablen zu finden ist. Ein Beispiel des Ergebnisses eines Pattern Matchings, um \glqq Short Names\grqq{} der \ac{loinc}-Codes zu berücksichtigen, ist in der \ref{tab:shortnamepattern} dargestellt. In diesem Beispiel ist die Erkennung eines \glqq Short Name\grqq{} in der Spalte \texttt{name} der Tabelle \texttt{co6\_config\_variables} repräsentiert.
 

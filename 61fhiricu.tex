@@ -2,15 +2,15 @@
 
 Bevor die Parameter der \ac{fhir}-Profile in die \ac{db} importiert wurden, erfolgte eine Analyse der bis \textit{dato} 80 \ac{fhir}-Profile. 
 
-In dieser Analyse wurde beobachtet, dass zwei Profile dieselben Namen besitzen, aber unterschiedliche Information beinhalten. Diese sind unter dem Profil-Namen \glqq Linksventrikulärer Schlagvolumenindex\grqq{} zu finden. In einem der Profile wird tatsächlich die Information des linksventrikulären Schlagvolumenindex spezifiziert. Das andere Profil hingegen sollte das linksventrikuläre Schlagvolumen definieren. Dieses Ereignis wurde durch das Attribut \glqq code\grqq{} beider Profile erkannt. Dieses Attribut spezifiziert die Codesysteme des Profils. An dieser Stelle wurde beobachtet, dass das Profil für den linksventrikulären Schlagvolumenindex den \ac{loinc}-Code \href{https://loinc.org/76297-1/}{76297-1} \glqq Left ventricular Stroke volume index\grqq{} besitzt. Das Profil für das linksventrikuläre Schlagvolumen beinhaltet wiederum den \ac{loinc}-Code \href{https://loinc.org/20562-5/}{20562-5} \glqq Left ventricular Stroke volume\grqq{}. Noch dazu sind die spezifizierten \ac{snomedct}-IDs und \ac{ieee}-Schlüssel beider Profile in dem Attribut \glqq code\grqq{} auch unterschiedlich. Diese Problematik war in der SIMPLIFIER-Webseite des Moduls vorher korrigiert. Aus diesem Grund wurde diese Anmerkung als Issue nicht gemeldet.
+In dieser Analyse wurde beobachtet, dass zwei Profile dieselben Namen besitzen, aber unterschiedliche Information beinhalten. Diese sind unter dem Profil-Namen \glqq Linksventrikulärer Schlagvolumenindex\grqq{} zu finden. In einem der Profile wird tatsächlich die Information des linksventrikulären Schlagvolumenindex spezifiziert. Das andere Profil hingegen sollte das linksventrikuläre Schlagvolumen definieren. Dieses Ereignis wurde durch das Attribut \glqq code\grqq{} beider Profile erkannt. Dieses Attribut spezifiziert die Codesysteme des Profils. An dieser Stelle wurde beobachtet, dass das Profil für den linksventrikulären Schlagvolumenindex den \ac{loinc}-Code \href{https://loinc.org/76297-1/}{76297-1} \glqq Left ventricular Stroke volume index\grqq{} besitzt. Das Profil für das linksventrikuläre Schlagvolumen beinhaltet wiederum den \ac{loinc}-Code \href{https://loinc.org/20562-5/}{20562-5} \glqq Left ventricular Stroke volume\grqq{}. Noch dazu sind die spezifizierten \ac{snomedct}-IDs und \ac{ieee}-Schlüssel beider Profile im Attribut \glqq code\grqq{} auch unterschiedlich. Diese Problematik war in der SIMPLIFIER-Webseite des Moduls vorher korrigiert. Aus diesem Grund wurde diese Anmerkung als Issue nicht gemeldet.
 
 Nach der durchgeführten Analyse der 80 \acs{fhir}-Profile, wurden die \ac{fhir}-Elemente der Profile in der Tabelle \texttt{mii\_icu} der \ac{db} \texttt{mii\_copra} geschrieben. Mit diesen Daten in der \ac{db} wurde die Einteilung der Profile analysiert.
 
-Die \ref{tab:proficu} zeigt die Anzahl an Profilen je Kategorie in dem Modul \glqq\ac{icu}\grqq{}. Die meist repräsentierten \ac{fhir}-Profile, nämlich 76, gehören zu der Kategorie \glqq Observation\grqq{}.
+Die \ref{tab:proficu} zeigt die Anzahl an Profilen je Kategorie im Modul \glqq\ac{icu}\grqq{}. Die meist repräsentierten \ac{fhir}-Profile, nämlich 76, gehören zu der Kategorie \glqq Observation\grqq{}.
 
 \begin{table}[ht]
 	\centering 
-	\caption[\acs{fhir}-Profile in dem Modul \glqq\acs{icu}\grqq{}]{\acs{fhir}-Profile in dem Modul \glqq\acs{icu}\grqq{}.}
+	\caption[\acs{fhir}-Profile im Modul \glqq\acs{icu}\grqq{}]{\acs{fhir}-Profile im Modul \glqq\acs{icu}\grqq{}.}
 	\label{tab:proficu}
 	\begin{tabular}{|l|l|}
 		\hline
@@ -22,13 +22,13 @@ Die \ref{tab:proficu} zeigt die Anzahl an Profilen je Kategorie in dem Modul \gl
 	\end{tabular}
 \end{table}
 
-In den logischen Tabellen der \ac{fhir}-Profile sind die standardisierten Codesysteme der Biosignaldaten in dem Attribut \glqq code\grqq{} registriert. Dieses Attribut ist charakteristisch für Profile der Typen \glqq Observation\grqq{} und \glqq Procedure\grqq{}. Die Distribution der Codesysteme in der \ac{fhir}-Profile ist in der \ref{tab:profilcodes} dargestellt. Das meist repräsentierte Codesystem ist \ac{loinc} mit 62 Profilen. Aus diesem Grund wurde dieses Codesystem als zusätzlicher Parameter für das Pattern Matching angewendet. Von den 78 \ac{fhir}-Profilen unter der Kategorien \glqq Observation\grqq{} und \glqq Procedure\grqq{} besitzen fünf kein Codesystem.
+In den logischen Tabellen der \ac{fhir}-Profile sind die standardisierten Codesysteme der Biosignaldaten im Attribut \glqq code\grqq{} registriert. Dieses Attribut ist charakteristisch für Profile der Typen \glqq Observation\grqq{} und \glqq Procedure\grqq{}. Die Distribution der Codesysteme in der \ac{fhir}-Profile ist in der \ref{tab:profilcodes} dargestellt. Das meist repräsentierte Codesystem ist \ac{loinc} mit 62 Profilen. Aus diesem Grund wurde dieses Codesystem als zusätzlicher Parameter für das Pattern Matching angewendet. Von den 78 \ac{fhir}-Profilen unter der Kategorien \glqq Observation\grqq{} und \glqq Procedure\grqq{} besitzen fünf kein Codesystem.
 
 %\clearpage
 
 \begin{table}[ht]
 	\centering 
-	\caption[Codesysteme der \acs{fhir}-Profile in dem Modul \glqq\acs{icu}\grqq{}]{Distribution der Codesysteme der \acs{fhir}-Profile in dem Modul \glqq\acs{icu}\grqq{}.}
+	\caption[Codesysteme der \acs{fhir}-Profile im Modul \glqq\acs{icu}\grqq{}]{Distribution der Codesysteme der \acs{fhir}-Profile im Modul \glqq\acs{icu}\grqq{}.}
 	\label{tab:profilcodes}
 	\begin{tabular}{|l|l|}
 		\hline
@@ -40,7 +40,7 @@ In den logischen Tabellen der \ac{fhir}-Profile sind die standardisierten Codesy
 	\end{tabular}
 \end{table}
 
-Die Profile der Typen \glqq Observation\grqq{}, die keine Codesysteme beinhalten (\ref{tab:profilnocode}), gehören zu den generischen Profilen. Diese sind nicht für die direkte Umsetzung konzipiert, sondern zur Modellierung der Daten. Die \glqq Procedure\grqq{}-Profile beinhalten keine Codesysteme, weil diese Information in dem Basismodul \glqq Prozedur\grqq{} der Kerndatensatz der \ac{mii} sich befindet. Die Profile unter der Kategorie \glqq DeviceMetric\grqq{} besitzen auch keine Codesysteme, denn diese Profile beschreiben die Messung oder Einstellungen des Geräts (\ref{subsec:icumodul}).
+Die Profile der Typen \glqq Observation\grqq{}, die keine Codesysteme beinhalten (\ref{tab:profilnocode}), gehören zu den generischen Profilen. Diese sind nicht für die direkte Umsetzung konzipiert, sondern zur Modellierung der Daten. Die \glqq Procedure\grqq{}-Profile beinhalten keine Codesysteme, weil diese Information im Basismodul \glqq Prozedur\grqq{} der Kerndatensatz der \ac{mii} sich befindet. Die Profile unter der Kategorie \glqq DeviceMetric\grqq{} besitzen auch keine Codesysteme, denn diese Profile beschreiben die Messung oder Einstellungen des Geräts (\ref{subsec:icumodul}).
 
 \begin{table}[ht]
 	\centering  
@@ -55,7 +55,7 @@ Die Profile der Typen \glqq Observation\grqq{}, die keine Codesysteme beinhalten
 	\end{tabular}
 \end{table}
 
-Ein weiterer wichtiger Aspekt ist die Analyse der Maßeinheiten der 76 Profile des Typs \glqq Observation\grqq{}. An dieser Stelle wurden 73 Profile mit definierten und drei ohne definierte Maßeinheiten in dem Modul gefunden. Diese letzten drei Profile sind dieselben \glqq Observation\grqq{}-Profile ohne Codesysteme (\ref{tab:profilnocode}).
+Ein weiterer wichtiger Aspekt ist die Analyse der Maßeinheiten der 76 Profile des Typs \glqq Observation\grqq{}. An dieser Stelle wurden 73 Profile mit definierten und drei ohne definierte Maßeinheiten im Modul gefunden. Diese letzten drei Profile sind dieselben \glqq Observation\grqq{}-Profile ohne Codesysteme (\ref{tab:profilnocode}).
 
 Eine andere Beobachtung hinsichtlich der Maßeinheiten mancher Profile ist, dass die Schreibweise einer Maßeinheit oder deren Untereinheiten bei verschiedenen Profilen nicht immer dieselbe war. Diese Unregelmäßigkeit wurde an die SIMPLIFIER-Webseite des Moduls gemeldet (\href{https://simplifier.net/medizininformatikinitiative-modul-intensivmedizin/~issues/2083}{Issue \#2083}), und von den Autoren und Entwicklern des Moduls korrigiert. Nach der Korrektur wurden die Schreibweisen der Maßeinheiten der \ac{fhir}-Profile in der Spalte \texttt{valuequantity\_code} der Tabelle \texttt{mii\_icu} geändert.
 

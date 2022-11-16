@@ -4,7 +4,7 @@ Für die Umsetzung dieser Arbeit wird eine \ac{db} in PostgreSQL entwickelt, um 
 
 Die \ac{fhir}-Profile des Erweiterungsmoduls \glqq\ac{icu}\grqq{} werden analysiert, und die allgemeinen Parameter der Profile werden in der entwickelten \ac{db} gespeichert. Einige dieser Parameter werden als Hilfsmittel für die Datenzuordnung angewendet. Andere hingegen spiegeln die Attribute der Biosignaldaten in \ac{copra} wider.
 
-Nach der Speicherung der Profile wird die Struktur der Tabellen von \ac{copra} in dem Staging Bereich des \ac{dw} analysiert. Diese beinhalten die Metadaten, wie Konfigurationsvariablen und Datentypen, und die Werte der Biosignaldaten mit den Attributen für das Data Mapping mit den \ac{fhir}-Profilen. 
+Nach der Speicherung der Profile wird die Struktur der Tabellen von \ac{copra} im Staging Bereich des \ac{dw} analysiert. Diese beinhalten die Metadaten, wie Konfigurationsvariablen und Datentypen, und die Werte der Biosignaldaten mit den Attributen für das Data Mapping mit den \ac{fhir}-Profilen. 
 
 Die Voraussetzungen für die Auswahl der Konfigurationsvariablen für die weitere Durchführung des Projekts werden definiert. Die ausgewählten Konfigurationsvariablen sollen patienten- oder fallbezogene sein, und mindestens 1000 validierten, aktuellen und nicht gelöschten Datensätzen in den Werttabellen beinhalten (\ref{subsec:datadef}).
 
@@ -14,11 +14,11 @@ Mit den gespeicherten Informationen der \ac{fhir}-Profile und den Konfigurations
 
 Der Prozess für die Verlinkung der Konfigurationsvariablen mit den \ac{fhir}-Profilen generiert einen Datensatz mit den notwendigen Attributen der Konfigurationsvariablen und der \ac{fhir}-Profile. Dieser Datensatz wird validiert.
 
-Für die Harmonisierung der Maßeinheiten beider Systeme werden diese Einheiten verglichen, um Fehler und andere Irregularitäten zu detektieren, und wenn möglich, mit der Kooperation der fachlichen Spezialisten der \ac{pdms}-Abteilung und mit Hilfe der Definition von Transformationsregeln solche Probleme zu lösen. Diese Regeln werden in dem Datensatz der zugeordneten Konfigurationsvariablen mit den \ac{fhir}-Profilen eingefügt, sodass zum Schluss die Maßeinheiten beider Systeme harmonisiert sind.
+Für die Harmonisierung der Maßeinheiten beider Systeme werden diese Einheiten verglichen, um Fehler und andere Irregularitäten zu detektieren, und wenn möglich, mit der Kooperation der fachlichen Spezialisten der \ac{pdms}-Abteilung und mit Hilfe der Definition von Transformationsregeln solche Probleme zu lösen. Diese Regeln werden im Datensatz der zugeordneten Konfigurationsvariablen mit den \ac{fhir}-Profilen eingefügt, sodass zum Schluss die Maßeinheiten beider Systeme harmonisiert sind.
 
 Der Datensatz der zugeordneten Konfigurationsvariablen mit den \ac{fhir}-Profilen wird danach in die \ac{copra}-Instanz des Staging Bereichs des \ac{dw} angelegt, um weitere Transformationsregeln für die Erzeugung der \ac{fhir}-Ressourcen aus den Biosignaldaten von \ac{copra} zu definieren.
 
-Mit dem Datensatz der zugeordneten Konfigurationsvariablen in dem Staging Bereich des \ac{dw} und mit der Identifikation der Felder von Quelle- und Zielsystemen werden \ac{sql}-Views in dem \ac{copra}-Instanz des Staging Bereichs programmiert, um die notwendigen Parameter der verschiedenen Tabellen zusammenzuführen. Diese Views können bei der Implementierung für die Erzeugung der \ac{fhir}-Ressourcen angewendet werden.
+Mit dem Datensatz der zugeordneten Konfigurationsvariablen im Staging Bereich des \ac{dw} und mit der Identifikation der Felder von Quelle- und Zielsystemen werden \ac{sql}-Views im \ac{copra}-Instanz des Staging Bereichs programmiert, um die notwendigen Parameter der verschiedenen Tabellen zusammenzuführen. Diese Views können bei der Implementierung für die Erzeugung der \ac{fhir}-Ressourcen angewendet werden.
 
 Ein Flussdiagramm (\ref{sec:flowdiagram}) der Ablaufschritte dieses Projekts ist in der \ref{fig:flowdiagram} dargestellt.
 
