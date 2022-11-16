@@ -1,6 +1,6 @@
 \section{Biosignaldaten aus \acs{copra}} \label{sec:configvarcopradiscu}
 
-Die Daten aus \ac{copra} zeigten eine sehr geringe Interoperabilität. Ein Grund hierzu ist die fehlende Standardisierung bei der Schreibweise und Art der Maßeinheiten, denn manche Einheiten und deren Darstellung nicht durch internationale etablierte Standards, wie die \ac{ucum} definiert sind. Das hat zufolge, dass die Maßeinheiten zwischen beiden Systemen harmonisiert werden müssen, und die spezifizierten Einheiten der \ac{fhir}-Profile benutzt werden sollen, denn die Maßeinheiten in den \ac{fhir}-Profilen durch standardisierte Codesysteme definiert sind. 
+Die Daten aus \ac{copra} zeigten eine sehr geringe Interoperabilität. Ein Grund hierzu ist die fehlende Standardisierung bei der Schreibweise und Art der Maßeinheiten, da manche Einheiten und deren Darstellung nicht durch internationale etablierte Standards, wie die \ac{ucum} definiert sind. Das hat zufolge, dass die Maßeinheiten zwischen beiden Systemen harmonisiert werden müssen, und die spezifizierten Einheiten der \ac{fhir}-Profile benutzt werden sollen, denn die Maßeinheiten in den \ac{fhir}-Profilen durch standardisierte Codesysteme definiert sind. 
 
 Darüber hinaus sind manche Biosignaldaten im \ac{copra}-System nicht harmonisiert, denn das \ac{copra}-System beinhaltet keine der etablierten Codesysteme für die Codierung der Bioparameter. Das hat zufolge, dass in einigen Situationen dasselbe Biosignal von unterschiedlichen Geräten und/oder in diversen Stationen gemessen wird, aber unterschiedlich wahrgenommen werden konnte. Ein Beispiel davon befindet sich in \ref{tab:sameprofilbiosig}.
 
@@ -18,7 +18,7 @@ Darüber hinaus sind manche Biosignaldaten im \ac{copra}-System nicht harmonisie
  	\end{tabular}
  \end{table}
 
-Nur eine der zugeordneten Biosignaldaten ist der Typ String (\ref{tab:stringvalue}). Durch andere parallele Projekte, wie der \ac{aktin}-Notaufnahmeregister, wurde zur Kenntnis genommen, dass es weitere \ac{copra}-Biosignaldaten, wie die Pupillenweite oder Pupillenreaktion, auch der Datentyp String sind, und deren Informationen in den aktuellen \ac{copra}-Tabellen des Staging Bereichs des \ac{dw} sich befinden. Diese anderen Biosignalparameter können bei der Erweiterung des Moduls \glqq Intensivmedizin\grqq{} betrachtet werden.
+Nur eine der zugeordneten Biosignaldaten ist der Typ String (\ref{tab:stringvalue}). Durch andere Projekte, wie der \ac{aktin}-Notaufnahmeregister, wurde zur Kenntnis genommen, dass es weitere Biosignaldaten, wie die Pupillenweite oder Pupillenreaktion, auch der Datentyp String sind, und deren Informationen in den aktuellen \ac{copra}-Tabellen des Staging Bereichs des \ac{dw} sich befinden. Diese anderen Biosignalparameter können bei der Erweiterung des Moduls \glqq Intensivmedizin\grqq{} betrachtet werden.
 
 Andere erkannte Unregelmäßigkeiten sind die Namen und die Beschreibungen der Konfigurationsvariablen in \ac{copra}. Einerseits beinhalten viele Biosignaldaten keine Beschreibung für die Fachtermini im System, die die Daten dokumentieren. In diese Situation befinden sich 379 der 701 relevanten Konfigurationsvariablen. Anderseits verfolgt die Benennung der Konfigurationsvariablen keine Standardnomenklatur, weder auf Deutsch noch auf Englisch. Aus diesem Grund wurden viele \ac{fhir}-Profile nicht gefunden.
 

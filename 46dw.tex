@@ -23,7 +23,7 @@ Zuerst werden bei der Datenextraktion die Daten aus den verschiedenen Datenquell
 
 Nach der Datenextraktion werden die Daten transformiert. Ziel der Transformation ist eine hohe Qualität der Daten zu gewährleisten. Damit werden die extrahierten Daten bereinigt, harmonisiert und zusammengeführt. Bei der Transformation werden Fehler und Inkonsistenzen beseitigt. Ein weiterer Aspekt der Datentransformation ist die Erstellung von Metadaten und künstlichen Schlüsseln zur Erleichterung der Referenzen auf die Datensätze im \ac{dw}, denn in manchen Fällen werden die Schlüssel der Quellsysteme nicht verwendet, denn zwei oder mehrere Quellsystemen können dasselbe Schlüsselschema haben \cite{dwbauer, dwtool}, z. B. die Nutzung von fortlaufenden Nummern als Primärschlüssel für die Identifikation von Diagnosen in verschiedenen Datenquellen.
 
-Die Ladephase ist die Letzte in dem \ac{etl}-Prozess. Damit werden die transformierten Daten physikalisch in die Zieltabellen des \ac{dw} überführt \cite{dwgoeken, dwtool}.
+Die Ladephase ist die Letzte im \ac{etl}-Prozess. Damit werden die transformierten Daten physikalisch in die Zieltabellen des \ac{dw} überführt \cite{dwgoeken, dwtool}.
 
 Ein Beispiel eines \ac{etl}-Prozesses ist in der \ref{fig:dizummz} im Kapitel \glqq Realisierung\grqq{} (\ref{ch:results}) dieses Projekts dargestellt.
 

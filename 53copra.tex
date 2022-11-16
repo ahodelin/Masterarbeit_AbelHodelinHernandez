@@ -31,7 +31,9 @@ Die Tabelle \texttt{co6\_config\_variable\_types} enthält die Datentypen der Ko
 		tableName & varchar & Name der Tabelle, in der die Information im \ac{copra} gespeichert wird, z. B. co6\_data\_string \\ \hline 
 	\end{tabular}
 \end{table}
+
 \newpage
+
 Eine weitere wichtige Tabelle für die spätere Überführung der Daten ist \texttt{co6\_medic\_data\_patient} (\ref{tab:patient}). Diese beinhaltet die Basisinformation der behandelnden Personen. Diese Tabelle beinhaltet zusammen mit der Patientennummer einen Hauptschlüssel für die Verlinkung der Werte der Biosignaldaten in den Werttabellen mit der korrespondierenden Person. Aus diesem Grund befindet sich dieser Schlüssel als Fremdschlüssel auch in den Werttabellen.
 %\clearpage
 \begin{longtable}{{|p{3.5cm}|l|p{6.7cm}|}}

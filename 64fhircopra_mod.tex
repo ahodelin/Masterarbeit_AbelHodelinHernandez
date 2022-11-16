@@ -6,7 +6,7 @@ Der erste Schritt für das Pattern Matching war die Zuordnung der \ac{fhir}-Prof
 
 Mit einem Python-Skript und der extrahierten \ac{csv}-Datei wurde die unscharfe Suche durchgeführt. Dieser Prozess liefert einen Datensatz mit 400 Paaren von zugeordneten Profilen mit Konfigurationsvariablen. 355 Paare davon waren falsche Zuordnungen, wie die Beispiele der \ref{tab:wrongpaar} zeigen.
 
-\begin{lstlisting}[language=python, caption={[Python-Skript für das Pattern Matching] Python-Skript für das Pattern Matching. Die Option \glqq token\_set\_ratio\grqq{} ermöglicht eine flexiblere fuzzy-Suche (\ref{sub:levdist}), denn die Länge der Namen der Profile, Namen und  Beschreibungen der Konfigurationsvariablen sind deutlich unterschiedlich.} , captionpos=b, label=list:testr]
+\begin{lstlisting}[language=python, caption={[Python-Skript für das Pattern Matching] Python-Skript für das Pattern Matching. Die Option \glqq token\_set\_ratio\grqq{} ermöglicht eine flexiblere fuzzy-Suche (\ref{sub:levdist}), denn die Länge der Namen der Profile und die Länge der Namen und Beschreibungen der Konfigurationsvariablen sind deutlich unterschiedlich.} , captionpos=b, label=list:testr]
 from thefuzz import process, fuzz  # Bibliotheken laden
 
 with open("profils_names.csv") as fp: # Datei mit den Namen der Profile
@@ -20,7 +20,7 @@ cvn = [x.strip() for x in cvn]
 for profil in prn: # Bei jeden Namen der Profile
   match_ratios = process.extract(profil, cvn, scorer=fuzz.token_set_ratio) # Liste der passenden Konfigurationsvariablen.
   for prn_match_cvn in match_ratios: 
-    print(profil, prn_match_cvn) # Liste der Paaren "Profile - Konfigurationsvariablen"
+    print(profil, prn_match_cvn) # Liste der Paare "Profile - Konfigurationsvariablen"
    
 \end{lstlisting}
 
@@ -30,7 +30,7 @@ for profil in prn: # Bei jeden Namen der Profile
 	\label{tab:wrongpaar}
 	\begin{tabular}{|l|l|}
 		\hline
-		\bfseries Profil & \bfseries Konfigurationsvariable \\ \hline
+		\bfseries Profile & \bfseries Konfigurationsvariablen \\ \hline
 		Arterieller Druck & ICP - Intrakranialer Druck \\ \hline
 		Atemfrequenz & HF - Herzfrequenz \\ \hline
         Rechtsatrialer Druck & CPP - Zerebraler Perfusionsdruck \\ \hline

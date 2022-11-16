@@ -12,9 +12,9 @@ Vor der Realisierung des Projekts ist auch wichtig zu wissen, wie die Daten in d
 	\label{fig:dizummz}
 \end{figure}
 
-Für die Realisierung dieses Projekts wurde mit der Information der \ac{copra}-Instanz des Staging Bereichs des \ac{dw} im \ac{diz} gearbeitet (\ref{fig:components}).
+Für die Realisierung dieses Projekts wurde mit der Information der \ac{copra}-Instanz des Staging Bereichs des \ac{dw} gearbeitet (\ref{fig:components}).
 
- Zu Beginn wurde die \ac{db} \texttt{mii\_copra} entwickelt. In den Tabellen dieser \ac{db} wurden die Parameter der \ac{fhir}-Profile des Erweiterungsmodul \glqq Intensivmedizin\grqq{} zusammen mit den relevanten Konfigurationsvariablen von \ac{copra} aus der \ac{copra}-Instanz des Staging Bereichs des \ac{dw} des \ac{diz} importiert. In der \ac{db} \texttt{mii\_copra} wurden auch die Zwischenschritten des Data Mappings realisiert. Als Ergebnis dieses Prozesses wird eine Datensatz mit zugeordneten Konfigurationsvariablen mit \ac{fhir}-Profilen erzeugt. Dieser Datensatz wurde danach in der \ac{copra}-Instanz des Staging Bereichs des \ac{dw} importiert. Mit diesem Datensatz als Basis wurden \ac{sql}-Views für die Zusammenführung der Daten beider Systeme programmiert.
+ Zu Beginn wurde die \ac{db} \texttt{mii\_copra} entwickelt. In den Tabellen dieser \ac{db} wurden die Parameter der \ac{fhir}-Profile des Erweiterungsmodul \glqq Intensivmedizin\grqq{} zusammen mit den relevanten Konfigurationsvariablen von \ac{copra} aus der \ac{copra}-Instanz des Staging Bereichs des \ac{dw} des \ac{diz} importiert. In der \ac{db} \texttt{mii\_copra} wurden auch die Zwischenschritten des Data Mappings realisiert. Als Ergebnis dieses Prozesses wird ein Datensatz mit zugeordneten Konfigurationsvariablen mit \ac{fhir}-Profilen erzeugt. Dieser Datensatz wurde danach in der \ac{copra}-Instanz des Staging Bereichs des \ac{dw} importiert. Mit diesem Datensatz als Basis wurden \ac{sql}-Views für die Zusammenführung der Daten beider Systeme programmiert.
 
 Ein Diagramm mit den Komponenten und dem Fluss der Daten in diesem Projekt ist in der \ref{fig:components} dargestellt.
 %\clearpage
