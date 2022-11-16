@@ -1,7 +1,7 @@
 \section{Auswahl der Konfigurationsvariablen von \acs{copra}} \label{sec:configvarcopra}
 
-Die Tabelle \texttt{co6\_config\_variables} in Zusammenhang mit den Werttabellen von \ac{copra} wurde untersucht, um die relevanten Konfigurationsvariablen für die Durchführung der Arbeit zu erkennen. Die Tabelle \texttt{co6\_config\_variables} beinhaltet 7409 Konfigurationsvariablen.
-\newpage
+Die Tabelle \texttt{co6\_config\_variables} in Zusammenhang mit den Werttabellen wurde untersucht, um die relevanten Konfigurationsvariablen für die Durchführung der Arbeit zu erkennen. Die Tabelle \texttt{co6\_config\_variables} beinhaltet 7409 Konfigurationsvariablen.
+%\newpage
 Die Kriterien für die Wahl der Variablen sind Folgende:
 
 \begin{itemize}
@@ -15,7 +15,7 @@ Die Kriterien für die Wahl der Variablen sind Folgende:
 
 Um die Konfigurationsvariablen auszuwählen, wurde für jede Werttabelle eine \ac{sql}-Abfrage, wie im Code \ref{list:selectconfigvar}, realisiert.
 
-\begin{lstlisting}[language=SQL, caption={[SQL-Abfrage zur Auswahl der Konfigurationsvariablen] SQL-Abfrage zur Auswahl der Konfigurationsvariablen im COPRA-System. \glqq copra.value\_table cvt\grqq{} stellt die verschiedenen Werttabellen im System dar, also co6\_data\_decimal\_6\_3, co6\_data\_string und co6\_medic\_pressure. \glqq quantity\_in\_value\_table\grqq{} ist ein Alias für die Spalte der Menge an Werten in den Werttabellen.}, captionpos=b, label=list:selectconfigvar]
+\begin{lstlisting}[language=SQL, caption={[SQL-Abfrage zur Auswahl der Konfigurationsvariablen] SQL-Abfrage zur Auswahl der Konfigurationsvariablen im COPRA-System. \glqq copra.value\_table cvt\grqq{} stellt die verschiedenen Werttabellen im System dar: co6\_data\_decimal\_6\_3, co6\_data\_string und co6\_medic\_pressure. \glqq quantity\_in\_value\_table\grqq{} ist ein Alias für die Spalte der Menge an Werten in den Werttabellen.}, captionpos=b, label=list:selectconfigvar]
 	select 
 	count(cvt.id) quantity_in_value_table, -- Menge an Werten je Konfigurationsvariable in der Werttabelle
 	ccv.id, -- ID der Konfiguationsvariable
@@ -40,15 +40,17 @@ Die Anzahl der ausgewählten Konfigurationsvariablen in den Werttabellen für da
 
 \begin{table}[ht]
 	\centering  
-	\caption[Anzahl der repräsentierten Konfigurationsvariablen in je Werttabelle]{Anzahl der repräsentierten Konfigurationsvariablen in je Werttabelle. Die meiste Konfigurationsvariablen sammeln numerische Werte. * Nicht alle Konfigurationsvariablen der Typ String speichern Biosignaldaten.}
+	\caption[Anzahl der repräsentierten Konfigurationsvariablen in je Werttabelle]{Anzahl der repräsentierten Konfigurationsvariablen in je Werttabelle. Die meisten Konfigurationsvariablen sammeln numerische Werte.}
 	
 	\label{tab:configvarvaluetables}
 	\begin{tabular}{|r|l|}
 		\hline
 		\bfseries Anzahl & \bfseries Werttabelle \\ \hline
-		492 & \texttt{co6\_data\_decimal\_6\_3} \\ \hline % 537
-		199 * & \texttt{co6\_data\_string} \\ \hline % 203  
-		10 & \texttt{co6\_medic\_pressure} \\ \hline % 10
+		492 & \texttt{co6\_data\_decimal\_6\_3} \\ \hline
+		199 & \texttt{co6\_data\_string} \\ \hline
+		10 & \texttt{co6\_medic\_pressure} \\ \hline
 		701 & Gesamt \\ \hline % 750
 	\end{tabular}
 \end{table}
+
+Unter der 701 ausgewählten Konfigurationsvariablen befinden sich die Biosignaldaten für die Datenzuordnung mit den \ac{fhir}-Profilen.
