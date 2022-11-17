@@ -40,18 +40,16 @@ for profil in prn: # Durchlauf die Namen der Profile
 	\end{tabular}
 \end{table}
 
-Nach dem vorherigen Ergebnis der unscharfen Suche wurden die \ac{fhir}-Profile und die Konfigurationsvariablen nochmal analysiert. Dieses Mal mit \ac{sql}-Abfragen mit \acp{regex} in den WHERE-Bedingungen. Für dieses Verfahren wurden Informationen der Spalten \texttt{profile\_name} und \texttt{loinc} der Tabelle \texttt{mii\_icu} benutzt, um Muster in den Spalten \texttt{name} und \texttt{description} der Tabelle \texttt{co6\_config\_variables} zu identifizieren. Die \ref{fig:mapping} zeigt eine Darstellung der angewandten Parameter der Tabellen und deren Zusammenführung im Pattern Matching-Prozess.
-
-%\clearpage
+Nach dem vorherigen Ergebnis der unscharfen Suche wurden die \ac{fhir}-Profile und die Konfigurationsvariablen nochmal analysiert. Dieses Mal mit \ac{sql}-Abfragen mit \acp{regex}. Für dieses Verfahren wurden die Informationen der Spalten \texttt{profile\_name} und \texttt{loinc} der Tabelle \texttt{mii\_icu} benutzt, um Muster in den Spalten \texttt{name} und \texttt{description} der Tabelle \texttt{co6\_config\_variables} zu identifizieren. Die \ref{fig:mapping} zeigt eine Darstellung der angewandten Parameter der Tabellen und deren Zusammenführung im Pattern Matching-Prozess.
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[height=5.5cm]{figures/mapping}
-	\caption[Zuordnung der Konfigurationsvariablen mit den \acs{fhir}-Profilen]{Schematische Darstellung der Zuordnung der Spalte \texttt{profile\_name} und die \glqq Short Names\grqq{} der \acs{loinc}-Codes in der Spalte \texttt{loinc} der Tabelle \texttt{mii\_icu} mit den Spalten \texttt{name} und \texttt{description} der Tabelle \texttt{co6\_config\_variables}. Das Ergebnis der Zuordnung wird in der Tabelle \texttt{mapping\_mii\_co6} gespeichert.}
+	\caption[Zuordnung der Konfigurationsvariablen mit den \acs{fhir}-Profilen]{Schematische Darstellung der Zuordnung der Spalte \texttt{profile\_name} und die \glqq Short Names\grqq{} der \acs{loinc}-Codes der Spalte \texttt{loinc} der Tabelle \texttt{mii\_icu} mit den Spalten \texttt{name} und \texttt{description} der Tabelle \texttt{co6\_config\_variables}. Das Ergebnis der Zuordnung wird in der Tabelle \texttt{mapping\_mii\_co6} gespeichert.}
 	\label{fig:mapping}
 \end{figure}
 
-Wichtig für die Definition der \acs{regex} bei der Anwendung dieses Verfahrens ist die Auswahl von Teilwörtern (\ref{subsec:pattmatch}) oder Kombinationen davon, die die \ac{fhir}-Profile charakterisieren. Denn diese Teilwörter sind in den meisten Fällen Fachtermini oder Teile von Fachbegriffen und können wieder in den Namen oder Beschreibungen der Konfigurationsvariablen gefunden werden.
+Wichtig für die Definition der \acp{regex} ist die Auswahl der Teilwörtern (\ref{subsec:pattmatch}) oder Kombinationen davon, die die \ac{fhir}-Profile charakterisieren. Denn diese Teilwörter sind in den meisten Fällen Fachtermini oder Teile von Fachbegriffen und können wieder in den Namen oder Beschreibungen der Konfigurationsvariablen gefunden werden.
 
  Manche Teilwörter in den Profilnamen sind sehr allgemein und befinden sich in mehreren Profilen und auch in zahlreichen Namen und Beschreibungen der Konfigurationsvariablen, z. B. \glqq druck\grqq{}. Das hat zufolge, dass viele Konfigurationsvariablen falsch einem Profil durch die Nutzung von nur einem von diesen Teilwörtern zugeordnet werden könnten. Solche Teilwörter wurden in Kombination mit anderen benutzt, um das Pattern Matching zu verfeinern und die Trefferquote zu erhöhen. Hier ist auch die Menge und Länge der angewandten Teilwörter entscheidend, denn die Anwendung von vielen oder zu langen Teilwörtern liefert auch kein Ergebnis. Aus diesem Grund wurde bei der Schreibung der \ac{sql}-Abfragen je \ac{fhir}-Profil solange die Definition der \ac{regex} getestet, bis die optimale Menge und Länge der Teilwörter in der \ac{regex} gefunden wurde, die die genaue Menge an Konfigurationsvariablen geliefert hatten.
 
