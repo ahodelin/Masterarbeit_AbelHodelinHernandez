@@ -60,13 +60,13 @@ In der Untersuchung der Maßeinheiten wurde auch eine fehlerhafte Darstellung de
 	\end{tabular}
 \end{table}
 
-Es wurden acht Konfigurationsvariablen mit Maßeinheiten identifiziert, die nicht dieselben Maßeinheiten haben wie die Einheiten der \ac{fhir}-Profile. Die Maßeinheiten von sieben dieser Konfigurationsvariablen konnten in die Maßeinheiten der \ac{fhir}-Profile umgerechnet werden. Diese Umwandlung wird durch die Multiplikation der numerischen Werte der Werttabellen mit Faktoren realisiert. Die \ref{tab:unittoconvert} zeigt die Liste der betroffenen Maßeinheiten.  
+Es wurden acht Konfigurationsvariablen mit Maßeinheiten identifiziert, die nicht dieselben Maßeinheiten haben wie die Einheiten der \ac{fhir}-Profile. Die Maßeinheiten von sieben dieser Konfigurationsvariablen konnten in die Maßeinheiten der \ac{fhir}-Profile umgerechnet werden. Diese Umwandlung wird durch die Multiplikation der numerischen Werte der Werttabellen mit Umrechnungsfaktoren realisiert. Die \ref{tab:unittoconvert} zeigt die Liste der betroffenen Maßeinheiten.  
 
 \clearpage
 
 \begin{table}[ht]
 	\centering
-	\caption[Maßeinheiten und Faktoren zur Umrechnung]{Maßeinheiten und Faktoren für die Umrechnung. Die 1 in den Einheiten der \ac{fhir}-Profile bedeutet \glqq decimal fraction\grqq{} \cite{unitsloinc}. Die Werte der Konfigurationsvariablen mit den gleichen Maßeinheiten wie die \ac{fhir}-Profile werden mit 1 multipliziert.}
+	\caption[Maßeinheiten und Umrechnungsfaktoren für die Harmonisierung]{Maßeinheiten und Umrechnungsfaktoren für die Harmonisierung. Die 1 in den Einheiten der \ac{fhir}-Profile bedeutet \glqq decimal fraction\grqq{} \cite{unitsloinc}. Die Werte der Konfigurationsvariablen mit den gleichen Maßeinheiten wie die \ac{fhir}-Profile werden mit 1 multipliziert.}
 	\label{tab:unittoconvert}
 	\begin{tabular}{|l|l|l|} \hline
 		\bfseries \ac{copra}-Einheit & \bfseries Profil-Einheit & \bfseries Faktor/Konversion \\ \hline
@@ -74,6 +74,7 @@ Es wurden acht Konfigurationsvariablen mit Maßeinheiten identifiziert, die nich
 		\% & 1 & 0.01 \\ \hline
 		mmHg & cm[H2O] & 1.35951 \\ \hline
 		min & h & 0.016667 \\ \hline
+		\multicolumn{2}{|l|}{\ac{copra}-Einheit = Profil-Einheit} & 1 \\ \hline
 	\end{tabular}
 \end{table}
 
