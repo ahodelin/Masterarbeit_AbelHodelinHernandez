@@ -1,10 +1,10 @@
-\section[Zuordnung der \acs{copra}-Biosignaldaten mit den \acs{fhir}-Profilen des Erweiterungsmoduls \glqq Intensivmedizin\grqq{}]{Zuordnung der \acs{copra}-Biosignaldaten \\ mit den \acs{fhir}-Profilen des Erweiterungsmoduls \glqq Intensivmedizin\grqq{}} \label{sect:resdatamapping}
+\section[Zuordnung der \acs{copra}-Biosignaldaten mit den \acs{fhir}-Profilen des Moduls \glqq Intensivmedizin\grqq{}]{Zuordnung der \acs{copra}-Biosignaldaten \\ mit den \acs{fhir}-Profilen des Moduls \glqq Intensivmedizin\grqq{}} \label{sect:resdatamapping}
 
-Das Hauptziel dieser Arbeit wurde durch die ersten Schritten des Data Mappings der Biosignaldaten aus \ac{copra} mit dem Standardformat \ac{fhir} aus der Spezifikationen des Erweiterungsmoduls \glqq Intensivmedizin\grqq{} erreicht. Innerhalb dieser Schritte ist ein Datensatz mit der Zuordnung der \ac{copra}-Biosignaldaten mit den \ac{fhir}-Profilen entstanden. Mit Hilfe von diesem Datensatz wurden am Ende \ac{sql}-Views in die \ac{copra}-Instanz des Staging Bereichs des \ac{dw} des \ac{diz} programmiert. Solche virtuellen Tabellen dienen der Zusammenführung und Bereitstellung der Parameter beider Systeme und können somit das Gerüst für die \ac{fhir}-Ressourcen sein.
+Das Hauptziel dieser Arbeit wurde durch die ersten Schritten des Data Mappings der Biosignaldaten aus \ac{copra} mit den \ac{fhir}-Spezifikationen des Erweiterungsmoduls \glqq Intensivmedizin\grqq{} erreicht. Innerhalb dieser Schritte ist ein Datensatz mit der Zuordnung der \ac{copra}-Biosignaldaten mit den \ac{fhir}-Profilen entstanden. Mit Hilfe von diesem Datensatz wurden am Ende \ac{sql}-Views in die \ac{copra}-Instanz des Staging Bereichs des \ac{dw} des \ac{diz} programmiert. Solche virtuellen Tabellen dienen der Zusammenführung und Bereitstellung der Parameter beider Systeme und können somit das Gerüst für die \ac{fhir}-Ressourcen sein.
 
 Am Ende dieses Projekts wurden 70 Biosignaldaten vom \ac{copra}-System richtig 39 \ac{fhir}-Profilen zugeordnet. Dieses Ergebnis wurde in einem Datensatz mit 75 Einträgen registriert.
 
-Die meisten Werte der Bioparameter sind der Typ Dezimal (64), wie die \ref{fig:signaldatatyps} zeigt. Diese Erkenntnis ist in Konkordanz mit dem spezifizierten Datentyp der \ac{fhir}-Profile. Auch die Datentypen der Werte und der Aufbau der Biosignaldaten für die Blutdruckmessungen in \ac{copra} stimmen mit der Struktur der \ac{fhir}-Profile überein. Nur eine Konfigurationsvariable war der Typ String (\ref{tab:stringvalue}) aber mit registrierten numerischen Werten, die bei der Programmierung der Transformationsregeln umgewandelt wurde (\ref{sec:prepdwtofhir}).
+Die meisten Werte der Bioparameter in \ac{copra} sind der Typ Dezimal (64), wie die \ref{fig:signaldatatyps} zeigt. Dieser Datentyp stimmt mit den spezifizierten Datentyp des Attributs \texttt{val} des Elements \texttt{valueQuantity} in den \ac{fhir}-Profilen überein. Auch der Aufbau der Biosignaldaten für die Blutdruckmessungen in \ac{copra} stimmt mit der Struktur der \ac{fhir}-Profile überein. Nur eine Konfigurationsvariable war der Typ String (\ref{tab:stringvalue}) aber mit registrierten numerischen Werten, die bei der Programmierung der Transformationsregeln umgewandelt wurde (\ref{sec:prepdwtofhir}).
 
 \begin{figure}[ht]
 	\centering
@@ -13,7 +13,7 @@ Die meisten Werte der Bioparameter sind der Typ Dezimal (64), wie die \ref{fig:s
 	\label{fig:signaldatatyps}
 \end{figure}
 
-Auch die Distribution der Datenarten der \ac{fhir}-Profile ist zu berücksichtigen (\ref{fig:datenarten}). Die meist repräsentierte Datenart der Profile im Datensatz der Zuordnung ist der \glqq Parameter von Beatmung\grqq{} mit 36 zugeordneten Biosignaldaten. Diese Datenart ist auch die meist repräsentierte Art im Erweiterungsmodul \glqq Intensivmedizin\grqq{}.
+Auch die Distribution der Datenarten der \ac{fhir}-Profile ist zu berücksichtigen (\ref{fig:datenarten}). Die meist repräsentierte Datenart der Profile im Datensatz der Zuordnung ist die Art \glqq Parameter von Beatmung\grqq{} mit 36 zugeordneten Biosignaldaten. Diese Datenart ist auch die meist repräsentierte Art im Erweiterungsmodul \glqq Intensivmedizin\grqq{}.
 
 \clearpage
 
