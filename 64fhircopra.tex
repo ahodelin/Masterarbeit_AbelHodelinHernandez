@@ -4,25 +4,27 @@ Nach der Erkennung der 701 relevanten Konfigurationsvariablen und der Datendefin
 
 Zu Beginn wurde eine unscharfe Suche durchgeführt, um die \ac{fhir}-Profile den Konfigurationsvariablen zuzuordnen. Für diesen Zweck wurden der Parameter \texttt{profile\_name} der Tabelle \texttt{mii\_icu} zusammen mit den Parametern \texttt{name} und \texttt{description} der Tabelle \texttt{co6\_config\_variables} in einem \ac{csv}-Datei extrahiert. 
 
-Mit einem Python-Skript und der extrahierten \ac{csv}-Datei wurde die unscharfe Suche durchgeführt. Dieser Prozess liefert einen Datensatz mit 400 Paaren von zugeordneten Profilen mit Konfigurationsvariablen. 355 Paare davon waren falsche Zuordnungen, wie die Beispiele der \ref{tab:wrongpaar} zeigen.
+Mit einem Python-Skript (Code \ref{list:testr}) und der \ac{csv}-Datei wurde die unscharfe Suche durchgeführt. Dieser Prozess liefert einen Datensatz mit 400 Paaren von zugeordneten Profilen mit Konfigurationsvariablen. 355 Paare davon waren falsche Zuordnungen, wie die Beispiele der \ref{tab:wrongpaar} zeigen.
 
 \begin{lstlisting}[language=python, caption={[Python-Skript für das Pattern Matching] Python-Skript für das Pattern Matching. Die Option \glqq token\_set\_ratio\grqq{} ermöglicht eine flexiblere fuzzy-Suche (\ref{sub:levdist}), denn die Länge der Namen der Profile und die Länge der Namen und Beschreibungen der Konfigurationsvariablen sind deutlich unterschiedlich.} , captionpos=b, label=list:testr]
-from thefuzz import process, fuzz  # Bibliotheken laden
+from thefuzz import process, fuzz  # Bibliotheken der unscharfe Suche laden
 
 with open("profils_names.csv") as fp: # Datei mit den Namen der Profile
 prn = fp.readlines() # Name der Profile
-prn = [x.strip() for x in prn] 
+prn = [x.strip() for x in prn] # Formatierung
 
 with open("config_vars_names.csv") as fc: # Datei mit den Konfigurationsvariablen
 cvn = fc.readlines() # Konfigurationsvariablen
-cvn = [x.strip() for x in cvn]
+cvn = [x.strip() for x in cvn] # Formatierung
 
-for profil in prn: # Bei jeden Namen der Profile
+for profil in prn: # Durchlauf die Namen der Profile
   match_ratios = process.extract(profil, cvn, scorer=fuzz.token_set_ratio) # Liste der passenden Konfigurationsvariablen.
-  for prn_match_cvn in match_ratios: 
+  for prn_match_cvn in match_ratios: # Durchlauf die Konfigurationsvariablen
     print(profil, prn_match_cvn) # Liste der Paare "Profile - Konfigurationsvariablen"
    
 \end{lstlisting}
+
+\clearpage
 
 \begin{table}[ht]
 	\centering 
