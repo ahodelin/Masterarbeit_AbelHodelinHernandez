@@ -2,14 +2,14 @@
 
 Nach der Validierung des Ergebnisses des Pattern Matchings und mit den eingefügten Maßeinheiten in die Tabelle der resultierenden Zuordnung, folgte eine detaillierte Untersuchung der Maßeinheiten in \ac{copra} und einen Vergleich zwischen den Maßeinheiten beider Systeme für die Harmonisierung der Einheiten beider Systeme.
 
-Die zwei Paare von zugeordneten Profilen mit Konfigurationsvariablen ohne Maßeinheiten weder in der Tabelle \texttt{co6\_config\_variables} noch im Frontend von \ac{copra} (\ref{tab:nounitscopra}) werden in diesem Projekt nicht weiter betrachtet.
+Die zwei Paare von zugeordneten Profilen mit Konfigurationsvariablen bei denen die Konfigurationsvariablen keine Maßeinheiten weder in der Tabelle \texttt{co6\_config\_variables} noch im Frontend von \ac{copra} erhalten haben (\ref{tab:nounitscopra}), werden in diesem Projekt nicht weiter betrachtet, weil solche Werte mit unbekannten Maßeinheiten in \ac{copra} sich nicht harmonisieren lassen.
 
 \begin{table}[ht]
 	\centering
 	\caption[Konfigurationsvariablen ohne Maßeinheiten]{Konfigurationsvariablen ohne Maßeinheiten.}
 	\label{tab:nounitscopra}
 	\begin{tabular}{|p{3cm}|p{3cm}|l|l|} \hline
-		\bfseries Profil-Name & \bfseries \ac{copra}-Name & \bfseries Profil-Einheit &  \bfseries \ac{copra}-Einheit \\ \hline
+		\bfseries Profilname & \bfseries \ac{copra}-Name & \bfseries Profil-Einheit &  \bfseries \ac{copra}-Einheit \\ \hline
 		Ionisiertes Kalzium aus Nierenersatzverfahren & NEV\_CRRT\_VO\_ CalciumLoesung & mmol/L & \textcolor{magenta}{NULL} \\ \hline
 		Zeitverhaeltnis-Ein-Ausatmung & Beatmung\_ MS\_G5\_IE Verhaeltnis & \{ratio\}  & \textcolor{magenta}{NULL} \\ \hline		
 	\end{tabular}
@@ -38,7 +38,7 @@ Auch dieselbe Maßeinheit wurde zwischen Konfigurationsvariablen unterschiedlich
 	\caption[Beispiel der Schreibweise derselbe Maßeinheit in \acs{copra}]{Beispiel der Schreibweise derselbe Maßeinheit bei unterschiedlichen Konfigurationsvariablen in \acs{copra}. bpm steht für \glqq breaths per minute\grqq{}.}
 	\label{tab:unitscopra}
 	\begin{tabular}{|p{3cm}|p{3cm}|l|l|} \hline
-		\bfseries Profil-Name & \bfseries \ac{copra}-Name & \bfseries Profil-Einheit &  \bfseries \ac{copra}-Einheit \\ \hline
+		\bfseries Profilname & \bfseries \ac{copra}-Name & \bfseries Profil-Einheit &  \bfseries \ac{copra}-Einheit \\ \hline
 		Mittlerer Beatmungsdruck & Beatmung\_ MS\_VisionA \_MAP & cm[H2O] & cm H2O \\ \hline
 		Mittlerer Beatmungsdruck & Beatmung\_ MS\_Servoi \_Pmean & cm[H2O] & [cmH2O] \\ \hline \hline
 		Mechanische-Atemfrequenz-Beatmet & Beatmung\_ MS\_Evita4 \_frequenz & \{Breaths\}/min & bpm \\ \hline
@@ -55,7 +55,7 @@ In der Untersuchung der Maßeinheiten wurde auch eine fehlerhafte Darstellung de
 	\caption[Fehlerhafte Darstellung Maßeinheiten in \acs{copra}]{Fehlerhafte Darstellung Maßeinheiten in \acs{copra}.}
 	\label{tab:errounit}
 	\begin{tabular}{|p{3cm}|p{3cm}|l|l|} \hline
-		\bfseries Profil-Name & \bfseries \ac{copra}-Name & \bfseries Profil-Einheit & \bfseries \ac{copra}-Einheit \\ \hline
+		\bfseries Profilname & \bfseries \ac{copra}-Name & \bfseries Profil-Einheit & \bfseries \ac{copra}-Einheit \\ \hline
 		Linksventriku- laerer Schlagvolumenindex & Vigileo\_SVI & mL/m2 & ml/b/m$^2$ml/b/m$^2$ \\ \hline
 	\end{tabular}
 \end{table}
@@ -84,7 +84,7 @@ Andere Maßeinheiten von Konfigurationsvariablen können nicht in die Einheiten 
 	\caption[Nicht kompatible Maßeinheiten]{Nicht kompatible Maßeinheiten.}
 	\label{tab:unitnocompat}
 	\begin{tabular}{|p{3.3cm}|p{1.7cm}|p{2.6cm}|p{2cm}|p{1.8cm}|} \hline
-		\bfseries Profil-Name & \bfseries \ac{copra}-Name & \bfseries \ac{copra}-Description & \bfseries Profil-Einheit & \bfseries \ac{copra}-Einheit \\ \hline
+		\bfseries Profilname & \bfseries \ac{copra}-Name & \bfseries \ac{copra}-Description & \bfseries Profil-Einheit & \bfseries \ac{copra}-Einheit \\ \hline
 		Linksventrikulaerer Herzindex & dPmax & Index der linken Ventrikelkontraktilität & L/(min.m2) & mmHg/s \\ \hline
 	\end{tabular}
 \end{table}
