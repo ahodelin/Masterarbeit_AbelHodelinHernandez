@@ -82,7 +82,7 @@ Andere Maßeinheiten von Konfigurationsvariablen können nicht in die Einheiten 
 
 \begin{table}[ht]
 	\centering
-	\caption[Nicht kompatible Maßeinheiten]{Nicht kompatible Maßeinheiten.}
+	\caption[Inkompatible Maßeinheiten]{Inkompatible Maßeinheiten.}
 	\label{tab:unitnocompat}
 	\begin{tabular}{|p{3.3cm}|p{1.7cm}|p{2.6cm}|p{2cm}|p{1.8cm}|} \hline
 		\bfseries Profilname & \bfseries \ac{copra}-Name & \bfseries \ac{copra}-Description & \bfseries Profil-Einheit & \bfseries \ac{copra}-Einheit \\ \hline
@@ -90,6 +90,6 @@ Andere Maßeinheiten von Konfigurationsvariablen können nicht in die Einheiten 
 	\end{tabular}
 \end{table}
 
-Die Inkompatibilität dieser Einheiten liegt daran, dass die Dimensionen von L/(min.m2) Volumen, Zeit und Flächeninhalt sind. Die Dimensionen von mmHg/s wiederum sind Druck und Zeit. Diese Maßeinheit wird für das Ablassen der Manschette bei der Blutdruckmessung benutzt. In \ac{copra} hingegen wird diese Maßeinheit an einer Konfigurationsvariable für die Messung des Indexes der linken Ventrikelkontraktilität gesetzt.
+Die Inkompatibilität dieser Einheiten liegt daran, dass die Dimensionen von L/(min.m2) Volumen, Zeit und Flächeninhalt sind. Die Dimensionen von mmHg/s sind wiederum Druck und Zeit.  mmHg/s wird für das Ablassen der Manschette bei der Blutdruckmessung benutzt. In \ac{copra} hingegen wird diese Maßeinheit an einer Konfigurationsvariable für die Messung des Indexes der linken Ventrikelkontraktilität gesetzt.
 
-Am Ende dieser Analyse bleiben 76 Einträge im Datensatz der zugeordneten Paare der Konfigurationsvariablen mit den \ac{fhir}-Profilen mit insgesamt 71 Konfigurationsvariablen und 39 \ac{fhir}-Profilen. Der resultierende Datensatz wurde in die Tabelle \texttt{mapping\_mii\_co6\_2} importiert. Diese neue Tabelle hat wiederum dieselbe Struktur wie \texttt{mapping\_mii\_co6} (\ref{tab:mapping}) mit einer neuen Spalte \texttt{unit\_transform} des Datentyps \glqq numeric\grqq{} mit dem Faktor für die Umrechnung der gespeicherten Biosignalen in den Maßeinheiten der \ac{fhir}-Profilen. Somit sind die Einheiten beider Systeme harmonisiert.
+Am Ende dieser Analyse bleiben 76 Einträge im Datensatz der zugeordneten Paare der Konfigurationsvariablen mit den \ac{fhir}-Profilen mit insgesamt 71 Konfigurationsvariablen und 39 \ac{fhir}-Profilen. Der resultierende Datensatz mit den Umwandlungen für die Harmonisierung der Maßeinheiten beider Systeme wurde in die Tabelle \texttt{mapping\_mii\_co6\_2} importiert. Diese neue Tabelle hat wiederum dieselbe Struktur wie \texttt{mapping\_mii\_co6} (\ref{tab:mapping}) mit einer neuen Spalte \texttt{unit\_transform} des Datentyps \glqq numeric\grqq{} mit dem Faktor für die Umrechnung der gespeicherten Biosignalen in den Maßeinheiten der \ac{fhir}-Profilen. Somit sind die Einheiten beider Systeme harmonisiert.
