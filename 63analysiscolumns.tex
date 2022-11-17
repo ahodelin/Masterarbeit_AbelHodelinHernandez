@@ -6,7 +6,7 @@ Die Spalten \texttt{profile\_name} und \texttt{loinc} in der Tabelle \texttt{mii
  
  Einerseits beinhaltet die Spalte \texttt{profile\_name} die Namen der \ac{fhir}-Profile, die wiederum auch die Namen von Verfahren oder Messungen sind, andererseits registriert die Spalte \texttt{loinc} die \ac{loinc}-Codes. Der Vorteil dieses Codesystem anzuwenden, liegt daran, dass \ac{loinc} das meist verwendete Codesystem in den \ac{fhir}-Profilen (\ref{tab:profilcodes}) ist. 
  
- Nach der Analyse der gespeicherten \ac{loinc}-Codes wurden auch Abkürzungen gefunden, die für den späteren Pattern Matching-Prozess von Bedeutung sind, denn sie dienen als zusätzliche Namen \glqq Short Name\grqq{} in der Beschreibung der \ac{loinc}-Codes. Manche dieser \glqq Short Names\grqq{} werden auch in der alltäglichen Kommunikation unter dem Gesundheitspersonal benutzt. Diese Besonderheit ist in der \ref{tab:shortname} dargestellt. Solche \glqq Short Names\grqq{} mit einigen Variationen wurden auch in den Namen und Beschreibungen von den Konfigurationsvariablen in \ac{copra} erkannt.
+ Nach der Analyse der gespeicherten \ac{loinc}-Codes wurden auch Abkürzungen gefunden, die für den späteren Pattern Matching-Prozess von Bedeutung sind, denn sie dienen als zusätzliche Namen \glqq Short Name\grqq{} in der Beschreibung der \ac{loinc}-Codes. Manche dieser \glqq Short Names\grqq{} werden auch in der alltäglichen Kommunikation unter dem Gesundheitspersonal benutzt, wie die Abkürzung FIO2 für die Sauerstofffraktion (\ref{tab:shortname}). Solche \glqq Short Names\grqq{} mit einigen Variationen wurden auch in den Namen und Beschreibungen von den Konfigurationsvariablen in \ac{copra} erkannt.
 
 \begin{table}[ht]
 	\centering 
