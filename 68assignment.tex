@@ -1,6 +1,6 @@
-\section{Bereitstellung der \acs{copra}-Daten im \acs{dw}} \label{sec:prepdwtofhir}
+\section{Bereitstellung der Biosignaldaten} \label{sec:prepdwtofhir}
 
-Mit der Modellierung der Zuweisung der Felder und der Definition von neuen Transformationsregeln für die Überführung der Biosignaldaten aus \ac{copra} in die \ac{fhir}-Ressourcen des Erweiterungsmoduls \glqq Intensivmedizin\grqq{} wurden drei \ac{sql}-Views programmiert, um die Parameter der Profile, Attribute der Biosignaldaten in den Werttabellen, zusammen mit den dazugehörigen Daten der behandelnden Personen, zu verlinken und zu visualisieren. Die angelegten \ac{sql}-Views sind Folgende:
+Mit der Modellierung der Zuweisung der Felder und der Definition von neuen Transformationsregeln für die Überführung der Biosignaldaten aus \ac{copra} in die \ac{fhir}-Ressourcen des Moduls \glqq Intensivmedizin\grqq{} wurden drei \ac{sql}-Views programmiert, um die Elemente der Profile, die Attribute der Biosignaldaten in den Werttabellen, zusammen mit den dazugehörigen Daten der behandelnden Personen, zu verlinken und zu visualisieren. Die angelegten \ac{sql}-Views sind Folgende:
 
 \begin{itemize}
 	\item \texttt{v\_profil\_decimal}: Information der Profile und der Biosignaldaten in der Tabelle \texttt{co6\_data\_decimal\_6\_3}.
@@ -13,36 +13,36 @@ Der Code \ref{list:viewpressure} zeigt den \ac{sql}-Befehl für die Erzeugung de
 \begin{lstlisting}[language=SQL, caption={[SQL-View für Werte in co6\_data\_string] SQL-View für Werte in co6\_data\_string.}, captionpos=b, label=list:viewsdicimalstring]
 	create or replace view copra.v_profil_string 
 	as
-	select 
-	's_'||md5(
-	(select table_name 
-	from information_schema.tables 
-	where table_schema = 'copra'
-	and table_name = 'co6_data_string') 
-	|| cdd.id 
-	|| mmc.profile_name) id, -- ID aus der Zusammensetzung von dem Name der Werttabelle, id des Werts und name des Profils
-	mmc.meta_profile,
-	'final' status,
-	mmc.category_coding_system,
-	mmc.category_coding_code,
-	mmc.code_coding_system_snomed,
-	mmc.code_coding_code_snomed,
-	mmc.code_coding_system_loinc,
-	mmc.code_coding_code_loinc,
-	mmc.code_coding_system_ieee,
-	mmc.code_coding_code_ieee,
-	'p_'||md5(cmdp.id::varchar) subject_reference,
-	cdd.val::decimal * mmc.unit_transform "valueQuantity_value",  -- type casting umd Umrechnung
-	mmc.valuequantity_system "valueQuantity_system",
-	mmc.valuequantity_code "valueQuantity_code",
-	cdd.datetimeto "effectiveDataTime"
+	  select 
+        's_'||md5(
+	      (select table_name 
+	      from information_schema.tables 
+	      where table_schema = 'copra'
+	      and table_name = 'co6_data_string') 
+	      || cdd.id 
+	      || mmc.profile_name) id, -- ID aus der Zusammensetzung vom Name der Werttabelle, id des Werts und name des Profils
+	    mmc.meta_profile,
+	    'final' status,
+	    mmc.category_coding_system,
+	    mmc.category_coding_code,
+	    mmc.code_coding_system_snomed,
+	    mmc.code_coding_code_snomed,
+      mmc.code_coding_system_loinc,
+      mmc.code_coding_code_loinc,
+      mmc.code_coding_system_ieee,
+      mmc.code_coding_code_ieee,
+		 'p_'||md5(cmdp.id::varchar) subject_reference,
+		 cdd.val::decimal * mmc.unit_transform "valueQuantity_value",  -- type casting umd Umrechnung
+      mmc.valuequantity_system "valueQuantity_system",
+      mmc.valuequantity_code "valueQuantity_code",
+		  cdd.datetimeto "effectiveDataTime"
 	from copra.co6_data_string cdd 
 	join copra.co6_config_variables ccv 
-	on cdd.varid = ccv.id 
+	  on cdd.varid = ccv.id 
 	join copra.mapping_mii_co6_2 mmc 
-	on mmc.conf_var_id = ccv.id 
+	  on mmc.conf_var_id = ccv.id 
 	join copra.co6_medic_data_patient cmdp 
-	on cmdp.id = cdd.parent_id 
+	  on cmdp.id = cdd.parent_id 
 	where not cdd.deleted
 	and cdd.validated 
 	and cdd.flagcurrent
@@ -50,9 +50,10 @@ Der Code \ref{list:viewpressure} zeigt den \ac{sql}-Befehl für die Erzeugung de
 	;
 \end{lstlisting}
 
+Die \ac{sql}-View für die Biosignale in \texttt{co6\_data\_decimal\_6\_3} wird in dieser Arbeit nicht präsentiert, denn diese View ist ähnlich wie die View für die String-Werte, aber weniger komplex. Der Grund hierzu ist, dass die detektierten Biosignaldaten in \texttt{co6\_data\_string}, die den \ac{fhir}-Profilen zugeordnet sind, in Wahrheit numerische Einträge sind (\ref{tab:stringvalue}), und somit sollte der Datentyp der Werte der Biosignaldaten umgewandelt werden, jedoch muss zuvor die Struktur des Wertes in der Spalte \texttt{val} der Tabelle \texttt{co6\_data\_string} kontrolliert werden (\ref{sec:transfer}).
 
-Die \ac{sql}-View für die Biosignale in \texttt{co6\_data\_decimal\_6\_3} wird in dieser Arbeit nicht präsentiert, denn diese View ist ähnlich wie die View für die String Werte, aber weniger komplex. Der Grund hierzu ist, dass die detektierten Biosignaldaten in \texttt{co6\_data\_string}, die den \ac{fhir}-Profilen zugeordnet sind, in Wahrheit numerische Einträge sind (\ref{tab:stringvalue}), und somit sollte der Datentyp der Werte der Biosignaldaten umgewandelt werden, jedoch muss zuvor die Struktur des Wertes in der Spalte \texttt{val} der Tabelle \texttt{co6\_data\_string} kontrolliert werden.
 \clearpage
+
 \begin{table}[ht]
 	\centering 
 	\caption[Eintrag in der Tabelle co6\_data\_string]{Beispiel eines Eintrags in der Tabelle co6\_data\_string. Der angezeigte Wert des Biosignals ist eine Zahl.}
@@ -64,7 +65,7 @@ Die \ac{sql}-View für die Biosignale in \texttt{co6\_data\_decimal\_6\_3} wird 
 	\end{tabular}
 \end{table}
 
-In der \ac{sql}-View für die Blutdruckwerte (\ref{list:viewpressure}) werden die Suffixe \glqq systolic\grqq{} für systolisch, \glqq mean\grqq{} für mittel und \glqq diastolic\grqq{} für diastolisch angewendet, um die Zusammensetzung dieser Werte in den zugeordneten \ac{fhir}-Profilen darzustellen (\ref{sec:fhirprofs}). 
+In der \ac{sql}-View für die Blutdruckwerte (Code \ref{list:viewpressure}) werden die Suffixe \glqq systolic\grqq{} für systolisch, \glqq mean\grqq{} für mittel und \glqq diastolic\grqq{} für diastolisch angewendet, um die Zusammensetzung dieser Werte in den zugeordneten \ac{fhir}-Profilen darzustellen (\ref{sec:fhirprofs}). 
 
 \begin{lstlisting}[language=SQL, caption={[SQL-View für Werte in co6\_medic\_pressure] SQL-View für Werte in co6\_medic\_pressure.} , captionpos=b, label=list:viewpressure]
 create or replace view copra.v_profil_pressure 
@@ -87,7 +88,7 @@ as
 		mmc.code_systolic_coding_code_snomed,
 		mmc.code_systolic_coding_system_loinc,
 		mmc.code_systolic_coding_code_loinc,
-		mmc.code_systolic_coding_system_ieee ,
+		mmc.code_systolic_coding_system_ieee,
 		mmc.code_systolic_coding_code_ieee,
 		cdd.systolic "valueQuantity_value_systolic",
 		mmc.valuequantity_system "valueQuantity_system_systolic",
@@ -96,7 +97,7 @@ as
 		mmc.code_mean_coding_code_snomed,
 		mmc.code_mean_coding_system_loinc,
 		mmc.code_mean_coding_code_loinc,
-		mmc.code_mean_coding_system_ieee ,
+		mmc.code_mean_coding_system_ieee,
 		mmc.code_mean_coding_code_ieee,
 		cdd.mean "valueQuantity_value_mean",
 		mmc.valuequantity_system "valueQuantity_system_mean",
