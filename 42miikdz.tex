@@ -49,7 +49,7 @@ Das Erweiterungsmodul \glqq Intensivmedizin\grqq{} ist in drei Entwicklungsstufe
  
  Die Beatmungswerte der Stufe 2 umfassen Daten, wie die Sauerstofffraktion, das Beatmungsvolumen, etc. Der Aufbau dieser \ac{fhir}-Profile ist analog zu Parametern von extrakorporalen Verfahren \cite{icukdz}.
 
-Die \ac{fhir}-Profile unter der Gruppe Monitoring und Vitaldaten umfassen Daten, wie die Herzfrequenz, Körpergröße, die pulsatilen Blutdrücke (systolisch, mittel und diastolisch), etc. Für die pulsatilen Blutdrücke wurde ein weiteres generisches Profil (Blutdruck Generisch) erstellt, um die Kompatibilität mit den deutschen und internationalen Basisprofilen zu gewährleisten \cite{icukdz}.
+Die \ac{fhir}-Profile unter der Gruppe Monitoring und Vitaldaten umfassen Daten, wie die Herzfrequenz, Körpergröße, die pulsatilen Blutdrücke (systolisch, mittel und diastolisch), etc. Für die pulsatilen Blutdrücke wurde ein weiteres generisches Profil (Blutdruck Generisch) erstellt, um die Kompatibilität mit den deutschen und internationalen Basisprofilen zu gewährleisten \cite{icukdz}. Diese Profile sind auch eine Zusammensetzung von drei separat kodierten \glqq Observations\grqq{}, die dieselben Attribute teilen, nämlich die Spezifikationen für den systolischen, mittleren und diastolischen Blutdruck \cite{icukdz}.
 
 \begin{figure}[ht]
 	\centering
@@ -59,6 +59,8 @@ Die \ac{fhir}-Profile unter der Gruppe Monitoring und Vitaldaten umfassen Daten,
 \end{figure}
 
 Die semantische Annotation des Erweiterungsmoduls \glqq Intensivmedizin\grqq{} referenziert mindestens einen Primärcode der Terminologie (\ac{snomedct} oder \ac{loinc}) \cite{icukdz, modicuvid}. Um die Interoperabilität mit der Kommunikation zwischen Medizingeräten oder Medizinprodukten zu ermöglichen, wird wenn möglich auch eine semantische Annotation nach \acsu{iso}/\acsu{ieee} 11073-10101\texttrademark{} (\ref{subsec:ieee}) hinzugefügt \cite{icukdz}. Die Maßeinheiten werden nach \ac{ucum} codiert.
+
+\newpage
 
 Die \ac{fhir}-Profile des Moduls \ac{icu} sind in drei Kategorien untergliedert:
 

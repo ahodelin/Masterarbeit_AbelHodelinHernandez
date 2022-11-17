@@ -6,7 +6,7 @@ Obwohl dieses Modul zum Abstimmverfahren von 25.02.2022 bis 08.04.2022 freigeben
 
 Die Parameter je Profil an der Webseite: Name, Typ, Attribute der Maßeinheit, Daten der Codesysteme und vorhandene Metrik des Geräts, wurden in die Tabelle \texttt{mii\_icu} der \ac{db} \texttt{mii\_copra} eingefügt.
 
-Die meisten \ac{fhir}-Profile unter der Kategorie \glqq Observation\grqq{} besitzen eine ähnliche Struktur, sodass der Import in die Tabelle \texttt{mii\_icu} erleichtert wird. Die Ausnahmen bilden die Profile der Gruppe \glqq Blutdruck Generisch\grqq{} zur Speicherung der Blutdruckmessungen, z. B. \glqq Linksatrialer Druck\grqq{}. Diese Profile sind eine Zusammensetzung von drei separat kodierten \glqq Observations\grqq{}, die dieselben Attribute teilen, nämlich die Spezifikationen für den systolischen, mittleren und diastolischen Blutdruck. In solchen Fällen wurden auch die semantischen Annotationen der systolischen, mittleren und diastolischen Attribute in der Tabelle \texttt{mii\_icu} registriert.
+Die meisten \ac{fhir}-Profile unter der Kategorie \glqq Observation\grqq{} besitzen eine ähnliche Struktur, sodass der Import in die Tabelle \texttt{mii\_icu} erleichtert wird. Die Ausnahmen bilden die Profile der Gruppe \glqq Blutdruck Generisch\grqq{} zur Speicherung der Blutdruckmessungen, z. B. \glqq Linksatrialer Druck\grqq{} (\ref{subsec:icumodul}). In solchen Fällen wurden auch die semantischen Annotationen der systolischen, mittleren und diastolischen Attribute in der Tabelle \texttt{mii\_icu} registriert.
 
 \newpage
 
