@@ -51,10 +51,10 @@ Nach dem vorherigen Ergebnis der unscharfen Suche wurden die \ac{fhir}-Profile u
 
 Wichtig für die Definition der \acp{regex} ist die Auswahl der Teilwörtern (\ref{subsec:pattmatch}) oder Kombinationen davon, die die \ac{fhir}-Profile charakterisieren. Denn diese Teilwörter sind in den meisten Fällen Fachtermini oder Teile von Fachbegriffen und können wieder in den Namen oder Beschreibungen der Konfigurationsvariablen gefunden werden.
 
- Manche Teilwörter in den Profilnamen sind sehr allgemein und befinden sich in mehreren Profilen und auch in zahlreichen Namen und Beschreibungen der Konfigurationsvariablen, z. B. \glqq druck\grqq{}. Das hat zufolge, dass viele Konfigurationsvariablen falsch einem Profil durch die Nutzung von nur einem von diesen Teilwörtern zugeordnet werden könnten. Solche Teilwörter wurden in Kombination mit anderen benutzt, um das Pattern Matching zu verfeinern und die Trefferquote zu erhöhen. Hier ist auch die Menge und Länge der angewandten Teilwörter entscheidend, denn die Anwendung von vielen oder zu langen Teilwörtern liefert auch kein Ergebnis. Aus diesem Grund wurde bei der Schreibung der \ac{sql}-Abfragen je \ac{fhir}-Profil solange die Definition der \ac{regex} getestet, bis die optimale Menge und Länge der Teilwörter in der \ac{regex} gefunden wurde, die die genaue Menge an Konfigurationsvariablen geliefert hatten.
+ Manche Teilwörter in den Profilnamen sind sehr allgemein und befinden sich in mehreren Profilen und in zahlreichen Namen und Beschreibungen der Konfigurationsvariablen, z. B. \glqq druck\grqq{}. Das hat zufolge, dass viele Konfigurationsvariablen falsch einem Profil durch die Nutzung von nur einem von diesen Teilwörtern zugeordnet werden könnten. Solche Teilwörter wurden in Kombination mit anderen benutzt, um das Pattern Matching zu verfeinern und die Trefferquote zu erhöhen. Hier ist auch die Menge und Länge der angewandten Teilwörter entscheidend, denn die Anwendung von vielen oder zu langen Teilwörtern liefert auch kein Ergebnis. Aus diesem Grund wurde bei der Schreibung der \ac{sql}-Abfragen je \ac{fhir}-Profil solange die Definition des \ac{regex} getestet, bis die optimale Kombination von Menge und Länge der Teilwörter gefunden wurde, die die genaue Menge an Konfigurationsvariablen geliefert hatte.
 
-Der Code \ref{list:pattdruck} zeigt beispielhaft die \ac{sql}-Abfrage mit \ac{regex} für die gleichzeitige Erkennung mehrerer allgemeiner Teilwörter des Profils \glqq Mittlerer Beatmungsdruck\grqq{} in der Tabelle der Konfigurationsvariablen, um \ac{fhir}-Profile und Konfigurationsvariablen zu zuordnen.
-%\clearpage
+Der Code \ref{list:pattdruck} zeigt beispielhaft die \ac{sql}-Abfrage mit \ac{regex} für die gleichzeitige Erkennung mehrerer allgemeiner Teilwörter des Profils \glqq Mittlerer Beatmungsdruck\grqq{} in der Tabelle der Konfigurationsvariablen, um das \ac{fhir}-Profil den Konfigurationsvariablen zuzuordnen.
+
 \begin{lstlisting}[language=SQL, caption={[SQL-Abfrage mit allgemeinen Teilwörtern] SQL-Abfrage mit allgemeinen Teilwörtern.} , captionpos=b, label=list:pattdruck]
 select 
   name, 
@@ -72,7 +72,7 @@ or description ~* 'mea.+pres.+(resp|vent)'
 Im Code \ref{list:pattdruck} werden die Spalten \texttt{name} und \texttt{description} der Tabelle \texttt{co6\_config\_variables} gleichzeitig zur Erkennung von Mustern untersucht. In der definierten \ac{regex} dieser \ac{sql}-Abfrage wird die Tilde \glqq$\sim$\grqq{} gefolgt von einem Sternchen \glqq$\ast$\grqq{} benutzt, um Groß- und Kleinschreibung nicht zu berücksichtigen. Die Teilwörter \glqq mitt\grqq{}, \glqq atm\grqq{} und \glqq druc\grqq{} des Profils \glqq Mittlerer Beatmungsdruck\grqq{} verbunden durch \glqq .+\grqq{}, für eine Folge von beliebigen Zeichen, haben das Ergebnis der \ref{tab:mittatmdruck} geliefert. Die Teilwörter \glqq mea\grqq{}, \glqq pres\grqq{} und die Gruppierung mit den Alternativen \glqq resp\grqq{} oder \glqq vent \grqq{} wurden benutzt, um den Name (Mean pressure Respiratory system airway --on ventilator) auf Englisch und den \glqq Short Name\grqq{} (Mean Pres on vent Airway) zu berücksichtigen.
 
 \begin{longtable}{|l|p{5cm}|}
-	\caption[Erkannte Konfigurationsvariablen durch eine \acs{regex} mit einer Kombination von allgemeinen Teilwörtern]{Erkannte Konfigurationsvariablen bei der Anwendung der Kombination von allgemeinen Teilwörtern. Das \ac{fhir}-Profil Mittlerer Beatmungsdruck wurde drei Konfigurationsvariablen zugeordnet.}
+	\caption[Erkannte Konfigurationsvariablen durch durch die Anwendung einer Kombination von allgemeinen Teilwörtern]{Erkannte Konfigurationsvariablen bei der Anwendung der Kombination von allgemeinen Teilwörtern. Das \ac{fhir}-Profil \glqq Mittlerer Beatmungsdruck\grqq{} wurde drei Konfigurationsvariablen zugeordnet.}
 	\label{tab:mittatmdruck}
 	\endfirsthead
 		\hline
@@ -82,7 +82,7 @@ Im Code \ref{list:pattdruck} werden die Spalten \texttt{name} und \texttt{descri
 		  Beatmung\_MS\_Servoi\_Pmean & Mittlerer Atemwegsdruck \\ \hline   
 \end{longtable}
 
-Andere Teilwörter wie \glqq intrakraniell\grqq{} können hingegen alleine benutzt oder zerteilt werden, ohne die Trefferquote des Pattern Matchings zu reduzieren, weil sie nicht sehr häufig in den \ac{fhir}-Profilnamen und in den Namen und Beschreibungen der Konfigurationsvariablen vorkommen, sodass durch diese Teilwörter die \ac{fhir}-Profile besser charakterisiert werden. Der Code \ref{list:pattermatc} zeigt beispielhaft die \ac{sql}-Abfrage mit der Definition der \ac{regex} mit nur einem Teilwort, um die passenden Konfigurationsvariablen zu dem \ac{fhir}-Profil \glqq Intrakranieller Druck\grqq{} zu detektieren.
+Andere Teilwörter wie \glqq intrakraniell\grqq{} können hingegen alleine benutzt oder zerteilt werden, ohne die Trefferquote des Pattern Matchings zu reduzieren, weil sie nicht sehr häufig in den Profilnamen und in den Namen und Beschreibungen der Konfigurationsvariablen vorkommen. Solche Teilwörter charakterisieren besser ein \ac{fhir}-Profil. Der Code \ref{list:pattermatc} zeigt beispielhaft die \ac{sql}-Abfrage mit der Definition des \ac{regex} mit nur einem Teilwort, um die passenden Konfigurationsvariablen zu dem \ac{fhir}-Profil \glqq Intrakranieller Druck\grqq{} zu detektieren.
 
 \begin{lstlisting}[language=SQL, caption={[SQL-Abfrage mit einem seltenen Teilwort] SQL-Abfrage mit einem seltenen Teilwort.}, captionpos=b, label=list:pattermatc]
 select 
@@ -96,7 +96,7 @@ or description ~* 'intra[ck]'
 ;
 \end{lstlisting}
 
-Im Code \ref{list:pattermatc} werden, wie bei dem Code \ref{list:pattdruck}, die Spalten \texttt{name} und \texttt{description} gleichzeitig untersucht. In diesem Beispiel befinden sich in den eckigen Klammern die Buchstaben \glqq c\grqq{} und \glqq k\grqq{}, um die Teilwörter \glqq intrakraniell\grqq{}, oder \glqq intracranial\grqq{} auf Englisch, zu identifizieren.
+Im Code \ref{list:pattermatc} werden dieselben Spalten, wie beim Code \ref{list:pattdruck} gleichzeitig untersucht. In diesem Beispiel befinden sich in den eckigen Klammern die Buchstaben \glqq c\grqq{} und \glqq k\grqq{}, um die Teilwörter \glqq intrakraniell\grqq{}, oder \glqq intracranial\grqq{} auf Englisch, zu identifizieren.
 
 Ein vorher genannter Aspekt ist die allgemeine, umgangssprachliche Anwendung der \ac{loinc}-\glqq Short Names\grqq{} vom Personal des Gesundheitswesens und wie dieser Parameter in der Konfigurationsvariablen zu finden ist. Ein Beispiel des Ergebnisses eines Pattern Matchings, um \glqq Short Names\grqq{} der \ac{loinc}-Codes zu berücksichtigen, ist in der \ref{tab:shortnamepattern} dargestellt. In diesem Beispiel ist die Erkennung eines \glqq Short Name\grqq{} in der Spalte \texttt{name} der Tabelle \texttt{co6\_config\_variables} repräsentiert.
 
@@ -111,6 +111,4 @@ Ein vorher genannter Aspekt ist die allgemeine, umgangssprachliche Anwendung der
 	\end{tabular}
 \end{table}
 
-Am Ende des Pattern Matching-Prozesses konnten von den 701 Konfigurationsvariablen 75 einem \ac{fhir}-Profil zugeordnet werden, und von den 80 \ac{fhir}-Profilen wurden dann 41 mit einer \ac{copra}-Variable verlinkt. Das sind insgesamt 80 importierte Einträge in der Tabelle \texttt{mapping\_mii\_co6}, weil einem Profil mehrere Konfigurationsvariablen zugeordnet wurden. 
-
-Interessanterweise sind alle zugeordneten Konfigurationsvariablen patientenbezogene Biosignalparameter. 
+Am Ende des Pattern Matching-Prozesses konnten von den 701 Konfigurationsvariablen 75 einem \ac{fhir}-Profil zugeordnet werden, und von den 80 \ac{fhir}-Profilen wurden dann 41 mit einer \ac{copra}-Variable verlinkt. Das sind insgesamt 80 importierte Einträge in der Tabelle \texttt{mapping\_mii\_co6}, weil ein Profil mehreren Konfigurationsvariablen zugeordnet wurde. Alle zugeordneten Konfigurationsvariablen waren patientenbezogene Biosignalparameter in \ac{copra}. 
