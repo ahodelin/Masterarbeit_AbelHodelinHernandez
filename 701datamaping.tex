@@ -4,7 +4,7 @@ Das Hauptziel dieser Arbeit wurde durch die ersten Schritten des Data Mappings d
 
 Am Ende dieses Projekts wurden 70 Biosignaldaten vom \ac{copra}-System richtig 39 \ac{fhir}-Profilen zugeordnet. Dieses Ergebnis wurde in einem Datensatz mit 75 Einträgen registriert.
 
-Die meisten Werte der Bioparameter in \ac{copra} sind der Typ Dezimal (64), wie die \ref{fig:signaldatatyps} zeigt. Dieser Datentyp stimmt mit den spezifizierten Datentyp des Attributs \texttt{val} des Elements \texttt{valueQuantity} in den \ac{fhir}-Profilen überein. Auch der Aufbau der Biosignaldaten für die Blutdruckmessungen in \ac{copra} stimmt mit der Struktur der \ac{fhir}-Profile überein. Nur eine Konfigurationsvariable war der Typ String (\ref{tab:stringvalue}) aber mit registrierten numerischen Werten, die bei der Programmierung der Transformationsregeln umgewandelt wurde (\ref{sec:prepdwtofhir}).
+Die meisten Werte der Bioparameter in \ac{copra} sind der Typ Dezimal (64), wie die \ref{fig:signaldatatyps} zeigt. Dieser Datentyp stimmt mit dem spezifizierten Datentyp des Attributs \texttt{val} des Elements \texttt{valueQuantity} in den \ac{fhir}-Profilen überein. Auch der Aufbau der Biosignaldaten für die Blutdruckmessungen in \ac{copra} stimmt mit der Struktur der \ac{fhir}-Profile überein. Nur eine Konfigurationsvariable war der Typ String (\ref{tab:stringvalue}) aber mit registrierten numerischen Werten, die bei der Programmierung der Transformationsregeln umgewandelt wurde (\ref{sec:prepdwtofhir}).
 
 \begin{figure}[ht]
 	\centering
