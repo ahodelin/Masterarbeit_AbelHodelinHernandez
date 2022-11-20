@@ -18,11 +18,11 @@ Um die Konfigurationsvariablen auszuwählen, wurde für jede Werttabelle eine \a
 \begin{lstlisting}[language=SQL, caption={[SQL-Abfrage zur Auswahl der Konfigurationsvariablen] SQL-Abfrage zur Auswahl der Konfigurationsvariablen im COPRA-System. \glqq copra.value\_table cvt\grqq{} stellt die verschiedenen Werttabellen im System dar: co6\_data\_decimal\_6\_3, co6\_data\_string und co6\_medic\_pressure. \glqq quantity\_in\_value\_table\grqq{} ist ein Alias für die Spalte der Menge an Werten in den Werttabellen.}, captionpos=b, label=list:selectconfigvar]
 	select 
 	count(cvt.id) quantity_in_value_table, -- Menge an Werten je Konfigurationsvariable in der Werttabelle
-	ccv.id, -- ID der Konfiguationsvariable
+	ccv.id, -- ID der Konfigurationsvariable
 	ccv."name" -- Name der Konfigurationsvariable
 	from copra.co6_config_variables ccv  -- Tabelle der Konfigurationsvariablen 
 	join copra.value_table cvt -- eine der Werttabellen
-	on cvt.varid = ccv.id -- Verlinkung der Werttabele mit der Tabelle co6_config_variables
+	on cvt.varid = ccv.id -- Verlinkung der Werttabelle mit der Tabelle co6_config_variables
 	where not cdd.deleted -- nicht geloeschte Daten
 	and ccv.parent in (1, 20) -- Patienten- oder Fallbezug
 	and not ccv.deleted -- Konfigurationsvariable wird benutzt
@@ -40,7 +40,7 @@ Die Anzahl der ausgewählten Konfigurationsvariablen in den Werttabellen für da
 
 \begin{table}[ht]
 	\centering  
-	\caption[Anzahl der repräsentierten Konfigurationsvariablen in je Werttabelle]{Anzahl der repräsentierten Konfigurationsvariablen in je Werttabelle. Die meisten Konfigurationsvariablen sammeln numerische Werte.}
+	\caption[Anzahl der repräsentierten Konfigurationsvariablen je Werttabelle]{Anzahl der repräsentierten Konfigurationsvariablen je Werttabelle. Die meisten Konfigurationsvariablen sammeln numerische Werte.}
 	
 	\label{tab:configvarvaluetables}
 	\begin{tabular}{|r|l|}
@@ -53,4 +53,4 @@ Die Anzahl der ausgewählten Konfigurationsvariablen in den Werttabellen für da
 	\end{tabular}
 \end{table}
 
-Unter der 701 ausgewählten Konfigurationsvariablen befinden sich die Biosignaldaten für die Datenzuordnung mit den \ac{fhir}-Profilen.
+Unter den 701 ausgewählten Konfigurationsvariablen befinden sich die Biosignaldaten für die Datenzuordnung mit den \ac{fhir}-Profilen.

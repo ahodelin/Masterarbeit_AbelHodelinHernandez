@@ -7,7 +7,7 @@ Zu Beginn wurde eine unscharfe Suche durchgeführt, um die \ac{fhir}-Profile den
 Mit einem Python-Skript (Code \ref{list:testr}) und der \ac{csv}-Datei wurde die unscharfe Suche durchgeführt. Dieser Prozess liefert einen Datensatz mit 400 Paaren von zugeordneten Profilen mit Konfigurationsvariablen. 355 Paare davon waren falsche Zuordnungen, wie die Beispiele der \ref{tab:wrongpaar} zeigen.
 
 \begin{lstlisting}[language=python, caption={[Python-Skript für das Pattern Matching] Python-Skript für das Pattern Matching. Die Option \glqq token\_set\_ratio\grqq{} ermöglicht eine flexiblere fuzzy-Suche (\ref{sub:levdist}), denn die Länge der Namen der Profile und die Länge der Namen und Beschreibungen der Konfigurationsvariablen sind deutlich unterschiedlich.} , captionpos=b, label=list:testr]
-from thefuzz import process, fuzz  # Bibliotheken der unscharfe Suche laden
+from thefuzz import process, fuzz  # Bibliotheken der unscharfen Suche laden
 
 with open("profils_names.csv") as fp: # Datei mit den Namen der Profile
 prn = fp.readlines() # Name der Profile
@@ -17,9 +17,9 @@ with open("config_vars_names.csv") as fc: # Datei mit den Konfigurationsvariable
 cvn = fc.readlines() # Konfigurationsvariablen
 cvn = [x.strip() for x in cvn] # Formatierung
 
-for profil in prn: # Durchlauf die Namen der Profile
+for profil in prn: # Durchlauf der Namen der Profile
   match_ratios = process.extract(profil, cvn, scorer=fuzz.token_set_ratio) # Liste der passenden Konfigurationsvariablen.
-  for prn_match_cvn in match_ratios: # Durchlauf die Konfigurationsvariablen
+  for prn_match_cvn in match_ratios: # Durchlauf der Konfigurationsvariablen
     print(profil, prn_match_cvn) # Liste der Paare "Profile - Konfigurationsvariablen"
    
 \end{lstlisting}
@@ -49,9 +49,9 @@ Nach dem vorherigen Ergebnis der unscharfen Suche wurden die \ac{fhir}-Profile u
 	\label{fig:mapping}
 \end{figure}
 
-Wichtig für die Definition der \acp{regex} ist die Auswahl der Teilwörtern (\ref{subsec:pattmatch}) oder Kombinationen davon, die die \ac{fhir}-Profile charakterisieren. Denn diese Teilwörter sind in den meisten Fällen Fachtermini oder Teile von Fachbegriffen und können wieder in den Namen oder Beschreibungen der Konfigurationsvariablen gefunden werden.
+Wichtig für die Definition der \acp{regex} ist die Auswahl der Teilwörter (\ref{subsec:pattmatch}) oder Kombinationen davon, die die \ac{fhir}-Profile charakterisieren. Denn diese Teilwörter sind in den meisten Fällen Fachtermini oder Teile von Fachbegriffen und können wieder in den Namen oder Beschreibungen der Konfigurationsvariablen gefunden werden.
 
- Manche Teilwörter in den Profilnamen sind sehr allgemein und befinden sich in mehreren Profilen und in zahlreichen Namen und Beschreibungen der Konfigurationsvariablen, z. B. \glqq druck\grqq{}. Das hat zufolge, dass viele Konfigurationsvariablen falsch einem Profil durch die Nutzung von nur einem von diesen Teilwörtern zugeordnet werden könnten. Solche Teilwörter wurden in Kombination mit anderen benutzt, um das Pattern Matching zu verfeinern und die Trefferquote zu erhöhen. Hier ist auch die Menge und Länge der angewandten Teilwörter entscheidend, denn die Anwendung von vielen oder zu langen Teilwörtern liefert auch kein Ergebnis. Aus diesem Grund wurde bei der Schreibung der \ac{sql}-Abfragen je \ac{fhir}-Profil solange die Definition des \ac{regex} getestet, bis die optimale Kombination von Menge und Länge der Teilwörter gefunden wurde, die die genaue Menge an Konfigurationsvariablen geliefert hatte.
+ Manche Teilwörter in den Profilnamen sind sehr allgemein und befinden sich in mehreren Profilen und in zahlreichen Namen und Beschreibungen der Konfigurationsvariablen, z. B. \glqq druck\grqq{}. Das hat zufolge, dass durch die Nutzung von nur einem dieser Teilwörter viele Konfigurationsvariablen falsch einem Profil zugeordnet werden könnten. Solche Teilwörter wurden in Kombination mit anderen benutzt, um das Pattern Matching zu verfeinern und die Trefferquote zu erhöhen. Hier ist auch die Menge und Länge der angewandten Teilwörter entscheidend, denn die Anwendung von vielen oder zu langen Teilwörtern liefert auch kein Ergebnis. Aus diesem Grund wurde bei der Schreibung der \ac{sql}-Abfragen je \ac{fhir}-Profil solange die Definition des \ac{regex} getestet, bis die optimale Kombination von Menge und Länge der Teilwörter gefunden wurde, die die genaue Menge an Konfigurationsvariablen geliefert hatte.
 
 Der Code \ref{list:pattdruck} zeigt beispielhaft die \ac{sql}-Abfrage mit \ac{regex} für die gleichzeitige Erkennung mehrerer allgemeiner Teilwörter des Profils \glqq Mittlerer Beatmungsdruck\grqq{} in der Tabelle der Konfigurationsvariablen, um das \ac{fhir}-Profil den Konfigurationsvariablen zuzuordnen.
 
@@ -72,7 +72,7 @@ or description ~* 'mea.+pres.+(resp|vent)'
 Im Code \ref{list:pattdruck} werden die Spalten \texttt{name} und \texttt{description} der Tabelle \texttt{co6\_config\_variables} gleichzeitig zur Erkennung von Mustern untersucht. In der definierten \ac{regex} dieser \ac{sql}-Abfrage wird die Tilde \glqq$\sim$\grqq{} gefolgt von einem Sternchen \glqq$\ast$\grqq{} benutzt, um Groß- und Kleinschreibung nicht zu berücksichtigen. Die Teilwörter \glqq mitt\grqq{}, \glqq atm\grqq{} und \glqq druc\grqq{} des Profils \glqq Mittlerer Beatmungsdruck\grqq{} verbunden durch \glqq .+\grqq{}, für eine Folge von beliebigen Zeichen, haben das Ergebnis der \ref{tab:mittatmdruck} geliefert. Die Teilwörter \glqq mea\grqq{}, \glqq pres\grqq{} und die Gruppierung mit den Alternativen \glqq resp\grqq{} oder \glqq vent \grqq{} wurden benutzt, um den Name (Mean pressure Respiratory system airway --on ventilator) auf Englisch und den \glqq Short Name\grqq{} (Mean Pres on vent Airway) zu berücksichtigen.
 
 \begin{longtable}{|l|p{5cm}|}
-	\caption[Erkannte Konfigurationsvariablen durch durch die Anwendung einer Kombination von allgemeinen Teilwörtern]{Erkannte Konfigurationsvariablen bei der Anwendung der Kombination von allgemeinen Teilwörtern. Das \ac{fhir}-Profil \glqq Mittlerer Beatmungsdruck\grqq{} wurde drei Konfigurationsvariablen zugeordnet.}
+	\caption[Erkannte Konfigurationsvariablen durch die Anwendung einer Kombination von allgemeinen Teilwörtern]{Erkannte Konfigurationsvariablen bei der Anwendung der Kombination von allgemeinen Teilwörtern. Das \ac{fhir}-Profil \glqq Mittlerer Beatmungsdruck\grqq{} wurde drei Konfigurationsvariablen zugeordnet.}
 	\label{tab:mittatmdruck}
 	\endfirsthead
 		\hline
@@ -113,4 +113,4 @@ Ein vorher genannter Aspekt ist die allgemeine, umgangssprachliche Anwendung der
 
 Am Ende des Pattern Matching-Prozesses konnten von den 701 Konfigurationsvariablen 75 einem \ac{fhir}-Profil zugeordnet werden, und von den 80 \ac{fhir}-Profilen wurden dann 41 mit einer \ac{copra}-Variable verlinkt. Das sind insgesamt 80 importierte Einträge in der Tabelle \texttt{mapping\_mii\_co6}, weil ein Profil mehreren Konfigurationsvariablen zugeordnet wurde. Alle zugeordneten Konfigurationsvariablen waren patientenbezogene Biosignalparameter in \ac{copra}.
 
-Das Ergebnis des Pattern Matchings is in der Tabelle \texttt{mapping\_mii\_co6} (\ref{tab:mapping}) registriert. Dieser Datensatz wurde danach (\ref{sec:validmethode}) von den Fachleute der \ac{pdms}-Abteilung validiert.
+Das Ergebnis des Pattern Matchings ist in der Tabelle \texttt{mapping\_mii\_co6} (\ref{tab:mapping}) registriert. Dieser Datensatz wurde danach (\ref{sec:validmethode}) von den Fachleuten der \ac{pdms}-Abteilung validiert.

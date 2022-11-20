@@ -50,7 +50,7 @@ Output:
 \begin{longtable}{|l|l|p{7.5cm}|} 
 	\hline
 	\multicolumn{3}{|l|}{\bfseries Data Mapping (inhaltlich) - numerische und String Werte} \\ \hline
-	id &  & MD5-Hash aus der Kombination des Namens der Werttabelle mit den Hauptschlüssel der Werte in dieser Tabelle und des Namens des \ac{fhir}-Profils: md5(\texttt{tables.table\_name}, \texttt{co6\_data\_decimal\_6\_3.id} und \texttt{mapping\_mii\_co6\_2.profile\_name}) oder md5(\texttt{tables.table\_name}, \texttt{co6\_data\_string.id} und \texttt{mapping\_mii\_co6\_2.profile\_name}) \\ \hline
+	id &  & MD5-Hash aus der Kombination des Namens der Werttabelle mit dem Hauptschlüssel der Werte in dieser Tabelle und des Namens des \ac{fhir}-Profils: md5(\texttt{tables.table\_name}, \texttt{co6\_data\_decimal\_6\_3.id} und \texttt{mapping\_mii\_co6\_2.profile\_name}) oder md5(\texttt{tables.table\_name}, \texttt{co6\_data\_string.id} und \texttt{mapping\_mii\_co6\_2.profile\_name}) \\ \hline
 	meta & profile & \texttt{mapping\_mii\_co6\_2.meta\_profile} \\ \hline 
 	status &  & final  \\ \hline 
 	category & coding & system: \texttt{mapping\_mii\_co6\_2.categoriy\_ coding\_system} \\ 
@@ -76,7 +76,7 @@ Output:
     effectiveDataTime & & Datum und Uhrzeit der Messung: \texttt{co6\_data\_decimal\_6\_3.datetimeto} oder \texttt{co6\_data\_string.datetimeto} \\  \hline
 \end{longtable}
 
-Die Zuweisung der Felder beider Systeme für die Überführung der Biosignalparameter von Blutdruckmessungen ist wie folgt:
+Die Zuweisung der Felder beider Systeme für die Überführung der Biosig- nalparameter von Blutdruckmessungen ist wie folgt:
 \vspace{4mm}
 
 \noindent Input:
@@ -105,7 +105,7 @@ Output:
 \begin{longtable}{|l|l|p{7cm}|} 
 	\hline
 	\multicolumn{3}{|l|}{\bfseries Data Mapping (inhaltlich) - Blutdruckmessungen} \\ \hline
-	id &  & MD5-Hash aus der Kombination des Namens der Werttabelle mit den Hauptschlüssel der Werte in dieser Tabelle und des Namens des \ac{fhir}-Profils: md5(\texttt{tables.table\_name}, \texttt{co6\_data\_medic\_pressure.id} und \texttt{mapping\_mii\_co6\_2.profile\_name}) \\ \hline
+	id &  & MD5-Hash aus der Kombination des Namens der Werttabelle mit dem Hauptschlüssel der Werte in dieser Tabelle und des Namens des \ac{fhir}-Profils: md5(\texttt{tables.table\_name}, \texttt{co6\_data\_medic\_pressure.id} und \texttt{mapping\_mii\_co6\_2.profile\_name}) \\ \hline
 	meta & profile & \texttt{mapping\_mii\_co6\_2.meta\_profile} \\ \hline 
 	status &  & final  \\ \hline 
 	category & coding & system: \texttt{mapping\_mii\_co6\_2.categoriy\_ coding\_system} \\ 

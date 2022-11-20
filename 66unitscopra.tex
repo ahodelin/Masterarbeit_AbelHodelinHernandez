@@ -35,7 +35,7 @@ Auch dieselbe Maßeinheit wurde zwischen Konfigurationsvariablen unterschiedlich
 
 \begin{table}[ht]
 	\centering
-	\caption[Beispiel der Schreibweise derselbe Maßeinheit in \acs{copra}]{Beispiel der Schreibweise derselbe Maßeinheit bei unterschiedlichen Konfigurationsvariablen in \acs{copra}. bpm steht für \glqq breaths per minute\grqq{}.}
+	\caption[Beispiel der Schreibweise derselben Maßeinheit in \acs{copra}]{Beispiel der Schreibweise derselben Maßeinheit bei unterschiedlichen Konfigurationsvariablen in \acs{copra}. bpm steht für \glqq breaths per minute\grqq{}.}
 	\label{tab:unitscopra}
 	\begin{tabular}{|p{3cm}|p{3cm}|l|l|} \hline
 		\bfseries Profilname & \bfseries \ac{copra}-Name & \bfseries Profil-Einheit &  \bfseries \ac{copra}-Einheit \\ \hline
@@ -46,13 +46,13 @@ Auch dieselbe Maßeinheit wurde zwischen Konfigurationsvariablen unterschiedlich
 	\end{tabular}
 \end{table}
 
-In der Untersuchung der Maßeinheiten wurde auch eine fehlerhafte Darstellung der Maßeinheit bei einer Konfigurationsvariable festgestellt. Diese Problematik konnte auch nicht von den Experten der \ac{pdms}-Abteilung geklärt werden. Aus diesem Grund wird diese Konfigurationsvariable nicht weiter betrachtet. Die \ref{tab:errounit} zeigt die Konfigurationsvariable mit diesem Problem.
+In der Untersuchung der Maßeinheiten wurde auch eine fehlerhafte Darstellung der Maßeinheit bei einer Konfigurationsvariablen festgestellt. Diese Problematik konnte auch nicht von den Experten der \ac{pdms}-Abteilung geklärt werden. Aus diesem Grund wird diese Konfigurationsvariable nicht weiter betrachtet. Die \ref{tab:errounit} zeigt die Konfigurationsvariable mit diesem Problem.
 
 %\clearpage
 
 \begin{table}[ht]
 	\centering
-	\caption[Fehlerhafte Darstellung Maßeinheiten in \acs{copra}]{Fehlerhafte Darstellung Maßeinheiten in \acs{copra}.}
+	\caption[Fehlerhafte Darstellung von Maßeinheiten in \acs{copra}]{Fehlerhafte Darstellung von Maßeinheiten in \acs{copra}.}
 	\label{tab:errounit}
 	\begin{tabular}{|p{3cm}|p{3cm}|l|l|} \hline
 		\bfseries Profilname & \bfseries \ac{copra}-Name & \bfseries Profil-Einheit & \bfseries \ac{copra}-Einheit \\ \hline
@@ -90,6 +90,6 @@ Andere Maßeinheiten von Konfigurationsvariablen können nicht in die Einheiten 
 	\end{tabular}
 \end{table}
 
-Die Inkompatibilität dieser Einheiten liegt daran, dass die Dimensionen von L/(min.m2) Volumen, Zeit und Flächeninhalt sind. Die Dimensionen von mmHg/s sind wiederum Druck und Zeit.  mmHg/s wird für das Ablassen der Manschette bei der Blutdruckmessung benutzt. In \ac{copra} hingegen wird diese Maßeinheit an einer Konfigurationsvariable für die Messung des Indexes der linken Ventrikelkontraktilität gesetzt.
+Die Inkompatibilität dieser Einheiten liegt daran, dass die Dimensionen von L/(min.m2) Volumen, Zeit und Flächeninhalt sind. Die Dimensionen von mmHg/s sind wiederum Druck und Zeit.  mmHg/s wird für das Ablassen der Manschette bei der Blutdruckmessung benutzt. In \ac{copra} hingegen wird diese Maßeinheit an eine Konfigurationsvariable für die Messung des Indexes der linken Ventrikelkontraktilität gesetzt.
 
-Am Ende dieser Analyse bleiben 76 Einträge im Datensatz der zugeordneten Paare der Konfigurationsvariablen mit den \ac{fhir}-Profilen mit insgesamt 71 Konfigurationsvariablen und 39 \ac{fhir}-Profilen. Der resultierende Datensatz mit den Umwandlungen für die Harmonisierung der Maßeinheiten beider Systeme wurde in die Tabelle \texttt{mapping\_mii\_co6\_2} importiert. Diese neue Tabelle hat wiederum dieselbe Struktur wie \texttt{mapping\_mii\_co6} (\ref{tab:mapping}) mit einer neuen Spalte \texttt{unit\_transform} des Datentyps \glqq numeric\grqq{} mit dem Faktor für die Umrechnung der gespeicherten Biosignalen in den Maßeinheiten der \ac{fhir}-Profilen. Somit sind die Einheiten beider Systeme harmonisiert.
+Am Ende dieser Analyse bleiben 76 Einträge im Datensatz der zugeordneten Paare der Konfigurationsvariablen mit den \ac{fhir}-Profilen mit insgesamt 71 Konfigurationsvariablen und 39 \ac{fhir}-Profilen. Der resultierende Datensatz mit den Umwandlungen für die Harmonisierung der Maßeinheiten beider Systeme wurde in die Tabelle \texttt{mapping\_mii\_co6\_2} importiert. Diese neue Tabelle hat wiederum dieselbe Struktur wie \texttt{mapping\_mii\_co6} (\ref{tab:mapping}) mit einer neuen Spalte \texttt{unit\_transform} des Datentyps \glqq numeric\grqq{} mit dem Faktor für die Umrechnung der gespeicherten Biosignale in den Maßeinheiten der \ac{fhir}-Profilen. Somit sind die Einheiten beider Systeme harmonisiert.
