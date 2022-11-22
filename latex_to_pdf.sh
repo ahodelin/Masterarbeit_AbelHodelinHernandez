@@ -1,6 +1,6 @@
 name_work="Masterarbeit_AbelHodelinHernandez"
 da=`date +%d-%m-%Y`
-date_sign="-signed-$da"
+date_sign="_digitalSigned_$da"
 if [ ! -f "$name_work.bcf" ]
 then 
   pdflatex $name_work.tex
