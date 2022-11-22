@@ -1,5 +1,6 @@
 name_work="Masterarbeit_AbelHodelinHernandez"
-
+da=`date +%d-%m-%Y`
+date_sign="-signed-$da"
 if [ ! -f "$name_work.bcf" ]
 then 
   pdflatex $name_work.tex
@@ -9,4 +10,4 @@ else
   pdflatex $name_work.tex
 fi
 
-# cp $name_work.pdf $name_work-signed.pdf
+cp $name_work.pdf $name_work$date_sign.pdf
