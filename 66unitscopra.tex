@@ -17,6 +17,8 @@ Die zwei Paare von zugeordneten Profilen mit Konfigurationsvariablen bei denen d
 
  Nach der Untersuchung der Maßeinheiten in \ac{copra} wurden 38 unterschiedliche Konfigurationsvariablen mit derselben Maßeinheit wie bei den zugewiesenen \ac{fhir}-Profilen, aber mit unterschiedlichen Schreibweisen, erkannt. Die \ref{tab:unitscopra} zeigt einige Beispiele davon.
 
+\clearpage
+
 \begin{table}[ht]
 	\centering
 	\caption[Schreibweisen derselben Maßeinheiten in beiden Systemen]{Schreibweise derselben Maßeinheiten in beiden Systemen.}
@@ -30,8 +32,6 @@ Die zwei Paare von zugeordneten Profilen mit Konfigurationsvariablen bei denen d
 \end{table}
 
 Auch dieselbe Maßeinheit wurde zwischen Konfigurationsvariablen unterschiedlich dargestellt. Dieses Phänomen wurde in sieben Fälle gefunden. Die \ref{tab:unitscopra} zeigt einige Beispiele dieses Ereignisses.
-
-\clearpage
 
 \begin{table}[ht]
 	\centering
@@ -48,7 +48,7 @@ Auch dieselbe Maßeinheit wurde zwischen Konfigurationsvariablen unterschiedlich
 
 In der Untersuchung der Maßeinheiten wurde auch eine fehlerhafte Darstellung der Maßeinheit bei einer Konfigurationsvariablen festgestellt. Diese Problematik konnte auch nicht von den Experten der \ac{pdms}-Abteilung geklärt werden. Aus diesem Grund wird diese Konfigurationsvariable nicht weiter betrachtet. Die \ref{tab:errounit} zeigt die Konfigurationsvariable mit diesem Problem.
 
-%\clearpage
+\clearpage
 
 \begin{table}[ht]
 	\centering
@@ -61,8 +61,6 @@ In der Untersuchung der Maßeinheiten wurde auch eine fehlerhafte Darstellung de
 \end{table}
 
 Es wurden acht Konfigurationsvariablen mit Maßeinheiten identifiziert, die nicht dieselben Maßeinheiten haben wie die Einheiten der \ac{fhir}-Profile. Die Maßeinheiten von sieben dieser Konfigurationsvariablen konnten in die Maßeinheiten der \ac{fhir}-Profile umgerechnet werden. Diese Umwandlung wird durch die Multiplikation der numerischen Werte der Werttabellen mit Umrechnungsfaktoren realisiert. Die \ref{tab:unittoconvert} zeigt die Liste der betroffenen Maßeinheiten.  
-
-\clearpage
 
 \begin{table}[ht]
 	\centering

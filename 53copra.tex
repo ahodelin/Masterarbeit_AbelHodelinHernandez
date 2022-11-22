@@ -36,7 +36,7 @@ Die Tabelle \texttt{co6\_config\_variable\_types} enthält die Datentypen der Ko
 
 \newpage
 
-Eine weitere wichtige Tabelle für die spätere Überführung der Daten ist \texttt{co6\_medic\_data\_patient} (\ref{tab:patient}). Diese beinhaltet die Basisinformation der behandelnden Personen. Diese Tabelle beinhaltet zusammen mit der pseudonymisierten Patientennummer einen Hauptschlüssel für die Verlinkung der Werte der Biosignaldaten in den Werttabellen mit der korrespondierenden Person. Aus diesem Grund befindet sich dieser Schlüssel als Fremdschlüssel auch in den Werttabellen.
+Eine weitere wichtige Tabelle für die spätere Überführung der Daten ist \texttt{co6\_medic\_data\_patient} (\ref{tab:patient}). Diese beinhaltet die Basisinformation der behandelten Personen. Diese Tabelle beinhaltet zusammen mit der pseudonymisierten Patientennummer einen Hauptschlüssel für die Verlinkung der Werte der Biosignaldaten in den Werttabellen mit der korrespondierenden Person. Aus diesem Grund befindet sich dieser Schlüssel als Fremdschlüssel auch in den Werttabellen.
 %\clearpage
 \begin{longtable}{{|p{3.5cm}|l|p{6.7cm}|}}
 	\caption[Relevante Spalten von co6\_medic\_data\_patient]{Relevante Spalten von co6\_medic\_data\_patient.}
@@ -81,7 +81,7 @@ Die Werttabellen \texttt{co6\_data\_decimal\_6\_3} und \texttt{co6\_data\_string
 		id & bigint & Hauptschlüssel der Tabelle, z. B. 2595 \\ \hline
 		varid & int & Fremdschlüssel, der zur Spalte id in der Tabelle co6\_config\_variables zeigt, z. B. 102 \\ \hline
 		deleted & boolean & \texttt{false}, wenn der Wert noch im System ist, sonst \texttt{true} \\ \hline
-		parent\_id & bigint & Fremdschlüssel, der zur Spalte id in der Tabelle co6\_data\_patient zeigt, wenn der Wert von parent\_id gleich 1 ist \\ \hline
+		parent\_id & bigint & Fremdschlüssel, der zur Spalte id in der Tabelle co6\_data\_patient zeigt, wenn der Wert von parent\_varid gleich 1 ist \\ \hline
 		parent\_varid & int & Fremdschlüssel, der zur Spalte id in der Tabelle co6\_config\_variables zeigt. Diese Spalte ist der Bezug der Biosignaldaten, z. B. 1 für Patientenbezug \\ \hline
 		datetimeto & timestamp & Datum und Uhrzeit der Messung in \acs{iso} 8601 Format (JJJJ-MM-DD HH:mm:ss)\\ \hline
 		validated & boolean & \texttt{true} wenn der Eintrag validiert wurde, sonst \texttt{false}. \\ \hline
@@ -100,7 +100,7 @@ Die Werttabelle \texttt{co6\_medic\_pressure} (\ref{tab:valuepress}) beinhaltet 
 		id & bigint & Hauptschlüssel der Tabelle, z. B. 2595 \\ \hline
 		varid & int & Fremdschlüssel, der zur Spalte id in co6\_config\_variables zeigt, z. B. 102 \\ \hline
 		deleted & boolean & \texttt{false}, wenn der Wert noch im System ist, sonst \texttt{true} \\ \hline
-		parent\_id & bigint & Fremdschlüssel, der zur Spalte id in der Tabelle co6\_data\_patient zeigt, wenn der Wert von parent\_id gleich 1 ist \\ \hline
+		parent\_id & bigint & Fremdschlüssel, der zur Spalte id in der Tabelle co6\_data\_patient zeigt, wenn der Wert von parent\_varid gleich 1 ist \\ \hline
 		parent\_varid & int & Fremdschlüssel, der zur Spalte id in co6\_config\_variables zeigt. Diese Spalte ist der Bezug der Biosignaldaten \\ \hline
 		datetimeto & timestamp & Datum und Uhrzeit der Messung in \acs{iso} 8601 Format (JJJJ-MM-DD HH:mm:ss)\\ \hline
 		validated & boolean & \texttt{true} wenn der Eintrag validiert wurde, sonst \texttt{false}. \\ \hline

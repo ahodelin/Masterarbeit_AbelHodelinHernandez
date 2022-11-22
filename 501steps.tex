@@ -6,7 +6,7 @@ Die \ac{fhir}-Profile des Erweiterungsmoduls \glqq\ac{icu}\grqq{} werden analysi
 
 Nach der Speicherung der Profile wird die Struktur der Tabellen von \ac{copra} im Staging Bereich des \ac{dw} analysiert. Diese beinhalten die Metadaten, wie Konfigurationsvariablen und Datentypen, und die Werte der Biosignaldaten mit den Attributen für das Data Mapping mit den \ac{fhir}-Profilen. 
 
-Die Voraussetzungen für die Auswahl der Konfigurationsvariablen für die weitere Durchführung des Projekts werden definiert. Die ausgewählten Konfigurationsvariablen sollen patienten- oder fallbezogene sein, und mindestens 1000 validierte, aktuelle und nicht gelöschte Datensätze in den Werttabellen beinhalten (\ref{subsec:datadef}).
+Die Voraussetzungen für die Auswahl der Konfigurationsvariablen für die weitere Durchführung des Projekts werden definiert. Die ausgewählten Konfigurationsvariablen sollen patienten- oder fallbezogene sein, und mindestens 1000 validierte, aktuelle und nicht gelöschte Datensätze in den Werttabellen beinhalten (\ref{subsec:datadef}). Somit werden die Konfigurationsvariablen mit einer repräsentativen Menge an Daten betrachtet.
 
 Nach der Auswahl werden die entscheidenden Attribute der Konfigurationsvariablen in die vorher entwickelten PostgreSQL \ac{db} importiert. Diese Konfigurationsvariablen beinhalten die Namen von Beobachtungen und Messungen. Diese solle den \glqq Procedure\grqq{}- und \glqq Observation\grqq{}-Profilen entsprechen.
 
