@@ -9,7 +9,7 @@ Mit der Modellierung der Zuweisung der Felder und der Definition von neuen Trans
 \end{itemize}
 
 Der Inhalt der Spalten der \ac{sql}-Views sind die spezifizierten Parameter der Tabellen in der Subsektion \ref{subsec:modellinksystems}. 
-
+\newpage
 Der Code \ref{list:viewpressure} zeigt den \ac{sql}-Befehl für die Erzeugung der \ac{sql}-View für die Bioparameter in der Tabelle \texttt{co6\_data\_string}. 
 
 \begin{lstlisting}[language=SQL, caption={[SQL-View für Werte in co6\_data\_string] SQL-View für Werte in co6\_data\_string.}, captionpos=b, label=list:viewsdicimalstring]
@@ -52,9 +52,18 @@ Der Code \ref{list:viewpressure} zeigt den \ac{sql}-Befehl für die Erzeugung de
 	;
 \end{lstlisting}
 
-Die \ac{sql}-View für die Biosignale in \texttt{co6\_data\_decimal\_6\_3} wird in dieser Arbeit nicht präsentiert, denn diese View ist ähnlich wie die View für die String-Werte, aber weniger komplex. Der Grund hierzu ist, dass die detektierten Biosignaldaten in \texttt{co6\_data\_string}, die den \ac{fhir}-Profilen zugeordnet sind, in Wahrheit numerische Einträge sind (\ref{tab:stringvalue}), und somit sollte der Datentyp dieser Biosignaldaten umgewandelt werden, jedoch muss zuvor die Struktur des Wertes in der Spalte \texttt{val} der Tabelle \texttt{co6\_data\_string} kontrolliert werden (\ref{sec:transfer}).
+\newpage
 
-\clearpage
+Ein Screenshot von einigen der Spalten der \ac{sql}-View \texttt{v\_profil\_string} ist in der \ref{fig:viewstring} zu sehen.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/view_string}
+	\caption[Screenshot der \acs{sql}-View \texttt{co6\_data\_string}]{Screenshot der \acs{sql}-View \texttt{co6\_data\_string}.}
+	\label{fig:viewstring}
+\end{figure}
+
+Die \ac{sql}-View für die Biosignale in \texttt{co6\_data\_decimal\_6\_3} wird in dieser Arbeit nicht präsentiert, denn diese View ist ähnlich wie die View für die String-Werte, aber weniger komplex. Der Grund hierzu ist, dass die detektierten Biosignaldaten in \texttt{co6\_data\_string}, die den \ac{fhir}-Profilen zugeordnet sind, in Wahrheit numerische Einträge sind (\ref{tab:stringvalue}), und somit sollte der Datentyp dieser Biosignaldaten umgewandelt werden, jedoch muss zuvor die Struktur des Wertes in der Spalte \texttt{val} der Tabelle \texttt{co6\_data\_string} kontrolliert werden (\ref{sec:transfer}).
 
 \begin{table}[ht]
 	\centering 

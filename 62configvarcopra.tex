@@ -15,7 +15,7 @@ Die Kriterien für die Wahl der Variablen sind Folgende:
 
 \newpage
 
-Um die Konfigurationsvariablen auszuwählen, wurde für jede Werttabelle eine \ac{sql}-Abfrage, wie im Code \ref{list:selectconfigvar} \footnote{Die \ac{sql}-Skripts für die Erstellung der \ac{db} und Bearbeitung der Daten zusammen mit dem Python-Skript befinden sich unter \href{https://github.com/ahodelin/mii_icu}{https://github.com/ahodelin/mii\_icu}}, realisiert.
+Um die Konfigurationsvariablen auszuwählen, wurde für jede Werttabelle eine \ac{sql}-Abfrage, wie im Code \ref{list:selectconfigvar}, realisiert.
 
 \begin{lstlisting}[language=SQL, caption={[SQL-Abfrage zur Auswahl der Konfigurationsvariablen] SQL-Abfrage zur Auswahl der Konfigurationsvariablen im COPRA-System. \glqq copra.value\_table cvt\grqq{} stellt die verschiedenen Werttabellen im System dar: co6\_data\_decimal\_6\_3, co6\_data\_string und co6\_medic\_pressure. \glqq quantity\_in\_value\_table\grqq{} ist ein Alias für die Spalte der Menge an Werten in den Werttabellen.}, captionpos=b, label=list:selectconfigvar]
 	select 
